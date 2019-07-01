@@ -1,8 +1,11 @@
+const passport = require("passport");
+const bcrypt = require("bcrypt");
+
 // Handles the GET, POST, PUT, and DELETE routes for users
 module.exports = {
     GET: function(request, response) {
         // TODO: Implement getting user
-        throw new Error("/api/login GET route not implemented yet.");
+        throw new Error("/api/user GET route not implemented yet.");
     },
     POST: function(request, response) {
         // TODO: Implement posting new users
