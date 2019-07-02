@@ -6,4 +6,6 @@ module.exports = function() {
     mongoose.connect(MONGO_DB, { useNewUrlParser: true });
     mongoose.set("useFindAndModify", false);
     // TODO: Perform database setup here (db connection and models)
+
+    const Options = mongoose.model("Options", optionSchema);
 };
