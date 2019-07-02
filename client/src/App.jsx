@@ -13,10 +13,10 @@ function App() {
             <div>
                 <Nav />
                 <Route exact path="/" component={Index} />
-                <Route exact path="/User/:id" component={User} />
-                <Route exact path="/User/:id/favorites" component={Favorites} />
-                <Route exact path="/Error" component={ErrorPage} />
-                <Route exact path="/Randomizer" component={Randomizer} />
+                <Route exact path="/user/:id" component={User} />
+                <Route exact path="/user/:id/favorites" component={Favorites} />
+                <Route exact path="/error" component={ErrorPage} />
+                <Route exact path="/randomizer" component={Randomizer} />
             </div>
         </Router>
     );
