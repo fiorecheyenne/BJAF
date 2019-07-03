@@ -1,23 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
-import Favorites from "./Favorites";
-import User from "./User";
-import Index from "./Index";
-import Randomizer from "./Randomizer";
-import Nav from "./Nav";
-import ErrorPage from "./ErrorPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.scss";
 
-function App() {
+// Shared components
+import Nav from "./shared/Nav";
+import Footer from "./shared/Footer";
+
+// Main page components
+import SplashPage from "./containers/SplashPage";
+import FavoritesPage from "./containers/FavoritesPage";
+import RandomizerPage from "./containers/RandomizerPage";
+import ResultsPage from "./containers/ResultsPage";
+import ErrorPage from "./containers/ErrorPage";
+
+export default function App() {
     return (
         <Router>
-            <div>
-                <Nav />
-                <Route exact path="/" component={Index} />
-                <Route exact path="/user/:id" component={User} />
-                <Route exact path="/user/:id/favorites" component={Favorites} />
-                <Route exact path="/error" component={ErrorPage} />
-                <Route exact path="/randomizer" component={Randomizer} />
-            </div>
+            <Nav />
+            <Switch>
+                <Route exact path="/" component={SplashPage} />
+                <Route path="/user/:id/favorites" component={FavoritesPage} />
+                <Route path="/randomizer" component={RandomizerPage} />
+                <Route path="/results" component={ResultsPage} />
+                <Route component={ErrorPage} />
+            </Switch>
+            <Footer />
         </Router>
     );
 }
