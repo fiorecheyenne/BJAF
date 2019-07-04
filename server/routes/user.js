@@ -21,23 +21,21 @@ module.exports = {
 
     // throw new Error("/api/user POST route not implemented yet.");
 
-    POST: function(request, response) {
-        console.log("post route called");
+    POST: async function(request, response) {
         // TODO: Implement posting new users
         var userData = request.body;
-        console.log(userData);
-        var newUser = User.create(userData);
-        newUser
-            // .save()
-            .then(User => {
-                console.log("dotthen");
-                res.send(User);
-            })
-            .catch(err => {
-                console.log("dotcatch");
-                response.status(400).send(err);
-            });
+        var newUser = await User.create(userData);
         response.send(newUser);
+        // newUser
+        //     .then(User => {
+        //         console.log("dotthen");
+        //         res.json(User);
+        //     })
+        //     .catch(err => {
+        //         console.log("dotcatch");
+        //         response.status(400).send(err);
+        //     });
+        // response.send(newUser);
     },
 
     PUT: function(request, response) {
