@@ -15,4 +15,4 @@ const optionSchema = new Schema({
     }),
 });
 
-module.exports = optionSchema;
+module.exports = model("Options", optionSchema);
