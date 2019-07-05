@@ -1,0 +1,20 @@
+type DutchBrosOption {
+    name: String
+    presets: [String]
+    flavors: [String]
+    milk: [String]
+    variation: [String]
+}
+
+type RandomizedDutchBrosOption {
+    name: String
+    preset: String
+    flavors: [String]
+    milk: String
+    variation: String
+}
+
+type Query {
+    allDutchBrosOptions(name: String!): [DutchBrosOption]
+    randomDutchBrosOption: RandomizedDutchBrosOption
+}
