@@ -1,5 +1,18 @@
+enum DutchBrosBase {
+    COFFEE
+    TEA
+    SODA
+    LEMONADE
+    CHAI
+    SMOOTHIE
+    COCOA
+    REBEL
+    FROST
+    MOCHA
+}
+
 type DutchBrosOption {
-    name: String
+    base: String
     presets: [String]
     flavors: [String]
     milk: [String]
@@ -7,7 +20,7 @@ type DutchBrosOption {
 }
 
 type RandomizedDutchBrosOption {
-    name: String
+    base: String
     preset: String
     flavors: [String]
     milk: String
@@ -15,6 +28,7 @@ type RandomizedDutchBrosOption {
 }
 
 type Query {
-    allDutchBrosOptions(name: String!): [DutchBrosOption]
+    allDutchBrosOptions: [DutchBrosOption]
+    dutchBrosOption(base: DutchBrosBase): DutchBrosOption
     randomDutchBrosOption: RandomizedDutchBrosOption
 }

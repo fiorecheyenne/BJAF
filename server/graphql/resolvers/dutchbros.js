@@ -1,10 +1,15 @@
-const data = require("../../../seed.json");
+const dutchBrosData = require("../../../seed.json");
 
 module.exports = {
-    allOptions() {
-        // TODO: Return all avaliable options
+    allOptions(parent, args, context) {
+        return Object.values(dutchBrosData);
     },
-    randomizedOption() {
+    option(parent, args, context) {
+        const { base } = args;
+        const baseData = dutchBrosData[base.toLowerCase() + "-options"];
+        return baseData;
+    },
+    randomizedOption(parent, args, context) {
         // TODO: Return generated randomized option
     },
 };
