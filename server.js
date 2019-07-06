@@ -17,7 +17,11 @@ initDatabase();
 const routes = require("./server/routes");
 routes(app);
 
-// TODO: Initialize Apollo Server for GraphQL
+// eslint-disable-next-line import/order
+const { ApolloServer } = require("apollo-server-express");
+const graphqlSetup = require("./server/graphql");
+const apollo = new ApolloServer(graphqlSetup);
+apollo.applyMiddleware({ app });
 
 // Default React route
 app.get("/*", (_, response) => {
