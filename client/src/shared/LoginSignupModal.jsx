@@ -1,9 +1,12 @@
 import React, { useState, useCallback } from "react";
 import IconButton from "./IconButton";
+import useUserToken from "../hooks/useUserToken";
 
-const emailTest = /.{2,}@.{2,}\..{2,}/;
+const emailMatch = /.{2,}@.{2,}\..{2,}/;
 
 export default function LoginSignupModal({ isVisible, onClose }) {
+    const [userToken, setUserToken] = useUserToken();
+
     const [formToDisplay, setFormToDisplay] = useState("SIGNUP");
 
     const [username, setUsername] = useState("");
@@ -32,7 +35,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
     }, [password]);
 
     const validateSignupInfo = useCallback(
-        () => username.length > 0 && validatePassword().length <= 0 && emailTest.test(email) && termsChecked,
+        () => username.length > 0 && validatePassword().length <= 0 && emailMatch.test(email) && termsChecked,
         [username, email, termsChecked, validatePassword]
     );
 
@@ -54,7 +57,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
             })
                 .then(data => data.json())
                 .then(createdUser => {
-                    console.log(createdUser);
+                    setUserToken(createdUser);
                 })
                 .catch(err => {
                     console.warn(err);
@@ -65,7 +68,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                     onClose && onClose();
                 });
         },
-        [processingSignup, username, email, password, validateSignupInfo, onClose]
+        [processingSignup, username, email, password, validateSignupInfo, setUserToken, onClose]
     );
 
     const [processingLogin, setProcessingLogin] = useState(false);
@@ -135,13 +138,13 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                 <input
                                     value={email}
                                     onChange={event => setEmail(event.target.value)}
-                                    className={"input" + (triggerValidation && !emailTest.test(email) ? " is-danger" : "")}
+                                    className={"input" + (triggerValidation && !emailMatch.test(email) ? " is-danger" : "")}
                                     type="text"
                                     placeholder="Example: johndoe@example.org"
                                     autoComplete="email"
                                 />
                             </div>
-                            {triggerValidation && !emailTest.test(email) && (
+                            {triggerValidation && !emailMatch.test(email) && (
                                 <p className="help is-danger">A valid email is needed to signup!</p>
                             )}
                         </div>
