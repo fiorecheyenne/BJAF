@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import IconButton from "./IconButton";
+
+const emailTest = /.{2,}@.{2,}\..{2,}/;
 
 export default function LoginSignupModal({ isVisible, onClose }) {
     const [formToDisplay, setFormToDisplay] = useState("SIGNUP");
@@ -10,10 +12,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
     const [termsChecked, setTermsChecked] = useState(false);
     const [triggerValidation, setTriggerValidation] = useState(false);
 
-    const [loginUser, setLoginUser] = useState("");
-    const [loginPassword, setLoginPassword] = useState("");
-
-    function validatePassword() {
+    const validatePassword = useCallback(() => {
         let errorReasons = [];
         if (password.length < 6) {
             errorReasons.push("Password must have at least 6 characters.");
@@ -30,20 +29,78 @@ export default function LoginSignupModal({ isVisible, onClose }) {
             }
         }
         return errorReasons;
-    }
+    }, [password]);
 
-    function onSignupFormDidSubmit(event) {
-        console.log(username, email, password);
-        setTriggerValidation(true);
-        event.preventDefault();
-        // TODO: Implement server requests to the server for signing up
-    }
+    const validateSignupInfo = useCallback(
+        () => username.length > 0 && validatePassword().length <= 0 && emailTest.test(email) && termsChecked,
+        [username, email, termsChecked, validatePassword]
+    );
 
-    function onLoginFormDidSubmit(event) {
-        console.log(loginUser, loginPassword);
-        event.preventDefault();
-        // TODO: Implement server requests to the server for logging in
-    }
+    const [processingSignup, setProcessingSignup] = useState(false);
+
+    const onSignupFormDidSubmit = useCallback(
+        event => {
+            event.preventDefault();
+            setTriggerValidation(true);
+            if (processingSignup || !validateSignupInfo()) {
+                return;
+            }
+            setProcessingSignup(true);
+            const newUserData = { username, email, password };
+            fetch("/api/user", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newUserData),
+            })
+                .then(data => data.json())
+                .then(createdUser => {
+                    console.log(createdUser);
+                })
+                .catch(err => {
+                    console.warn(err);
+                    // TODO: Show server signup error message to end user
+                })
+                .finally(() => {
+                    setProcessingSignup(false);
+                    onClose && onClose();
+                });
+        },
+        [processingSignup, username, email, password, validateSignupInfo, onClose]
+    );
+
+    const [processingLogin, setProcessingLogin] = useState(false);
+    const [loginUser, setLoginUser] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+
+    const onLoginFormDidSubmit = useCallback(
+        event => {
+            event.preventDefault();
+            if (processingLogin) {
+                return;
+            }
+            setProcessingLogin(true);
+            const userCredentials = {
+                user: loginUser,
+                password: loginPassword,
+            };
+            // TODO: Implement login authentication
+            fetch("/api/user/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userCredentials),
+            })
+                .then(data => data.json())
+                .then(loginData => {
+                    console.warn("TESTING USER LOGIN", loginData);
+                })
+                .catch(err => {
+                    // TODO: Show user server login error
+                    console.log(err);
+                })
+                .finally(() => setProcessingLogin(false));
+        },
+        [processingLogin, loginUser, loginPassword]
+    );
 
     return (
         <div className={`modal ${isVisible && "is-active"}`}>
@@ -65,6 +122,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                     className={`input${triggerValidation && username.length <= 0 ? " is-danger" : ""}`}
                                     type="text"
                                     placeholder="Example: JohnDoe"
+                                    autoComplete="username"
                                 />
                             </div>
                             {triggerValidation && username.length <= 0 && (
@@ -77,13 +135,14 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                 <input
                                     value={email}
                                     onChange={event => setEmail(event.target.value)}
-                                    className={"input" + (triggerValidation && email.length <= 0 ? " is-danger" : "")}
+                                    className={"input" + (triggerValidation && !emailTest.test(email) ? " is-danger" : "")}
                                     type="text"
                                     placeholder="Example: johndoe@example.org"
+                                    autoComplete="email"
                                 />
                             </div>
-                            {triggerValidation && email.length <= 0 && (
-                                <p className="help is-danger">A email is needed to signup!</p>
+                            {triggerValidation && !emailTest.test(email) && (
+                                <p className="help is-danger">A valid email is needed to signup!</p>
                             )}
                         </div>
                         <div className="field">
@@ -96,12 +155,15 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                         "input" + (triggerValidation && validatePassword().length > 0 ? " is-danger" : "")
                                     }
                                     type="password"
+                                    autoComplete="new-password"
                                 />
                             </div>
                             {triggerValidation && (
                                 <ul>
-                                    {validatePassword().map(reason => (
-                                        <li className="help is-danger">{reason}</li>
+                                    {validatePassword().map((reason, key) => (
+                                        <li key={key} className="help is-danger">
+                                            {reason}
+                                        </li>
                                     ))}
                                 </ul>
                             )}
@@ -117,7 +179,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                             </div>
                             <div className="control">
                                 <p>
-                                    I agree to the <a>Terms and Conditions</a>.
+                                    I agree to the <a href="#login-form">Terms and Conditions</a>.
                                 </p>
                             </div>
                         </div>
@@ -127,10 +189,14 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                         <hr />
                         <div className="field is-grouped is-grouped-right is-vertical-center">
                             <div className="control">
-                                <a onClick={() => setFormToDisplay("LOGIN")}>I already have an account</a>
+                                <a href="#signup-form" onClick={() => setFormToDisplay("LOGIN")}>
+                                    I already have an account
+                                </a>
                             </div>
                             <div className="control">
-                                <button className="button is-primary">Create Account</button>
+                                <button className={"button is-primary" + (processingSignup ? " is-loading" : "")}>
+                                    Create Account
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -150,6 +216,7 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                     onChange={event => setLoginUser(event.target.value)}
                                     type="text"
                                     className="input"
+                                    autoComplete="username"
                                 />
                             </div>
                         </div>
@@ -161,16 +228,21 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                                     onChange={event => setLoginPassword(event.target.value)}
                                     type="password"
                                     className="input"
+                                    autoComplete="current-password"
                                 />
                             </div>
                         </div>
                         <hr />
                         <div className="field is-grouped is-grouped-right is-vertical-center">
                             <div className="control">
-                                <a onClick={() => setFormToDisplay("SIGNUP")}>Create an account</a>
+                                <a href="#signup-form" onClick={() => setFormToDisplay("SIGNUP")}>
+                                    Create an account
+                                </a>
                             </div>
                             <div className="control">
-                                <button className="button is-primary">Log into my Account</button>
+                                <button className={"button is-primary" + (processingLogin ? " is-loading" : "")}>
+                                    Log into my Account
+                                </button>
                             </div>
                         </div>
                     </form>
