@@ -154,6 +154,7 @@
             "Sugar Free Vanilla",
             "Sugar Free Peppermint"
         ],
+        "milk": ["none"],
         "variation": ["Iced", "Hot", "Frozen"]
     },
     "soda-options": {
@@ -230,6 +231,7 @@
             "Sugar Free Strawberry",
             "Sugar Free Vanilla"
         ],
+        "milk": ["none"],
         "variation": ["Iced"]
     },
     "lemonade-options": {
@@ -293,6 +295,7 @@
             "Sugar Free Strawberry",
             "Sugar Free Vanilla"
         ],
+        "milk": ["none"],
         "variation": ["Iced", "Frozen"]
     },
     "chai-options": {
@@ -335,7 +338,10 @@
     },
     "smoothie-options": {
         "base": "Smoothie",
-        "presets": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"]
+        "presets": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
+        "flavors": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
+        "milk": ["none"],
+        "variations": ["none"]
     },
     "cocoa-options": {
         "base": "Hot Cocoa",
@@ -495,6 +501,7 @@
             "Sugar Free Strawberry",
             "Sugar Free Vanilla"
         ],
+        "milk": ["none"],
         "variation": ["Iced", "Frozen"]
     },
     "frost-options": {
@@ -588,8 +595,8 @@
             "White Angel",
             "White Mocha"
         ],
-        "flavors": [],
-        "milk": [],
+        "flavors": ["none"],
+        "milk": ["none"],
         "variation": ["none"]
     },
     "mocha-options": {

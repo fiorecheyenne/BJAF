@@ -1,4 +1,5 @@
 const dutchBrosData = require("../../../seed.json");
+const randomizer = require("../../randomizer.js");
 
 module.exports = {
     allOptions(parent, args, context) {
@@ -11,5 +12,6 @@ module.exports = {
     },
     randomizedOption(parent, args, context) {
         // TODO: Return generated randomized option
+        return randomizer();
     },
 };
