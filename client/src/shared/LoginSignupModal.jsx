@@ -86,7 +86,6 @@ export default function LoginSignupModal({ isVisible, onClose }) {
                 user: loginUser,
                 password: loginPassword,
             };
-            // TODO: Implement login authentication
             fetch("/api/user/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -94,11 +93,11 @@ export default function LoginSignupModal({ isVisible, onClose }) {
             })
                 .then(data => data.json())
                 .then(loginData => {
-                    console.warn("TESTING USER LOGIN", loginData);
+                    setUserToken(loginData);
                 })
                 .catch(err => {
                     // TODO: Show user server login error
-                    console.log(err);
+                    console.warn(err);
                 })
                 .finally(() => setProcessingLogin(false));
         },
