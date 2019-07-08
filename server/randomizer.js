@@ -6,8 +6,6 @@ const randomizer = option => {
         return obj[keys[(keys.length * Math.random()) << 0]];
     };
 
-    // console.log(randomBase(seedData));
-
     if (!option) {
         option = randomBase(seedData);
     } else {
@@ -18,7 +16,7 @@ const randomizer = option => {
         randomBlend = option.presets[Math.floor(Math.random() * option.presets.length)];
     } else {
         randomBlend = [];
-        x = [Math.random() * 3];
+        const x = [Math.random() * 3];
 
         for (i = 0; i < x; i++) {
             randomFlavors = [option.flavors[Math.floor(Math.random() * option.flavors.length)]];

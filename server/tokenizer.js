@@ -9,4 +9,4 @@ module.exports = function signing(user) {
         email: user.email,
         token: token,
     };
-    };
+};
