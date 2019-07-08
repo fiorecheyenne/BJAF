@@ -13,17 +13,27 @@ const randomizer = option => {
     } else {
         option = seedData[option + "-options"];
     }
+    if (Math.random() * 100 > 50) {
+        randomBlend = option.presets[Math.floor(Math.random() * option.presets.length)];
+    } else {
+        randomBlend = [];
+        x = [Math.random() * 3];
+
+        for (i = 0; i < x; i++) {
+            randomFlavors = option.flavors[Math.floor(Math.random() * option.flavors.length)];
+            randomBlend.push(randomFlavors);
+        }
+    }
+
     return {
-        base: option.base,
-        presets: randomBase(option.presets),
-        flavors: randomBase(option.flavors),
-        milk: randomBase(option.milk),
-        variation: randomBase(option.variation),
+        randomizedBase: option.base,
+        randomizedFlavor: randomBlend,
+        randomizedMilk: randomBase(option.milk),
+        randomizedVariation: randomBase(option.variation),
     };
 };
 
 console.log(randomizer());
-
 // start with the option (either given as an input, or randomized)
 // randomly pick either present or flavors, and randomly generate based off of the option
 // if option has milk, randomize milk
