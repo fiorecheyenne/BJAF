@@ -26,18 +26,17 @@ const randomizer = option => {
         }
 
         randomBlend = new Array(...new Set(randomBlend));
-        // }
-
-        return {
-            randomizedBase: option.base,
-            randomizedFlavor: randomBlend,
-            randomizedMilk: randomBase(option.milk),
-            randomizedVariation: randomBase(option.variation),
-        };
     }
+
+    return {
+        randomizedBase: option.base,
+        randomizedFlavor: randomBlend,
+        randomizedMilk: randomBase(option.milk),
+        randomizedVariation: randomBase(option.variation),
+    };
 };
 
-console.log(randomizer());
+console.log("test =>", randomizer());
 
 // start with the option (either given as an input, or randomized)
 // randomly pick either present or flavors, and randomly generate based off of the option
