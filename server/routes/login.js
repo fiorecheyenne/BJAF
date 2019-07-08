@@ -1,16 +1,20 @@
 const User = require("../database/models/User.js");
 const bcrypt = require("bcrypt");
+const tokenizer = require("../tokenizer");
 
 module.exports = {
     POST: async function(request, response) {
-        //LOGIN the user
         // find a user by username
-        // pull the hashed password from db
-        // boolean = bcrypt.compareSync(INPUT PASS, HASHED PASS FROM DB)
-        // if (boolean){return token}
-        // if (!boolean){DONT WORRY ABOUT IT}
-
-        let loginUser = await User.findOne({username:request.body.username});
-        response.json(loginUser);
+        let loginUser = await User.findOne({
+            username: request.body.username,
+        });
+        // check input password against DB
+        passCheck = bcrypt.compareSync(request.body.password, loginUser.password);
+        if (passCheck) {
+            console.log(passCheck);
+            response.json(tokenizer(loginUser));
+        } else {
+            response.json({});
+        }
     },
 };
