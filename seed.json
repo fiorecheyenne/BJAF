@@ -155,7 +155,7 @@
             "Sugar Free Peppermint"
         ],
         "milk": ["none"],
-        "variation": ["Iced", "Hot", "Frozen"]
+        "variation": ["Iced Black", "Iced Green", "Hot Black", "Hot Green", "Frozen Black", "Frozen Green"]
     },
     "soda-options": {
         "base": "Italian Soda",
