@@ -1,5 +1,5 @@
 import useLocalStorage from "./useLocalStorage";
 
 export default function useUserToken() {
-    return useLocalStorage("USER_TOEKN");
+    return useLocalStorage("USER_TOKEN");
 }
