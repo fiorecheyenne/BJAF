@@ -11,7 +11,13 @@ module.exports = {
         return baseData;
     },
     randomizedOption(parent, args, context) {
-        // TODO: Return generated randomized option
-        return randomizer();
+        const randomized = randomizer(args.base ? args.base.toLowerCase() : undefined);
+
+        return {
+            base: randomized.randomizedBase,
+            blend: randomized.randomizedFlavor,
+            milk: randomized.randomizedMilk,
+            variation: randomized.randomizedVariation,
+        };
     },
 };
