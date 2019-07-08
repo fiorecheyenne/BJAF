@@ -1,9 +1,9 @@
 const randomizer = require("./randomizer");
 const users = require("./user");
-const auth = require("./auth")
+const auth = require("./auth");
 
 module.exports = function(app) {
-    app.get("/api/randomizer", randomizer);
+    app.get("/api/randomizer", randomizer.GET);
     app.get("/api/user/:id", users.GET);
     app.post("/api/user", users.POST);
     app.put("/api/user/:id", users.PUT);

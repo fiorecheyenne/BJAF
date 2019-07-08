@@ -6,8 +6,6 @@ const randomizer = option => {
         return obj[keys[(keys.length * Math.random()) << 0]];
     };
 
-    // console.log(randomBase(seedData));
-
     if (!option) {
         option = randomBase(seedData);
     } else {
