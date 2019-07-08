@@ -6,7 +6,9 @@ const tokenizer = require("../tokenizer");
 // Handles the GET, POST, PUT, and DELETE routes for users
 module.exports = {
     GET: function(request, response) {
-        // TODO: Implement getting user
+      User.findOne(request.user, function(err, User) {
+
+      });
         response.json(Users);
         throw new Error("/api/user GET route not implemented yet.");
     },
@@ -29,6 +31,8 @@ module.exports = {
 
         throw new Error("/api/user PUT route not implemented yet.");
     },
+
+    
     DELETE: function(request, response) {
         // TODO: Implement deleteing a user
         throw new Error("/api/user DELETE route not implemented yet.");
