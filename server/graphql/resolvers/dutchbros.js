@@ -12,6 +12,6 @@ module.exports = {
     },
     randomizedOption(parent, args, context) {
         // TODO: Return generated randomized option
-        return randomizer();
+        return randomizer(args.base && args.base.toLowerCase());
     },
 };
