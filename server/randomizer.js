@@ -14,32 +14,31 @@ const randomizer = option => {
         option = seedData[option + "-options"];
     }
 
-    let randomBlend;
-    // if (Math.random() * 100 > 50) {
-    //     randomBlend = option.presets[Math.floor(Math.random() * option.presets.length)];
-    // } else {
-    randomBlend = [];
-    x = [Math.random() * 3];
+    if (Math.random() * 100 > 50) {
+        randomBlend = option.presets[Math.floor(Math.random() * option.presets.length)];
+    } else {
+        randomBlend = [];
+        x = [Math.random() * 3];
 
-    for (i = 0; i < x; i++) {
-        randomFlavors = [option.flavors[Math.floor(Math.random() * option.flavors.length)]];
-        randomBlend.push(...randomFlavors);
+        for (i = 0; i < x; i++) {
+            randomFlavors = [option.flavors[Math.floor(Math.random() * option.flavors.length)]];
+            randomBlend.push(...randomFlavors);
+        }
+
+        randomBlend = new Array(...new Set(randomBlend));
+        // }
+
+        return {
+            randomizedBase: option.base,
+            randomizedFlavor: randomBlend,
+            randomizedMilk: randomBase(option.milk),
+            randomizedVariation: randomBase(option.variation),
+        };
     }
-
-    randomBlend = new Array(...new Set(randomBlend));
-    // }
-
-    return {
-        randomizedBase: option.base,
-        randomizedFlavor: randomBlend,
-        randomizedMilk: randomBase(option.milk),
-        randomizedVariation: randomBase(option.variation),
-    };
 };
 
-for (let i = 0; i < 150; i++) {
-    console.log(randomizer().randomizedFlavor);
-}
+console.log(randomizer());
+
 // start with the option (either given as an input, or randomized)
 // randomly pick either present or flavors, and randomly generate based off of the option
 // if option has milk, randomize milk
