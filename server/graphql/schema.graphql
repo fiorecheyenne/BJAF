@@ -21,7 +21,7 @@ type DutchBrosOption {
 
 type RandomizedDutchBrosOption {
     base: String
-    preset: String
+    presets: String
     flavors: [String]
     milk: String
     variation: String
