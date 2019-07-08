@@ -1,4 +1,4 @@
-// const passport = require("passport");
+const passport = require("passport");
 const bcrypt = require("bcrypt");
 const User = require("../database/models/User.js");
 
@@ -10,19 +10,7 @@ module.exports = {
         throw new Error("/api/user GET route not implemented yet.");
     },
 
-    // User = {
-    //         firstName: String,
-    //         lastName: String,
-    //         email: String,
-    //         username: String,
-    //         password: String,
-    //         faves: [],
-    //     };
-
-    // throw new Error("/api/user POST route not implemented yet.");
-
     POST: async function(request, response) {
-
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(request.body.password, salt);
         var userData = request.body;
