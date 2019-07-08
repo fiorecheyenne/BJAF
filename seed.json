@@ -341,7 +341,7 @@
         "presets": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
         "flavors": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
         "milk": ["none"],
-        "variations": ["none"]
+        "variation": ["none"]
     },
     "cocoa-options": {
         "base": "Hot Cocoa",
