@@ -1,5 +1,8 @@
+const randomizer = require("../randomizer.js");
+
 // Handles the /api/randomizer GET route
-module.exports = function(request, response) {
-    // TODO: Create randomizer route
-    throw new Error("/api/randomizer route not implemented yet");
+module.exports = {
+    GET(request, response) {
+        response.send(randomizer());
+    },
 };
