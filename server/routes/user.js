@@ -1,6 +1,7 @@
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const User = require("../database/models/User.js");
+const tokenizer = require("../tokenizer");
 
 // Handles the GET, POST, PUT, and DELETE routes for users
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
             password: hash,
             faves: userData.faves,
         });
-        response.send(newUser);
+        response.send(tokenizer(newUser));
     },
 
     PUT: function(request, response) {
