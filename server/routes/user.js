@@ -9,7 +9,7 @@ const tokenKey = process.env.TOKEN_KEY;
 module.exports = {
     GET: async function(request, response) {
         // receive Token
-        let userToke = request.get('Auth-Token');
+        let userToke = request.get("Auth-Token");
         // Decode Token
         let payload = decoder(userToke);
         // find a user by _id:
@@ -17,7 +17,7 @@ module.exports = {
             _id: payload.payload,
         });
         // return Username, Name, Faves:[]
-        let userInfo = {username: loginUser.username, faves: loginUser.faves};
+        let userInfo = { username: loginUser.username, faves: loginUser.faves };
         response.json(userInfo);
     },
 
@@ -36,22 +36,22 @@ module.exports = {
     },
 
     PUT: async function(request, response) {
+        let item = req.body.item;
         // receive token
-        // Decode Token
-        // pull _:id from token
+        let userToke = request.get("Auth-Token");
+        // decode  _:id from token
+        let payload = decoder(userToke);
         // find a user by _:id in DB
+        let updatedFaves = await User.updateOne({
+            _id: payload.payload,
+            $addToSet: { faves: item },
+        });
         // pull faves:[] from DB by _:id
         // update Faves:[] with new favorite
         // return Username, Name, Faves:[]
 
-        console.log("hit");
+        console.log(updatedFaves);
         // TODO: Implement updating users info
-        let loginUser = await User.findOne({
-            username: request.body.username,
-        });
-
-        let updateFaves = await User.updateOne({ username: loginUser });
-
         // console.log(updateFaves);
         // console.log(decoder(request.body.token));
         response.send(request.body.token);
