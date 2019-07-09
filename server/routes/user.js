@@ -1,16 +1,24 @@
 const passport = require("passport");
 const bcrypt = require("bcrypt");
-const User = require("../database/models/User.js");
+const User = require("../database/models/User");
 const tokenizer = require("../tokenizer");
+const decoder = require("../decoder");
+const tokenKey = process.env.TOKEN_KEY;
 
 // Handles the GET, POST, PUT, and DELETE routes for users
 module.exports = {
-    GET: function(request, response) {
-      User.findOne(request.user, function(err, User) {
-
-      });
-        response.json(Users);
-        throw new Error("/api/user GET route not implemented yet.");
+    GET: async function(request, response) {
+        // receive Token
+        let userToke = request.get('Auth-Token');
+        // Decode Token
+        let payload = decoder(userToke);
+        // find a user by _id:
+        let loginUser = await User.findOne({
+            _id: payload.payload,
+        });
+        // return Username, Name, Faves:[]
+        let userInfo = {username: loginUser.username, faves: loginUser.faves};
+        response.json(userInfo);
     },
 
     POST: async function(request, response) {
@@ -18,6 +26,7 @@ module.exports = {
         let hash = bcrypt.hashSync(request.body.password, salt);
         var userData = request.body;
         var newUser = await User.create({
+            name: userData.name,
             email: userData.email,
             username: userData.username,
             password: hash,
@@ -26,15 +35,37 @@ module.exports = {
         response.send(tokenizer(newUser));
     },
 
-    PUT: function(request, response) {
-        // TODO: Implement updating users info
+    PUT: async function(request, response) {
+        // receive token
+        // Decode Token
+        // pull _:id from token
+        // find a user by _:id in DB
+        // pull faves:[] from DB by _:id
+        // update Faves:[] with new favorite
+        // return Username, Name, Faves:[]
 
+        console.log("hit");
+        // TODO: Implement updating users info
+        let loginUser = await User.findOne({
+            username: request.body.username,
+        });
+
+        let updateFaves = await User.updateOne({ username: loginUser });
+
+        // console.log(updateFaves);
+        // console.log(decoder(request.body.token));
+        response.send(request.body.token);
         throw new Error("/api/user PUT route not implemented yet.");
     },
 
-    
     DELETE: function(request, response) {
-        // TODO: Implement deleteing a user
+        // receive token
+        // Decode Token
+        // pull username from token
+        // find a user by username
+        // pull faves:[] from DB by User
+        // update Faves:[] with new favorite
+        // return Username, Name, Faves:[]
         throw new Error("/api/user DELETE route not implemented yet.");
     },
 };

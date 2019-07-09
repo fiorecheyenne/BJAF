@@ -1,4 +1,4 @@
-const User = require("../database/models/User.js");
+const User = require("../database/models/User");
 const bcrypt = require("bcrypt");
 const tokenizer = require("../tokenizer");
 
@@ -18,4 +18,3 @@ module.exports = {
         }
     },
 };
-
