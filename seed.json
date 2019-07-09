@@ -72,13 +72,7 @@
             "Almond",
             "Peppermint",
             "Vanilla",
-            "Salted Caramel",
-            "Sugar Free Chocolate Mac",
-            "Sugar Free Coconut",
-            "Sugar Free Hazelnut",
-            "Sugar Free Irish Cream",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Salted Caramel"
         ],
         "milk": ["2%", "Nonfat", "Chocolate Blend", "Soy Milk", "Almond Milk", "Coconut Milk"],
         "variation": ["Iced Latte", "Hot Latte", "Freeze", "Cold Brew", "Toasted Cold Brew", "Iced Americano", "Hot Americano"]
@@ -147,12 +141,7 @@
             "Strawberry",
             "Orange",
             "Vanilla",
-            "Watermelon",
-            "Sugar Free Coconut",
-            "Sugar Free Rasberry",
-            "Sugar Free Strawberry",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Watermelon"
         ],
         "milk": ["none"],
         "variation": ["Iced Black", "Iced Green", "Hot Black", "Hot Green", "Frozen Black", "Frozen Green"]
@@ -225,11 +214,7 @@
             "Strawberry",
             "Orange",
             "Vanilla",
-            "Watermelon",
-            "Sugar Free Coconut",
-            "Sugar Free Rasberry",
-            "Sugar Free Strawberry",
-            "Sugar Free Vanilla"
+            "Watermelon"
         ],
         "milk": ["none"],
         "variation": ["Iced"]
@@ -289,11 +274,7 @@
             "Ruby Red Grapefruit",
             "Strawberry",
             "Orange",
-            "Watermelon",
-            "Sugar Free Coconut",
-            "Sugar Free Rasberry",
-            "Sugar Free Strawberry",
-            "Sugar Free Vanilla"
+            "Watermelon"
         ],
         "milk": ["none"],
         "variation": ["Iced", "Frozen"]
@@ -325,13 +306,7 @@
             "Almond",
             "Peppermint",
             "Vanilla",
-            "Salted Caramel",
-            "Sugar Free Chocolate Mac",
-            "Sugar Free Coconut",
-            "Sugar Free Hazelnut",
-            "Sugar Free Irish Cream",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Salted Caramel"
         ],
         "milk": ["2%", "Nonfat", "Chocolate Blend", "Soy Milk", "Almond Milk", "Coconut Milk"],
         "variation": ["Iced", "Hot", "Frozen"]
@@ -416,13 +391,7 @@
             "Almond",
             "Peppermint",
             "Vanilla",
-            "Salted Caramel",
-            "Sugar Free Chocolate Mac",
-            "Sugar Free Coconut",
-            "Sugar Free Hazelnut",
-            "Sugar Free Irish Cream",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Salted Caramel"
         ],
         "milk": ["2%", "Nonfat", "Chocolate Blend", "Soy Milk", "Almond Milk", "Coconut Milk"],
         "variation": ["none"]
@@ -495,11 +464,7 @@
             "Strawberry",
             "Orange",
             "Vanilla",
-            "Watermelon",
-            "Sugar Free Coconut",
-            "Sugar Free Rasberry",
-            "Sugar Free Strawberry",
-            "Sugar Free Vanilla"
+            "Watermelon"
         ],
         "milk": ["none"],
         "variation": ["Iced", "Frozen"]
@@ -629,12 +594,7 @@
             "Almond",
             "Peppermint",
             "Vanilla",
-            "Salted Caramel",
-            "Sugar Free Chocolate Mac",
-            "Sugar Free Hazelnut",
-            "Sugar Free Irish Cream",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Salted Caramel"
         ],
         "milk": ["none"],
         "variation": ["none"]
@@ -712,13 +672,7 @@
             "Almond",
             "Peppermint",
             "Vanilla",
-            "Salted Caramel",
-            "Sugar Free Chocolate Mac",
-            "Sugar Free Coconut",
-            "Sugar Free Hazelnut",
-            "Sugar Free Irish Cream",
-            "Sugar Free Vanilla",
-            "Sugar Free Peppermint"
+            "Salted Caramel"
         ],
         "milk": ["2%", "Nonfat", "Chocolate Blend", "Soy Milk", "Almond Milk", "Coconut Milk"],
         "variation": ["Iced", "Hot"]
