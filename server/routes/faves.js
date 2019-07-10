@@ -20,12 +20,12 @@ module.exports = {
         );
         let isAdded = updatedFaves.nModified;
         if (isAdded) {
-            console.log({ status: 200, Message: item + " Deleted from faves." });
-            response.send({ status: 200, Message: item + " Deleted from faves." });
+            console.log({ status: 200, Message: item + " Added to faves." });
+            response.send({ status: 200, Message: item + " Added to faves." });
         }
-        if (!isAdded || !item) {
-            console.log({ status: 500, Message: item + " could not be deleted from faves." });
-            response.send({ status: 500, Message: item + " could not be deleted from faves." });
+        if (!isAdded) {
+            console.log({ status: 500, Message: item + " could not be added to faves because it already exists in array." });
+            response.send({ status: 500, Message: item + " is already in your faves." });
         }
     },
     DELETE: async function(request, response) {
@@ -53,9 +53,9 @@ module.exports = {
             console.log({ status: 200, Message: item + " Deleted from faves." });
             response.send({ status: 200, Message: item + " Deleted from faves." });
         }
-        if (!isAdded || !item) {
-            console.log({ status: 500, Message: item + " could not be deleted from faves." });
-            response.send({ status: 500, Message: item + " could not be deleted from faves." });
+        if (!isAdded) {
+            console.log({ status: 500, Message: item + " could not be deleted from faves because does not exist in array." });
+            response.send({ status: 500, Message: item + " does not exist in faves." });
         }
     },
 };
