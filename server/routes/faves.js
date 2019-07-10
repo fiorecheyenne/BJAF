@@ -16,29 +16,25 @@ module.exports = {
             {
                 _id: payloadID,
             },
-            { $addToSet: { faves: item } },
-            
-            );
-               console.log(updatedFaves); 
-        // try{
-        //     updatedFaves
-        
-        // }catch (error){
-        //     console.error();
-        // }
-    
-        // pull faves:[] from DB by _:id
-        // update Faves:[] with new favorite
-        // return Username, Name, Faves:[]
-
-        // TODO: Implement updating users info
-        // console.log(updateFaves);
-        // console.log(decoder(request.body.token));
-
-        response.send(updatedFaves);
+            { $addToSet: { faves: item } }
+        );
+        let isAdded = updatedFaves.nModified;
+        if (isAdded) {
+            console.log({ status: 200, Message: item + " Deleted from faves." });
+            response.send({ status: 200, Message: item + " Deleted from faves." });
+        }
+        if (!isAdded || !item) {
+            console.log({ status: 500, Message: item + " could not be deleted from faves." });
+            response.send({ status: 500, Message: item + " could not be deleted from faves." });
+        }
     },
     DELETE: async function(request, response) {
-       let item = request.body.item;
+        try {
+            if (!request) throw "new err";
+        } catch (err) {
+            console.log("input");
+        }
+        let item = request.body.item;
         // receive token
         let userToke = request.get("Auth-Token");
         // decode  _:id from token
@@ -48,18 +44,18 @@ module.exports = {
             {
                 _id: payloadID,
             },
-            { $pull: { faves: item } },
-            ); 
-            if (pullFave.nModified){
-                console.log("200")
-                response.send({"status": 200, "Message": item + "Deleted from faves."});
-            }
-            if (!pullFave.nModified){
-                    console.log({ "status": 500, "Message": item + " could not be deleted from faves." });
-                    response.send({ "status": 500, "Message": item + " could not be deleted from faves."})
-            }
-            
-            console.log(item);
-            
+            { $pull: { faves: item } }
+        );
+        let isAdded = pullFave.nModified;
+        console.log(pullFave);
+
+        if (isAdded) {
+            console.log({ status: 200, Message: item + " Deleted from faves." });
+            response.send({ status: 200, Message: item + " Deleted from faves." });
+        }
+        if (!isAdded || !item) {
+            console.log({ status: 500, Message: item + " could not be deleted from faves." });
+            response.send({ status: 500, Message: item + " could not be deleted from faves." });
+        }
     },
 };
