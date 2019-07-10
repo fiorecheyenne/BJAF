@@ -35,29 +35,6 @@ module.exports = {
         response.send(tokenizer(newUser));
     },
 
-    PUT: async function(request, response) {
-        let item = req.body.item;
-        // receive token
-        let userToke = request.get("Auth-Token");
-        // decode  _:id from token
-        let payload = decoder(userToke);
-        // find a user by _:id in DB
-        let updatedFaves = await User.updateOne({
-            _id: payload.payload,
-            $addToSet: { faves: item },
-        });
-        // pull faves:[] from DB by _:id
-        // update Faves:[] with new favorite
-        // return Username, Name, Faves:[]
-
-        console.log(updatedFaves);
-        // TODO: Implement updating users info
-        // console.log(updateFaves);
-        // console.log(decoder(request.body.token));
-        response.send(request.body.token);
-        throw new Error("/api/user PUT route not implemented yet.");
-    },
-
     DELETE: function(request, response) {
         // receive token
         // Decode Token
