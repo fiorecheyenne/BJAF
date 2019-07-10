@@ -36,12 +36,4 @@ const randomizer = option => {
 
 console.log("test =>", randomizer());
 
-// start with the option (either given as an input, or randomized)
-// randomly pick either present or flavors, and randomly generate based off of the option
-// if option has milk, randomize milk
-// if option has variation, randomize variation
-// i need to return randomizedObject somehow
-
 module.exports = randomizer;
-
-// const randomizer = require("./randomizer.js");
