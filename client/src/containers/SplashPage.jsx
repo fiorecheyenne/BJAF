@@ -1,16 +1,15 @@
-import React from "react";
-import Hero from "./Hero";
-import ContainerLeft from "./ContainerLeft";
-import ContainerRight from "./ContainerRight";
+import React, { useState } from "react";
+import LoginSignupModal from "../shared/LoginSignupModal";
+
 // TODO: Design initial index/splash page
 export default function SplashPage() {
-    return (
-        <main>
-            <ContainerLeft>
-                Hello<br />
-                <a class="button is-primary">Select base</a>
-            </ContainerLeft>
-            <ContainerRight>Hello</ContainerRight>
-        </main>
-    );
+  const [isVisible, setIsVisible] = useState(true);
+  return (
+    <main>
+      <LoginSignupModal
+        isVisible={isVisible}
+        onClose={() => setIsVisible(false)}
+      />
+    </main>
+  );
 }

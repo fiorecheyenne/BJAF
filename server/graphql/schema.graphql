@@ -1,0 +1,35 @@
+enum DutchBrosBase {
+    COFFEE
+    TEA
+    SODA
+    LEMONADE
+    CHAI
+    SMOOTHIE
+    COCOA
+    REBEL
+    FROST
+    MOCHA
+}
+
+type DutchBrosOption {
+    base: String
+    presets: [String]
+    flavors: [String]
+    milk: [String]
+    variation: [String]
+}
+
+scalar Blend
+
+type RandomizedDutchBrosOption {
+    base: String
+    blend: Blend
+    milk: String
+    variation: String
+}
+
+type Query {
+    allDutchBrosOptions: [DutchBrosOption]
+    dutchBrosOption(base: DutchBrosBase): DutchBrosOption
+    randomDutchBrosOption(base: DutchBrosBase): RandomizedDutchBrosOption
+}

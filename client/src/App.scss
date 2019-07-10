@@ -6,31 +6,35 @@ $primary: #9a82b5;
 @import "../node_modules/bulma/bulma.sass";
 
 #root {
-    min-height: 100vh;
-    background: url("./image/lotsocups.jpg");
-    background-size: cover;
-    background-color: #9a82b5;
-    opacity: 0.6;
+  min-height: 100vh;
+  background: url("./image/lotsocups.jpg");
+  background-size: cover;
+  background-color: #9a82b5;
+  opacity: 0.6;
 }
 
 button {
-    @extend .button;
+  @extend .button;
 }
 
 nav {
-    @extend .navbar;
+  @extend .navbar;
 }
 
 #peace {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 #appname {
-    font-family: "Poiret One", cursive;
-    font-weight: bolder;
-    font-size: 35px;
+  font-family: "Poiret One", cursive;
+  font-weight: bolder;
+  font-size: 35px;
 }
 
 #full {
-    height: 100%;
+  height: 100%;
+  .is-vertical-center {
+    display: flex;
+    align-items: center;
+  }
 }
