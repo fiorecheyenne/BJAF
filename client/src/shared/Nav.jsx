@@ -7,8 +7,8 @@ export default function Nav() {
         <nav class="navbar is-fixed-top " role="navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="">
-                    <i class="fab fa-angellist" id="peace" />
-                    <span id="appname">Schilderwald</span>
+                    <i class="fas fa-random" id="random" />
+                    <span id="appname">MIXTLY</span>
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true" />

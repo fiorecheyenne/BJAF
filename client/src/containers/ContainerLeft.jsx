@@ -5,9 +5,10 @@ export default styled.div`
     background-color: transparent;
     float: left;
     text-align: center;
-    color: black;
-    font-size: 4rem;
-    width: 50%;
-    height: 100%;
-    min-height: 100vh;
+    /* color: black;
+    font-size: 16px; */
+    width: 100%;
+    position: relative;
+    top: 40vh;
+    padding: 10px;
 `;

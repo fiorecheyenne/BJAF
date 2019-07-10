@@ -4,9 +4,11 @@ import styled from "styled-components";
 export default styled.div`
     background-color: transparent;
     float: right;
-    text-align: center;
-    color: black;
-    font-size: 4rem;
+    text-align: left;
+    /* color: black;
+    font-size: 16px; */
     width: 50%;
-    min-height: 100vh;
+    position: relative;
+    top: 40vh;
+    padding: 10px;
 `;
