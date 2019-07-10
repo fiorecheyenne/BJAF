@@ -2,6 +2,7 @@ const User = require("../database/models/User");
 const tokenizer = require("../tokenizer");
 const decoder = require("../decoder");
 const tokenKey = process.env.TOKEN_KEY;
+const errHandle = require("../errormsgclass")
 
 module.exports = {
     PUT: async function(request, response) {
@@ -19,19 +20,16 @@ module.exports = {
             { $addToSet: { faves: item } }
         );
         let isAdded = updatedFaves.nModified;
-        if (!item || !item.name) {
-            console.log("item dont exist");
-            response.send({ status: 500, message: "Your fave needs a name before you save it! get creative!" });
-            return;
-        }
+      if (!item.name) {
+          response.send(new errHandle(500, "You need to name your favorite before you can add it"));
+          return;
+      }
         if (isAdded) {
-            console.log({ status: 200, Message: item + " Added to faves." });
-            response.send({ status: 200, Message: item + " Added to faves." });
+            response.send(new errHandle(200, ` ${item.name} added to faves`));
             return;
         }
         if (!isAdded) {
-            console.log({ status: 500, Message: item + " could not be added to faves because it already exists in array." });
-            response.send({ status: 500, Message: item + " is already in your faves." });
+            response.send(new errHandle(500, `Could not add ${item.name} because it is already in your faves.`));
             return;
         }
     },
@@ -49,28 +47,13 @@ module.exports = {
             },
             { $pull: { faves: item } }
         );
-        let isAdded = pullFave.nModified;
-
-        class FaveResult {
-            constructor(stat, msg){
-                this.status = stat;
-                this.message = msg;
-            }
-        }
-
-        if (!item || !item.name) {
-            console.log("item dont exist");
-            response.send({ status: 500, message: "invalid input" });
+        let isDeleted = pullFave.nModified;
+        if (isDeleted) {
+            response.send(new errHandle(200,`" ${item.name} " deleted from faves.`));
             return;
         }
-        if (isAdded) {
-            console.log({ status: 200, message: item + " deleted from faves." });
-            response.send({ status: 200, message: item + " deleted from faves." });
-            return;
-        }
-        if (!isAdded) {
-            console.log({ status: 500, message: item + " could not be deleted from faves because does not exist in array." });
-            response.send({ status: 500, message: "'" + item.name + "' does not exist in faves." });
+        if (!isDeleted) {
+            response.send(new errHandle(500,`${item.name} "does not exist in faves.`));
             return;
         }
     },
