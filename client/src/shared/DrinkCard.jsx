@@ -21,14 +21,17 @@ const favoritesButton = {
     transform: "translate(-28%, 28%)",
 };
 
-export default function DrinkCard({ base, preset, flavors, milk, variation, img }) {
-    const [favorite, toggleFavorite] = useFavorite({
-        base,
-        preset,
-        flavors,
-        milk,
-        variation,
-    });
+export default function DrinkCard({ base, preset, flavors, milk, variation, img, isFavorite }) {
+    const [favorite, toggleFavorite] = useFavorite(
+        {
+            base,
+            preset,
+            flavors,
+            milk,
+            variation,
+        },
+        isFavorite
+    );
     const buttonDisplayState = useMemo(() => {
         switch (favorite) {
             case "PROCESSING":
