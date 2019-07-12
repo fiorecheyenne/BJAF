@@ -6,10 +6,12 @@ export default function Nav() {
     return (
         <nav class="navbar is-fixed-top " role="navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="">
-                    <i class="fas fa-random" id="random" />
-                    <span id="appname">MIXTLY</span>
-                </a>
+                <Link to="/">
+                    <a class="navbar-item">
+                        <i class="fas fa-random" id="random" />
+                        <span id="appname">MIXTLY</span>
+                    </a>
+                </Link>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true" />
                     <span aria-hidden="true" />

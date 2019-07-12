@@ -11,7 +11,7 @@ const center = {
     justifyContent: "center",
     marginBottom: "12px",
 };
-//TODO: fix card display - desktop 2 rows of 5, mobile side by side
+//TODO: fix card display - desktop 2 rows of 5, mobile side by side - 200px md cards - 150 mobile cards - 300 lrg cards
 export default class RandomizerPage extends Component {
     render() {
         return (
