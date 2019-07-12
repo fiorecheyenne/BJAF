@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ContainerLeft from "./ContainerLeft";
-import ContainerRight from "./ContainerRight";
 
 // TODO: Design initial index/splash page
 export default function SplashPage() {

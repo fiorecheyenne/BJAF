@@ -3,13 +3,16 @@
 $navbar-background-color: transparent;
 $primary: #aa91c7;
 $link: #7e49c9;
-
+.title {
+    font-family: "Poiret One", cursive;
+}
 @import "../node_modules/bulma/bulma.sass";
 
 #root {
     min-height: 100vh;
     background: url("./image/lotsocups.jpg");
     background-size: cover;
+    overflow: hidden;
     background-color: rgba(234, 220, 250, 0.7);
     background-blend-mode: lighten;
 }
@@ -48,10 +51,30 @@ nav {
     position: relative;
     top: 35vh;
 }
+
+#randomizerbox {
+    position: relative;
+    top: 20vh;
+}
 #full {
     height: 100%;
     .is-vertical-center {
         display: flex;
         align-items: center;
     }
+}
+
+#basecardcol {
+    position: relative;
+    top: 15vh;
+}
+
+#basecardcol2 {
+    position: relative;
+    top: 20vh;
+}
+
+#randomizertitle {
+    position: relative;
+    top: 10vh;
 }
