@@ -11,7 +11,6 @@ module.exports = {
         // check input password against DB
         passCheck = bcrypt.compareSync(request.body.password, loginUser.password);
         if (passCheck) {
-            console.log(passCheck);
             response.json(tokenizer(loginUser));
         } else {
             response.json({});
