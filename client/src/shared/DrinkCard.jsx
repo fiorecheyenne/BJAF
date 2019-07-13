@@ -1,10 +1,13 @@
 import React, { useMemo } from "react";
 import useFavorite from "../hooks/useFavorite";
 import IconButton from "../shared/IconButton";
+import { relative } from "path";
 
 const constraints = {
-    width: "300px",
+    width: "350px",
     position: "relative",
+    top: "20vh",
+    left: "38vw",
     margin: "25px",
 };
 

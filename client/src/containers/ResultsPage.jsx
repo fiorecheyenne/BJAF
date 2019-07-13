@@ -1,25 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DrinkCard from "../shared/DrinkCard";
 
-import IconButton from "../shared/IconButton";
-
-const constraints = {
-    width: "300px",
-    position: "relative",
-    margin: "25px",
-};
-const centerContainer = {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "12px",
-};
-const favoritesButton = {
-    position: "absolute",
-    right: "0",
-    top: "0",
-    transform: "translate(-28%, 28%)",
-};
-
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
     const { base } = props.location;
@@ -56,11 +37,5 @@ export default function ResultsPage(props) {
             });
     }, []);
 
-    return (
-        <main>
-            {/* <div className="result box" style={constraints}> */}
-            {result && <DrinkCard {...result} />}
-            {/* </div> */}
-        </main>
-    );
+    return <main>{result && <DrinkCard id="resultcard" {...result} />}</main>;
 }
