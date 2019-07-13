@@ -2,7 +2,7 @@ const User = require("../database/models/User");
 const tokenizer = require("../tokenizer");
 const decoder = require("../decoder");
 const tokenKey = process.env.TOKEN_KEY;
-const errHandle = require("../errormsgclass")
+const errHandle = require("../errormsgclass");
 
 module.exports = {
     PUT: async function(request, response) {
@@ -12,7 +12,6 @@ module.exports = {
         // decode  _:id from token
         let payloadID = decoder(userToke).payload;
         // find a user by _:id in DB
-        console.log(item);
         let updatedFaves = await User.updateOne(
             {
                 _id: payloadID,
@@ -20,10 +19,10 @@ module.exports = {
             { $addToSet: { faves: item } }
         );
         let isAdded = updatedFaves.nModified;
-      if (!item.name) {
-          response.send(new errHandle(500, "You need to name your favorite before you can add it"));
-          return;
-      }
+        if (!item.name) {
+            response.send(new errHandle(500, "You need to name your favorite before you can add it"));
+            return;
+        }
         if (isAdded) {
             response.send(new errHandle(200, ` ${item.name} added to faves`));
             return;
@@ -49,11 +48,11 @@ module.exports = {
         );
         let isDeleted = pullFave.nModified;
         if (isDeleted) {
-            response.send(new errHandle(200,`" ${item.name} " deleted from faves.`));
+            response.send(new errHandle(200, `" ${item.name} " deleted from faves.`));
             return;
         }
         if (!isDeleted) {
-            response.send(new errHandle(500,`${item.name} "does not exist in faves.`));
+            response.send(new errHandle(500, `${item.name} "does not exist in faves.`));
             return;
         }
     },
