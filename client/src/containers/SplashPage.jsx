@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const randomizeAll = function(event) {
     event.preventDefault();
-    fetch("/api/randomizer")
+    fetch("https://api/randomizer")
         .then(data => data.json())
         .then(data => {
             console.log(data);
