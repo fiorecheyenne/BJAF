@@ -1,22 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
-const randomizeAll = function(event) {
-    event.preventDefault();
-    fetch("https://api/randomizer")
-        .then(data => data.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(err => {
-            console.warn(err);
-        });
-};
+import { Link, Redirect } from "react-router-dom";
 
 // TODO: Design initial index/splash page
-export default function SplashPage() {
+export default function SplashPage(props) {
+    // const [redirect, setRedirect] = useState("");
     return (
         <main>
+            {/* {redirect && <Redirect to={redirect} />} */}
             <div class="column is-full has-text-centered" id="divleft">
                 <p>
                     <h1>Welcome to mixtly</h1>
@@ -32,7 +22,7 @@ export default function SplashPage() {
                     </Link>
                 </div>
                 <div class="column is-one-quarter is-full-mobile has-text-centered-mobile" id="randomizebutton">
-                    <button class="button is-primary is-medium" onClick={randomizeAll}>
+                    <button class="button is-primary is-medium" onClick={() => props.history.push("/results")}>
                         Randomize All
                     </button>
                 </div>
