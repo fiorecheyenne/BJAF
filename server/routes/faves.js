@@ -4,7 +4,7 @@ const errHandle = require("../errormsgclass");
 
 module.exports = {
     PUT: async function(request, response) {
-        let item = request.body;
+        let item = request.body.item;
         if (!item) {
             response.send(new errHandle(500, "You need to name your favorite before you can add it"));
             return;
@@ -27,7 +27,8 @@ module.exports = {
         }
         if (!isAdded) {
             response.send(new errHandle(500, `Could not add ${item.name} because it is already in your faves.`));
-            return;        }
+            return;
+        }
     },
 
     DELETE: async function(request, response) {

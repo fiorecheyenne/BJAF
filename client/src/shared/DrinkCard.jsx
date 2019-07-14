@@ -3,10 +3,12 @@ import useFavorite from "../hooks/useFavorite";
 import IconButton from "../shared/IconButton";
 
 const constraints = {
-    minWidth: "350px",
+    minWidth: "300px",
+    // width: "350px",
     position: "relative",
     top: "1px",
     margin: "1rem",
+    display: "block",
 };
 
 const centerContainer = {
@@ -66,7 +68,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
             {flavors && (
                 <>
                     <p>
-                        <strong>Randomized Flavors:</strong>
+                        <strong>Flavors</strong>:
                     </p>
                     {flavors.map((flavor, key) => (
                         <p key={key}> + {flavor}</p>
@@ -76,7 +78,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
             {preset && (
                 <>
                     <p>
-                        <strong>Randomized Drink:</strong>
+                        <strong>Drink</strong>:
                     </p>
                     <p>{preset}</p>
                 </>
