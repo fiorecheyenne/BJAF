@@ -8,7 +8,7 @@ module.exports = function(app) {
     app.get("/api/user/", users.GET);
     app.post("/api/user/", users.POST);
     app.delete("/api/user/:id", users.DELETE);
-    app.post("/api/user/login/", login.POST);
+    app.post("/api/login/", login.POST);
     app.put("/api/faves/", faves.PUT);
     app.delete("/api/faves/", faves.DELETE);
 };
