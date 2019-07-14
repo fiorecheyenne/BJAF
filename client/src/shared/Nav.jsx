@@ -5,6 +5,7 @@ import useUserToken from "../hooks/useUserToken";
 
 export default function Nav(props) {
     const [signupVisible, setSignupVisible] = useState(false);
+    const [mobileNavActive, setMobileNavActive] = useState(false);
     const [visibleForm, setVisibleForm] = useState("LOGIN");
     const [token, setToken] = useUserToken();
     return (
@@ -18,7 +19,12 @@ export default function Nav(props) {
                         </a>
                     </Link>
                     {!signupVisible && (
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <a
+                            role="button"
+                            class={"navbar-burger" + (mobileNavActive ? " is-active" : "")}
+                            aria-label="menu"
+                            aria-expanded="false"
+                            onClick={() => setMobileNavActive(!mobileNavActive)}>
                             <span aria-hidden="true" />
                             <span aria-hidden="true" />
                             <span aria-hidden="true" />
@@ -26,7 +32,7 @@ export default function Nav(props) {
                     )}
                 </div>
                 {!signupVisible && (
-                    <div class="navbar-menu">
+                    <div class={"navbar-menu" + (mobileNavActive ? " is-active" : "")}>
                         <div class="navbar-end">
                             <div class="navbar-item">
                                 <div class="buttons">
@@ -34,6 +40,7 @@ export default function Nav(props) {
                                         <>
                                             <button
                                                 onClick={() => {
+                                                    setMobileNavActive(false);
                                                     props.history.push("/user/favorites");
                                                 }}
                                                 class="button is-primary">
@@ -42,6 +49,7 @@ export default function Nav(props) {
                                             <button
                                                 onClick={() => {
                                                     setToken(null);
+                                                    setMobileNavActive(false);
                                                     props.history.push("/");
                                                 }}
                                                 class="button is-light">
@@ -61,6 +69,7 @@ export default function Nav(props) {
                                             <button
                                                 onClick={() => {
                                                     setVisibleForm("LOGIN");
+                                                    setMobileNavActive(false);
                                                     setSignupVisible(true);
                                                 }}
                                                 class="button is-light">
@@ -76,7 +85,10 @@ export default function Nav(props) {
             </nav>
             <SignupLoginModal
                 isVisible={signupVisible}
-                onClose={() => setSignupVisible(false)}
+                onClose={() => {
+                    setMobileNavActive(false);
+                    setSignupVisible(false);
+                }}
                 visibleForm={visibleForm}
                 setVisibleForm={setVisibleForm}
             />
