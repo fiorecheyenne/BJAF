@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DrinkCard from "../shared/DrinkCard";
 
+const centerConstraints = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "calc(100vh - 70px)",
+};
+
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
     const { base } = props.location;
@@ -48,5 +55,9 @@ export default function ResultsPage(props) {
             });
     }, []);
 
-    return <main>{result && <DrinkCard id="resultcard" {...result} />}</main>;
+    return (
+        <main>
+            <div style={centerConstraints}>{result && <DrinkCard id="resultcard" {...result} />}</div>
+        </main>
+    );
 }
