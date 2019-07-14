@@ -16,7 +16,7 @@ import ErrorPage from "./containers/ErrorPage";
 export default function App() {
     return (
         <Router>
-            <Nav />
+            <Route paht="/" component={Nav} />
             <Switch>
                 <Route exact path="/" component={SplashPage} />
                 <Route path="/user/favorites" component={FavoritesPage} />

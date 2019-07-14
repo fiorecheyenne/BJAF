@@ -56,7 +56,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
         <div className="drink box" style={constraints}>
             {base && (
                 <div style={centerContainer}>
-                    <img src={`./images/${imgName}.png`} alt={base + " drink"} />
+                    <img src={`/images/${imgName}.png`} alt={base + " drink"} />
                 </div>
             )}
             <hr />
