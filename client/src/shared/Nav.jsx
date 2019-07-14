@@ -30,7 +30,25 @@ export default function Nav(props) {
                         <div class="navbar-end">
                             <div class="navbar-item">
                                 <div class="buttons">
-                                    {!token ? (
+                                    {token && token.token ? (
+                                        <>
+                                            <button
+                                                onClick={() => {
+                                                    props.history.push("/user/favorites");
+                                                }}
+                                                class="button is-primary">
+                                                My Favorites
+                                            </button>
+                                            <button
+                                                onClick={() => {
+                                                    setToken(null);
+                                                    props.history.push("/");
+                                                }}
+                                                class="button is-light">
+                                                Log Out
+                                            </button>
+                                        </>
+                                    ) : (
                                         <>
                                             <button
                                                 onClick={() => {
@@ -47,24 +65,6 @@ export default function Nav(props) {
                                                 }}
                                                 class="button is-light">
                                                 Login
-                                            </button>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <button
-                                                onClick={() => {
-                                                    props.history.push("/user/favorites");
-                                                }}
-                                                class="button is-primary">
-                                                My Favorites
-                                            </button>
-                                            <button
-                                                onClick={() => {
-                                                    setToken(null);
-                                                    props.history.push("/");
-                                                }}
-                                                class="button is-light">
-                                                Log Out
                                             </button>
                                         </>
                                     )}
