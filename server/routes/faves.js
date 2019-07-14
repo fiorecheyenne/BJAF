@@ -1,7 +1,5 @@
 const User = require("../database/models/User");
-const tokenizer = require("../tokenizer");
 const decoder = require("../decoder");
-const tokenKey = process.env.TOKEN_KEY;
 const errHandle = require("../errormsgclass");
 
 module.exports = {
@@ -16,7 +14,6 @@ module.exports = {
         // decode  _:id from token
         let payloadID = decoder(userToke).payload;
         // find a user by _:id in DB
-        console.log(item);
         let updatedFaves = await User.updateOne(
             {
                 _id: payloadID,
@@ -30,8 +27,7 @@ module.exports = {
         }
         if (!isAdded) {
             response.send(new errHandle(500, `Could not add ${item.name} because it is already in your faves.`));
-            return;
-        }
+            return;        }
     },
 
     DELETE: async function(request, response) {
