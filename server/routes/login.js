@@ -8,17 +8,13 @@ module.exports = {
         // find a user by username
         // if (request.body.email)
         let user = request.body.user
-
-        let userByEmail = await User.findOne({
-            email:user,
-        });
-        let userByUsername = await User.findOne({
-            username: user,
-        })
         
         if(userByEmail){
             var loginUser = userByEmail
         }else{  
+            let userByUsername = await User.findOne({
+            username: user,
+        })
             var loginUser = userByUsername
         }
 
