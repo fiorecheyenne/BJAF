@@ -3,11 +3,10 @@ import useFavorite from "../hooks/useFavorite";
 import IconButton from "../shared/IconButton";
 
 const constraints = {
-    width: "350px",
+    minWidth: "350px",
     position: "relative",
-    top: "20vh",
-    left: "38vw",
-    margin: "25px",
+    top: "1px",
+    margin: "1rem",
 };
 
 const centerContainer = {

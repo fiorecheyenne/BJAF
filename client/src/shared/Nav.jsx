@@ -9,7 +9,7 @@ export default function Nav(props) {
     const [token, setToken] = useUserToken();
     return (
         <>
-            <nav class="navbar is-fixed-top " role="navigation">
+            <nav class="navbar" role="navigation">
                 <div class="navbar-brand">
                     <Link to="/">
                         <a class="navbar-item">
