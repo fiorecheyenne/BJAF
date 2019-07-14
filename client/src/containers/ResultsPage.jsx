@@ -27,7 +27,7 @@ export default function ResultsPage(props) {
                 if (typeof result.randomizedFlavor === "string") {
                     generatedResult = {
                         ...generatedResult,
-                        preset: generatedResult.randomizedFlavor,
+                        preset: result.randomizedFlavor,
                     };
                 } else {
                     generatedResult = {

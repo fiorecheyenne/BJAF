@@ -58,7 +58,7 @@ export default function useFavorite(drink = {}, isFavorite) {
                 .then(response => response.json())
                 .then(userData => {
                     if (userData) {
-                        if (userData.faves.map(favorite => JSON.stringify(favorite).includes(JSON.stringify(drink)))) {
+                        if (userData.faves.map(favorite => JSON.stringify(favorite)).includes(JSON.stringify(drink))) {
                             dispatch("FINISHED_FAVORITE");
                         } else {
                             dispatch("FINISHED_UNFAVORITE");
