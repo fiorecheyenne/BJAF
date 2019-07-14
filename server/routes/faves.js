@@ -1,12 +1,14 @@
 const User = require("../database/models/User");
-const tokenizer = require("../tokenizer");
 const decoder = require("../decoder");
-const tokenKey = process.env.TOKEN_KEY;
 const errHandle = require("../errormsgclass");
 
 module.exports = {
     PUT: async function(request, response) {
-        let item = request.body.item;
+        let item = request.body;
+        if (!item) {
+            response.send(new errHandle(500, "You need to name your favorite before you can add it"));
+            return;
+        }
         // receive token
         let userToke = request.get("Auth-Token");
         // decode  _:id from token
@@ -19,18 +21,13 @@ module.exports = {
             { $addToSet: { faves: item } }
         );
         let isAdded = updatedFaves.nModified;
-        if (!item.name) {
-            response.send(new errHandle(500, "You need to name your favorite before you can add it"));
-            return;
-        }
         if (isAdded) {
             response.send(new errHandle(200, ` ${item.name} added to faves`));
             return;
         }
         if (!isAdded) {
             response.send(new errHandle(500, `Could not add ${item.name} because it is already in your faves.`));
-            return;
-        }
+            return;        }
     },
 
     DELETE: async function(request, response) {
@@ -45,7 +42,10 @@ module.exports = {
                 _id: payloadID,
             },
             { $pull: { faves: item } }
-        );
+        ).catch(err => {
+            console.log("error!!!!!:" + err);
+            response.send(`ERROR WILL ROBINSON!: ${err}`);
+        });
         let isDeleted = pullFave.nModified;
         if (isDeleted) {
             response.send(new errHandle(200, `" ${item.name} " deleted from faves.`));
