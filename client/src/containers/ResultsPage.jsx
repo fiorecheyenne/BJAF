@@ -35,6 +35,12 @@ export default function ResultsPage(props) {
                         flavors: result.randomizedFlavor,
                     };
                 }
+                if (generatedResult.milk === "none") {
+                    generatedResult.milk = undefined;
+                }
+                if (generatedResult.variation === "none") {
+                    generatedResult.variation = undefined;
+                }
                 setResult(generatedResult);
             })
             .catch(error => {

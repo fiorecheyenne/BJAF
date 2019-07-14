@@ -101,7 +101,7 @@ export default function RandomizerPage(props) {
                 {/* Cocoa card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=cocoa")}>
-                        <img src="./images/hot_cocoa.png" />
+                        <img src="./images/cocoa.png" />
                         <p class="title is-4" style={center}>
                             COCOA
                         </p>

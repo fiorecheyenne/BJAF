@@ -23,7 +23,7 @@ const favoritesButton = {
     transform: "translate(-28%, 28%)",
 };
 
-export default function DrinkCard({ base, preset, flavors, milk, variation, img, isFavorite }) {
+export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }) {
     const [favorite, toggleFavorite] = useFavorite(
         {
             base,
@@ -48,21 +48,36 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, img,
                 return "is-disabled";
         }
     }, [favorite]);
+    const imgName = useMemo(() => {
+        const baseWords = base.toLowerCase().split(" ");
+        return baseWords[baseWords.length - 1];
+    }, [base]);
     return (
         <div className="drink box" style={constraints}>
-            <div style={centerContainer}>
-                <img src={img} alt={base + " drink"} />
-            </div>
+            {base && (
+                <div style={centerContainer}>
+                    <img src={`./images/${imgName}.png`} alt={base + " drink"} />
+                </div>
+            )}
             <hr />
             <h3 className="is-size-5">
                 <strong>{variation ? `${variation} ${base}` : base}</strong>
             </h3>
             <hr />
-            {flavors && <p>{flavors.join(", ")}</p>}
+            {flavors && (
+                <>
+                    <p>
+                        <strong>Randomized Flavors:</strong>
+                    </p>
+                    {flavors.map((flavor, key) => (
+                        <p key={key}> + {flavor}</p>
+                    ))}
+                </>
+            )}
             {preset && (
                 <>
                     <p>
-                        <strong>Chosen Drink</strong>
+                        <strong>Randomized Drink:</strong>
                     </p>
                     <p>{preset}</p>
                 </>
