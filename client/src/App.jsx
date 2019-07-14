@@ -19,7 +19,7 @@ export default function App() {
             <Nav />
             <Switch>
                 <Route exact path="/" component={SplashPage} />
-                <Route path="/user/:id/favorites" component={FavoritesPage} />
+                <Route path="/user/favorites" component={FavoritesPage} />
                 <Route path="/randomizer" component={RandomizerPage} />
                 <Route path="/results" component={ResultsPage} />
                 <Route component={ErrorPage} />

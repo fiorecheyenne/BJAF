@@ -6,7 +6,6 @@ export default function SplashPage(props) {
     // const [redirect, setRedirect] = useState("");
     return (
         <main>
-            {/* {redirect && <Redirect to={redirect} />} */}
             <div class="column is-full has-text-centered" id="divleft">
                 <p>
                     <h1>Welcome to mixtly</h1>

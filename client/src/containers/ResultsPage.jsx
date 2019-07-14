@@ -19,18 +19,23 @@ export default function ResultsPage(props) {
         fetch(base ? "/api/randomizer?base=" + base : "/api/randomizer")
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-                const Results = {
+                let generatedResult = {
                     base: result.randomizedBase,
-                    flavor: result.randomizedFlavor,
                     milk: result.randomizedMilk,
                     variation: result.randomizedVariation,
                 };
-                setResult(Results);
-                console.log("base: " + Results.base);
-                console.log("flavor: " + Results.flavor);
-                console.log("Suggested milk: " + Results.milk);
-                console.log("variation: " + Results.variation);
+                if (typeof result.randomizedFlavor === "string") {
+                    generatedResult = {
+                        ...generatedResult,
+                        preset: generatedResult.randomizedFlavor,
+                    };
+                } else {
+                    generatedResult = {
+                        ...generatedResult,
+                        flavors: result.randomizedFlavor,
+                    };
+                }
+                setResult(generatedResult);
             })
             .catch(error => {
                 console.warn(error);

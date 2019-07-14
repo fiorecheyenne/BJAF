@@ -81,7 +81,19 @@ nav {
 }
 
 .drink.box {
-    padding-top: 0;
+    display: inline-block;
+}
+
+.drink hr {
+    margin: 7px 0 6px 0;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.drink.box {
     display: inline-block;
 }
 

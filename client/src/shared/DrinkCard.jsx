@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import useFavorite from "../hooks/useFavorite";
 import IconButton from "../shared/IconButton";
-import { relative } from "path";
 
 const constraints = {
     width: "350px",
