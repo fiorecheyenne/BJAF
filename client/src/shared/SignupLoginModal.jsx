@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
 export default function SignupLoginModal(props) {
-    const [visibleForm, setVisibleForm] = useState("SIGNUP");
+    const { visibleForm, setVisibleForm } = props;
     return (
         <Modal {...props}>
             {visibleForm === "LOGIN" && (

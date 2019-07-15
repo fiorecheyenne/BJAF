@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DrinkCard from "../shared/DrinkCard";
 
+const centerConstraints = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "calc(100vh - 70px)",
+};
+
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
     const { base } = props.location;
@@ -19,23 +26,38 @@ export default function ResultsPage(props) {
         fetch(base ? "/api/randomizer?base=" + base : "/api/randomizer")
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-                const Results = {
+                let generatedResult = {
                     base: result.randomizedBase,
-                    flavor: result.randomizedFlavor,
                     milk: result.randomizedMilk,
                     variation: result.randomizedVariation,
                 };
-                setResult(Results);
-                console.log("base: " + Results.base);
-                console.log("flavor: " + Results.flavor);
-                console.log("Suggested milk: " + Results.milk);
-                console.log("variation: " + Results.variation);
+                if (typeof result.randomizedFlavor === "string") {
+                    generatedResult = {
+                        ...generatedResult,
+                        preset: result.randomizedFlavor,
+                    };
+                } else {
+                    generatedResult = {
+                        ...generatedResult,
+                        flavors: result.randomizedFlavor,
+                    };
+                }
+                if (generatedResult.milk === "none") {
+                    generatedResult.milk = undefined;
+                }
+                if (generatedResult.variation === "none") {
+                    generatedResult.variation = undefined;
+                }
+                setResult(generatedResult);
             })
             .catch(error => {
                 console.warn(error);
             });
     }, []);
 
-    return <main>{result && <DrinkCard id="resultcard" {...result} />}</main>;
+    return (
+        <main>
+            <div style={centerConstraints}>{result && <DrinkCard id="resultcard" {...result} />}</div>
+        </main>
+    );
 }

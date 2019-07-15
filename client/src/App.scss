@@ -11,7 +11,7 @@ $link: #654791;
 
 #root {
     min-height: 100vh;
-    background: url("./image/lotsocups.jpg");
+    background: url("/images/lotsocups.jpg");
     background-size: cover;
     overflow: hidden;
     background-color: rgba(234, 220, 250, 0.7);
@@ -81,7 +81,19 @@ nav {
 }
 
 .drink.box {
-    padding-top: 0;
+    display: inline-block;
+}
+
+.drink hr {
+    margin: 7px 0 6px 0;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.drink.box {
     display: inline-block;
 }
 
