@@ -13,7 +13,9 @@ const randomizer = option => {
     }
 
     if (Math.random() * 100 > 50) {
-        randomBlend = option.presets[Math.floor(Math.random() * option.presets.length)];
+        randomBlend = [];
+        randomPreset = option.presets[Math.floor(Math.random() * option.presets.length)];
+        randomBlend.push(randomPreset);
     } else {
         randomBlend = [];
         const x = [Math.random() * 3];
@@ -34,6 +36,6 @@ const randomizer = option => {
     };
 };
 
-console.log("test =>", randomizer());
+console.log("test =>", randomizer("coffee"));
 
 module.exports = randomizer;

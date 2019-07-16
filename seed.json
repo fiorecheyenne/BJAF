@@ -2,61 +2,61 @@
     "coffee-options": {
         "base": "Coffee",
         "presets": [
-            "Almond Bar",
-            "Ameretto",
-            "Annihilator",
-            "B-52",
-            "Ba-Nay-Nay",
-            "Banana Bread",
-            "Banana Cream Pie",
-            "Banana Split",
-            "Billy Jean",
-            "Birthday Cake",
-            "Black Forest",
-            "Breve",
-            "Cake Batter",
-            "Cherry Blossom",
-            "Cinnamon Dolce",
-            "Cinnamon Roll",
-            "Cocomo",
-            "Cookie",
-            "Cookies & Cream",
-            "Cotton Candy",
-            "Crazy Hawaiian",
-            "Dream Weaver",
-            "Double Chocolate Mocha",
-            "Double Torture",
-            "Dutch Canyon",
-            "Flap Jack",
-            "French Toast",
-            "French Vanilla Bean",
-            "German Chocolate",
-            "Golden Eagle",
-            "Grasshoper",
-            "Horchata",
-            "Irie",
-            "Islander",
-            "Jelly Donut",
-            "Kicker",
-            "Molten Lava",
-            "Ninja",
-            "Nutty Irishman",
-            "Peach Cobbler",
-            "Peppermint Bark",
-            "Rasberry Truffle",
-            "S'Mores",
-            "Snickerdoodle",
-            "Sugar Cookie",
-            "The Bob",
-            "Toasted Mellow",
-            "Trifecta",
-            "Tuxedo",
-            "Vanilla Bean",
-            "Wallaby",
-            "White Angel",
-            "White Zombie",
-            "White Mocha",
-            "911"
+            { "name": "Almond Bar", "flavor": "White Chocolate, Almond" },
+            { "name": "Ameretto", "flavor": "Almond, Cherry" },
+            { "name": "Annihilator", "flavor": "Chocolate Macadamia Nut" },
+            { "name": "B-52", "flavor": "Orange, Irish Cream" },
+            { "name": "Ba-Nay-Nay", "flavor": "Banana, Dark Chocolate" },
+            { "name": "Banana Bread", "flavor": "Banana, Hazelnut" },
+            { "name": "Banana Cream Pie", "flavor": "Banana, White Chocolate" },
+            { "name": "Banana Split", "flavor": "Vanilla, Banana, Dark Chocolate" },
+            { "name": "Billy Jean", "flavor": "White Chocolate, Coconut" },
+            { "name": "Birthday Cake", "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles" },
+            { "name": "Black Forest", "flavor": "Dark Chocolate, Cherry" },
+            { "name": "Breve", "flavor": "" },
+            { "name": "Cake Batter", "flavor": "Almond Roca, White Chocolate" },
+            { "name": "Cherry Blossom", "flavor": "White Chocolate, Cherry" },
+            { "name": "Cinnamon Dolce", "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles" },
+            { "name": "Cinnamon Roll", "flavor": "Cinnamon, White Chocolate" },
+            { "name": "Cocomo", "flavor": "Coconut, Mocha" },
+            { "name": "Cookie", "flavor": "White Chocolate, Chocolate Macadamia Nut" },
+            { "name": "Cookies & Cream", "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle" },
+            { "name": "Cotton Candy", "flavor": "Blue Rasberry, White Chocolate" },
+            { "name": "Crazy Hawaiian", "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate" },
+            { "name": "Dream Weaver", "flavor": "Hazelnut, White Chocolate" },
+            { "name": "Double Chocolate Mocha", "flavor": "Dark Chocolate Mocha" },
+            { "name": "Double Torture", "flavor": "Extra Shot Vanilla Mocha" },
+            { "name": "Dutch Canyon", "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate" },
+            { "name": "Flap Jack", "flavor": "Salted Caramel, White Chocolate, Vanilla" },
+            { "name": "French Toast", "flavor": "White Chocolate, Brown Sugar Cinnamon" },
+            { "name": "French Vanilla Bean", "flavor": "Vanilla, Caramel" },
+            { "name": "German Chocolate", "flavor": "Caramel, Coconut, Dark Chocolate" },
+            { "name": "Golden Eagle", "flavor": "Vanilla, Caramel w/ Caramel Drizzle" },
+            { "name": "Grasshoper", "flavor": "Creme De Menthe, Dark Chocolate" },
+            { "name": "Horchata", "flavor": "Caramel, White Chocolate, Cinnamon" },
+            { "name": "Irie", "flavor": "Banana, Coconut" },
+            { "name": "Islander", "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla" },
+            { "name": "Jelly Donut", "flavor": "Salted Caramel, Raspberry, Almond" },
+            { "name": "Kicker", "flavor": "Irish Cream" },
+            { "name": "Molten Lava", "flavor": "Cinnamon, Dark Chocolate" },
+            { "name": "Ninja", "flavor": "Creme De Menthe, White Chocolate" },
+            { "name": "Nutty Irishman", "flavor": "Irish Cream, Hazelnut" },
+            { "name": "Peach Cobbler", "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut" },
+            { "name": "Peppermint Bark", "flavor": "White Chocolate, Dark Chocolate, Peppermint" },
+            { "name": "Raspberry Truffle", "flavor": "White Chocolate, Raspberry, English Toffee" },
+            { "name": "S'Mores", "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon" },
+            { "name": "Snickerdoodle", "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles" },
+            { "name": "Sugar Cookie", "flavor": "Almond Roca, Vanilla, White Chocolate" },
+            { "name": "The Bob", "flavor": "Banana, Coconut, Dark Chocolate" },
+            { "name": "Toasted Mellow", "flavor": "Vanilla, Chocolate Macadamia Nut" },
+            { "name": "Trifecta", "flavor": "Caramel, White Chocolate, Dark Chocolate" },
+            { "name": "Tuxedo", "flavor": "White Chocolate, Dark Chocolate" },
+            { "name": "Vanilla Bean", "flavor": "Vanilla, Chocolate Macadamia Nut" },
+            { "name": "Wallaby", "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel" },
+            { "name": "White Angel", "flavor": "White Chocolate, Coconut, Vanilla" },
+            { "name": "White Zombie", "flavor": "White Chocolate, Vanilla" },
+            { "name": "White Mocha", "flavor": "White Chocolate Mocha" },
+            { "name": "911", "flavor": "Extra Shot, Irish Cream" }
         ],
         "flavors": [
             "Almond Roca",
@@ -321,61 +321,221 @@
     "cocoa-options": {
         "base": "Hot Cocoa",
         "presets": [
-            "Hot Cocoa",
-            "Almond Bar",
-            "Ameretto",
-            "Annihilator",
-            "B-52",
-            "Ba-Nay-Nay",
-            "Banana Bread",
-            "Banana Cream Pie",
-            "Banana Split",
-            "Billy Jean",
-            "Birthday Cake",
-            "Black Forest",
-            "Breve",
-            "Cake Batter",
-            "Cherry Blossom",
-            "Cinnamon Dolce",
-            "Cinnamon Roll",
-            "Cocomo",
-            "Cookie",
-            "Cookies & Cream",
-            "Cotton Candy",
-            "Crazy Hawaiian",
-            "Dream Weaver",
-            "Double Chocolate Mocha",
-            "Double Torture",
-            "Dutch Canyon",
-            "Flap Jack",
-            "French Toast",
-            "French Vanilla Bean",
-            "German Chocolate",
-            "Golden Eagle",
-            "Grasshoper",
-            "Horchata",
-            "Irie",
-            "Islander",
-            "Jelly Donut",
-            "Kicker",
-            "Molten Lava",
-            "Ninja",
-            "Nutty Irishman",
-            "Peach Cobbler",
-            "Peppermint Bark",
-            "Rasberry Truffle",
-            "S'Mores",
-            "Snickerdoodle",
-            "Sugar Cookie",
-            "The Bob",
-            "Toasted Mellow",
-            "Trifecta",
-            "Tuxedo",
-            "Vanilla Bean",
-            "Wallaby",
-            "White Angel",
-            "White Zombie",
-            "White Mocha"
+            { "name": "Hot Cocoa", "flavor": "Traditional Hot Chocolate" },
+            { "name": "Almond Bar", "flavor": "White Chocolate, Almond" },
+            { "name": "Ameretto", "flavor": "Almond, Cherry" },
+            {
+                "name": "Annihilator",
+                "flavor": "Chocolate Macadamia Nut"
+            },
+            {
+                "name": "B-52",
+                "flavor": "Orange, Irish Cream"
+            },
+            {
+                "name": "Ba-Nay-Nay",
+                "flavor": "Banana, Dark Chocolate"
+            },
+            {
+                "name": "Banana Bread",
+                "flavor": "Banana, Hazelnut"
+            },
+            {
+                "name": "Banana Cream Pie",
+                "flavor": "Banana, White Chocolate"
+            },
+            {
+                "name": "Banana Split",
+                "flavor": "Vanilla, Banana, Dark Chocolate"
+            },
+            {
+                "name": "Billy Jean",
+                "flavor": "White Chocolate, Coconut"
+            },
+            {
+                "name": "Birthday Cake",
+                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+            },
+            {
+                "name": "Black Forest",
+                "flavor": "Dark Chocolate, Cherry"
+            },
+            {
+                "name": "Breve",
+                "flavor": ""
+            },
+            {
+                "name": "Cake Batter",
+                "flavor": "Almond Roca, White Chocolate"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor": "White Chocolate, Cherry"
+            },
+            {
+                "name": "Cinnamon Dolce",
+                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Cinnamon Roll",
+                "flavor": "Cinnamon, White Chocolate"
+            },
+            {
+                "name": "Cocomo",
+                "flavor": "Coconut, Mocha"
+            },
+            {
+                "name": "Cookie",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Cookies & Cream",
+                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor": "Blue Rasberry, White Chocolate"
+            },
+            {
+                "name": "Crazy Hawaiian",
+                "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Dream Weaver",
+                "flavor": "Hazelnut, White Chocolate"
+            },
+            {
+                "name": "Double Chocolate Mocha",
+                "flavor": "Dark Chocolate Mocha"
+            },
+            {
+                "name": "Double Torture",
+                "flavor": "Extra Shot Vanilla Mocha"
+            },
+            {
+                "name": "Dutch Canyon",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Flap Jack",
+                "flavor": "Salted Caramel, White Chocolate, Vanilla"
+            },
+            {
+                "name": "French Toast",
+                "flavor": "White Chocolate, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "French Vanilla Bean",
+                "flavor": "Vanilla, Caramel"
+            },
+            {
+                "name": "German Chocolate",
+                "flavor": "Caramel, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Golden Eagle",
+                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+            },
+            {
+                "name": "Grasshoper",
+                "flavor": "Creme De Menthe, Dark Chocolate"
+            },
+            {
+                "name": "Horchata",
+                "flavor": "Caramel, White Chocolate, Cinnamon"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Islander",
+                "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla"
+            },
+            {
+                "name": "Jelly Donut",
+                "flavor": "Salted Caramel, Raspberry, Almond"
+            },
+            {
+                "name": "Kicker",
+                "flavor": "Irish Cream"
+            },
+            {
+                "name": "Molten Lava",
+                "flavor": "Cinnamon, Dark Chocolate"
+            },
+            {
+                "name": "Ninja",
+                "flavor": "Creme De Menthe, White Chocolate"
+            },
+            {
+                "name": "Nutty Irishman",
+                "flavor": "Irish Cream, Hazelnut"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Peppermint Bark",
+                "flavor": "White Chocolate, Dark Chocolate, Peppermint"
+            },
+            {
+                "name": "Raspberry Truffle",
+                "flavor": "White Chocolate, Raspberry, English Toffee"
+            },
+            {
+                "name": "S'Mores",
+                "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "Snickerdoodle",
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Sugar Cookie",
+                "flavor": "Almond Roca, Vanilla, White Chocolate"
+            },
+            {
+                "name": "The Bob",
+                "flavor": "Banana, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Toasted Mellow",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Trifecta",
+                "flavor": "Caramel, White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Tuxedo",
+                "flavor": "White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Vanilla Bean",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Wallaby",
+                "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel"
+            },
+            {
+                "name": "White Angel",
+                "flavor": "White Chocolate, Coconut, Vanilla"
+            },
+            {
+                "name": "White Zombie",
+                "flavor": "White Chocolate, Vanilla"
+            },
+            {
+                "name": "White Mocha",
+                "flavor": "White Chocolate Mocha"
+            },
+            {
+                "name": "911",
+                "flavor": "Extra Shot, Irish Cream"
+            }
         ],
         "flavors": [
             "Almond Roca",
@@ -472,93 +632,226 @@
     "frost-options": {
         "base": "Frost",
         "presets": [
-            "Aftershock",
-            "Almond Bar",
-            "Ameretto",
-            "Aquaberry",
-            "Astronaut",
-            "B-52",
-            "Ba-Nay-Nay",
-            "Banana Bread",
-            "Banana Cream Pie",
-            "Banana Split",
-            "Billy Jean",
-            "Birthday Cake",
-            "Black Forest",
-            "Bubblegum",
-            "Cake Batter",
-            "Cherry Blossom",
-            "Cinnamon Dolce",
-            "Cinnamon Roll",
-            "Cookie",
-            "Cotton Candy",
-            "Crazy Hawaiian",
-            "Dinosaur Egg",
-            "Double Rainbro",
-            "Dragon Slayer",
-            "Dream Weaver",
-            "Dutch Canyon",
-            "Dutch Mojito",
-            "Eclipse",
-            "Electric Berry",
-            "Fire Lizard",
-            "Freedom",
-            "Flap Jack",
-            "French Toast",
-            "French Vanilla Bean",
-            "German Chocolate",
-            "Golden Eagle",
-            "Grasshoper",
-            "Gummy Bear",
-            "Hawaiian",
-            "Horchata",
-            "Hyperchrome",
-            "Irie",
-            "Islander",
-            "Jelly Donut",
-            "Laser Cat",
-            "Majestic Forest",
-            "Marmalade",
-            "Midnight",
-            "Molten Lava",
-            "Ninja",
-            "Nutty Irishman",
-            "OG Gummer Bear",
-            "Orangesicle",
-            "Palm Beach",
-            "Palm Tree",
-            "Passion Water",
-            "Peach Cobbler",
-            "Peach Ring",
-            "Peppermint Bark",
-            "Pink Flamingo",
-            "Rasberry Truffle",
-            "Ray of Sunshine",
-            "Red, White, & Blue",
-            "Rocky Point",
-            "S'Mores",
-            "Shark Attack",
-            "Snickerdoodle",
-            "Starry Night",
-            "Stop Light",
-            "Sweet Sunrise",
-            "The Bob",
-            "The Juice",
-            "The Vampire Slayer",
-            "Tiger's Blood",
-            "Toasted Mellow",
-            "Tricky Tre",
-            "Trixie",
-            "Tropical",
-            "Tuxedo",
-            "Unicorn Blood",
-            "Galaxy Fish",
-            "Gem Berry",
-            "Grape",
-            "Vanilla Bean",
-            "Wallaby",
-            "White Angel",
-            "White Mocha"
+            {
+                "name": "Almond Bar",
+                "flavor": "White Chocolate, Almond"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Almond, Cherry"
+            },
+            {
+                "name": "Annihilator",
+                "flavor": "Chocolate Macadamia Nut"
+            },
+            {
+                "name": "B-52",
+                "flavor": "Orange, Irish Cream"
+            },
+            {
+                "name": "Ba-Nay-Nay",
+                "flavor": "Banana, Dark Chocolate"
+            },
+            {
+                "name": "Banana Bread",
+                "flavor": "Banana, Hazelnut"
+            },
+            {
+                "name": "Banana Cream Pie",
+                "flavor": "Banana, White Chocolate"
+            },
+            {
+                "name": "Banana Split",
+                "flavor": "Vanilla, Banana, Dark Chocolate"
+            },
+            {
+                "name": "Billy Jean",
+                "flavor": "White Chocolate, Coconut"
+            },
+            {
+                "name": "Birthday Cake",
+                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+            },
+            {
+                "name": "Black Forest",
+                "flavor": "Dark Chocolate, Cherry"
+            },
+            {
+                "name": "Breve",
+                "flavor": ""
+            },
+            {
+                "name": "Cake Batter",
+                "flavor": "Almond Roca, White Chocolate"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor": "White Chocolate, Cherry"
+            },
+            {
+                "name": "Cinnamon Dolce",
+                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Cinnamon Roll",
+                "flavor": "Cinnamon, White Chocolate"
+            },
+            {
+                "name": "Cocomo",
+                "flavor": "Coconut, Mocha"
+            },
+            {
+                "name": "Cookie",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Cookies & Cream",
+                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor": "Blue Rasberry, White Chocolate"
+            },
+            {
+                "name": "Crazy Hawaiian",
+                "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Dream Weaver",
+                "flavor": "Hazelnut, White Chocolate"
+            },
+            {
+                "name": "Double Chocolate Mocha",
+                "flavor": "Dark Chocolate Mocha"
+            },
+            {
+                "name": "Double Torture",
+                "flavor": "Extra Shot Vanilla Mocha"
+            },
+            {
+                "name": "Dutch Canyon",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Flap Jack",
+                "flavor": "Salted Caramel, White Chocolate, Vanilla"
+            },
+            {
+                "name": "French Toast",
+                "flavor": "White Chocolate, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "French Vanilla Bean",
+                "flavor": "Vanilla, Caramel"
+            },
+            {
+                "name": "German Chocolate",
+                "flavor": "Caramel, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Golden Eagle",
+                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+            },
+            {
+                "name": "Grasshoper",
+                "flavor": "Creme De Menthe, Dark Chocolate"
+            },
+            {
+                "name": "Horchata",
+                "flavor": "Caramel, White Chocolate, Cinnamon"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Islander",
+                "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla"
+            },
+            {
+                "name": "Jelly Donut",
+                "flavor": "Salted Caramel, Raspberry, Almond"
+            },
+            {
+                "name": "Kicker",
+                "flavor": "Irish Cream"
+            },
+            {
+                "name": "Molten Lava",
+                "flavor": "Cinnamon, Dark Chocolate"
+            },
+            {
+                "name": "Ninja",
+                "flavor": "Creme De Menthe, White Chocolate"
+            },
+            {
+                "name": "Nutty Irishman",
+                "flavor": "Irish Cream, Hazelnut"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Peppermint Bark",
+                "flavor": "White Chocolate, Dark Chocolate, Peppermint"
+            },
+            {
+                "name": "Raspberry Truffle",
+                "flavor": "White Chocolate, Raspberry, English Toffee"
+            },
+            {
+                "name": "S'Mores",
+                "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "Snickerdoodle",
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Sugar Cookie",
+                "flavor": "Almond Roca, Vanilla, White Chocolate"
+            },
+            {
+                "name": "The Bob",
+                "flavor": "Banana, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Toasted Mellow",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Trifecta",
+                "flavor": "Caramel, White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Tuxedo",
+                "flavor": "White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Vanilla Bean",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Wallaby",
+                "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel"
+            },
+            {
+                "name": "White Angel",
+                "flavor": "White Chocolate, Coconut, Vanilla"
+            },
+            {
+                "name": "White Zombie",
+                "flavor": "White Chocolate, Vanilla"
+            },
+            {
+                "name": "White Mocha",
+                "flavor": "White Chocolate Mocha"
+            },
+            {
+                "name": "911",
+                "flavor": "Extra Shot, Irish Cream"
+            }
         ],
         "flavors": [
             "Blackberry",
@@ -602,61 +895,226 @@
     "mocha-options": {
         "base": "Mocha",
         "presets": [
-            "Mocha",
-            "Almond Bar",
-            "Ameretto",
-            "B-52",
-            "Ba-Nay-Nay",
-            "Banana Bread",
-            "Banana Cream Pie",
-            "Banana Split",
-            "Billy Jean",
-            "Birthday Cake",
-            "Black Forest",
-            "Cake Batter",
-            "Cherry Blossom",
-            "Cinnamon Dolce",
-            "Cinnamon Roll",
-            "Cocomo",
-            "Cookie",
-            "Cookies & Cream",
-            "Cotton Candy",
-            "Crazy Hawaiian",
-            "Double Chocolate Mocha",
-            "Double Torture",
-            "Dream Weaver",
-            "Double Chocolate Mocha",
-            "Double Torture",
-            "Dutch Canyon",
-            "Flap Jack",
-            "French Toast",
-            "French Vanilla Bean",
-            "German Chocolate",
-            "Golden Eagle",
-            "Grasshoper",
-            "Horchata",
-            "Irie",
-            "Islander",
-            "Jelly Donut",
-            "Kicker",
-            "Molten Lava",
-            "Ninja",
-            "Nutty Irishman",
-            "Peach Cobbler",
-            "Peppermint Bark",
-            "Rasberry Truffle",
-            "S'Mores",
-            "Snickerdoodle",
-            "Sugar Cookie",
-            "The Bob",
-            "Toasted Mellow",
-            "Trifecta",
-            "Tuxedo",
-            "Vanilla Bean",
-            "Wallaby",
-            "White Angel",
-            "White Zombie",
-            "White Mocha"
+            {
+                "name": "Almond Bar",
+                "flavor": "White Chocolate, Almond"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Almond, Cherry"
+            },
+            {
+                "name": "Annihilator",
+                "flavor": "Chocolate Macadamia Nut"
+            },
+            {
+                "name": "B-52",
+                "flavor": "Orange, Irish Cream"
+            },
+            {
+                "name": "Ba-Nay-Nay",
+                "flavor": "Banana, Dark Chocolate"
+            },
+            {
+                "name": "Banana Bread",
+                "flavor": "Banana, Hazelnut"
+            },
+            {
+                "name": "Banana Cream Pie",
+                "flavor": "Banana, White Chocolate"
+            },
+            {
+                "name": "Banana Split",
+                "flavor": "Vanilla, Banana, Dark Chocolate"
+            },
+            {
+                "name": "Billy Jean",
+                "flavor": "White Chocolate, Coconut"
+            },
+            {
+                "name": "Birthday Cake",
+                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+            },
+            {
+                "name": "Black Forest",
+                "flavor": "Dark Chocolate, Cherry"
+            },
+            {
+                "name": "Breve",
+                "flavor": ""
+            },
+            {
+                "name": "Cake Batter",
+                "flavor": "Almond Roca, White Chocolate"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor": "White Chocolate, Cherry"
+            },
+            {
+                "name": "Cinnamon Dolce",
+                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Cinnamon Roll",
+                "flavor": "Cinnamon, White Chocolate"
+            },
+            {
+                "name": "Cocomo",
+                "flavor": "Coconut, Mocha"
+            },
+            {
+                "name": "Cookie",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Cookies & Cream",
+                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor": "Blue Rasberry, White Chocolate"
+            },
+            {
+                "name": "Crazy Hawaiian",
+                "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Dream Weaver",
+                "flavor": "Hazelnut, White Chocolate"
+            },
+            {
+                "name": "Double Chocolate Mocha",
+                "flavor": "Dark Chocolate Mocha"
+            },
+            {
+                "name": "Double Torture",
+                "flavor": "Extra Shot Vanilla Mocha"
+            },
+            {
+                "name": "Dutch Canyon",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Flap Jack",
+                "flavor": "Salted Caramel, White Chocolate, Vanilla"
+            },
+            {
+                "name": "French Toast",
+                "flavor": "White Chocolate, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "French Vanilla Bean",
+                "flavor": "Vanilla, Caramel"
+            },
+            {
+                "name": "German Chocolate",
+                "flavor": "Caramel, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Golden Eagle",
+                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+            },
+            {
+                "name": "Grasshoper",
+                "flavor": "Creme De Menthe, Dark Chocolate"
+            },
+            {
+                "name": "Horchata",
+                "flavor": "Caramel, White Chocolate, Cinnamon"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Islander",
+                "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla"
+            },
+            {
+                "name": "Jelly Donut",
+                "flavor": "Salted Caramel, Raspberry, Almond"
+            },
+            {
+                "name": "Kicker",
+                "flavor": "Irish Cream"
+            },
+            {
+                "name": "Molten Lava",
+                "flavor": "Cinnamon, Dark Chocolate"
+            },
+            {
+                "name": "Ninja",
+                "flavor": "Creme De Menthe, White Chocolate"
+            },
+            {
+                "name": "Nutty Irishman",
+                "flavor": "Irish Cream, Hazelnut"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Peppermint Bark",
+                "flavor": "White Chocolate, Dark Chocolate, Peppermint"
+            },
+            {
+                "name": "Raspberry Truffle",
+                "flavor": "White Chocolate, Raspberry, English Toffee"
+            },
+            {
+                "name": "S'Mores",
+                "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "Snickerdoodle",
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Sugar Cookie",
+                "flavor": "Almond Roca, Vanilla, White Chocolate"
+            },
+            {
+                "name": "The Bob",
+                "flavor": "Banana, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Toasted Mellow",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Trifecta",
+                "flavor": "Caramel, White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Tuxedo",
+                "flavor": "White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Vanilla Bean",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Wallaby",
+                "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel"
+            },
+            {
+                "name": "White Angel",
+                "flavor": "White Chocolate, Coconut, Vanilla"
+            },
+            {
+                "name": "White Zombie",
+                "flavor": "White Chocolate, Vanilla"
+            },
+            {
+                "name": "White Mocha",
+                "flavor": "White Chocolate Mocha"
+            },
+            {
+                "name": "911",
+                "flavor": "Extra Shot, Irish Cream"
+            }
         ],
         "flavors": [
             "Almond Roca",
