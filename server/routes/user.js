@@ -9,7 +9,7 @@ const tokenKey = process.env.TOKEN_KEY;
 module.exports = {
     GET: async function(request, response) {
         // receive Token
-        let userToke = request.get('Auth-Token');
+        let userToke = request.get("Auth-Token");
         // Decode Token
         let payload = decoder(userToke);
         // find a user by _id:
@@ -17,7 +17,7 @@ module.exports = {
             _id: payload.payload,
         });
         // return Username, Name, Faves:[]
-        let userInfo = {username: loginUser.username, faves: loginUser.faves};
+        let userInfo = { username: loginUser.username, faves: loginUser.faves };
         response.json(userInfo);
     },
 
@@ -33,29 +33,6 @@ module.exports = {
             faves: userData.faves,
         });
         response.send(tokenizer(newUser));
-    },
-
-    PUT: async function(request, response) {
-        // receive token
-        // Decode Token
-        // pull _:id from token
-        // find a user by _:id in DB
-        // pull faves:[] from DB by _:id
-        // update Faves:[] with new favorite
-        // return Username, Name, Faves:[]
-
-        console.log("hit");
-        // TODO: Implement updating users info
-        let loginUser = await User.findOne({
-            username: request.body.username,
-        });
-
-        let updateFaves = await User.updateOne({ username: loginUser });
-
-        // console.log(updateFaves);
-        // console.log(decoder(request.body.token));
-        response.send(request.body.token);
-        throw new Error("/api/user PUT route not implemented yet.");
     },
 
     DELETE: function(request, response) {
