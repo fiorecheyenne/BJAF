@@ -67,17 +67,17 @@ nav {
 
 #basecardcol {
     position: relative;
-    top: 15vh;
+    top: 5vh;
 }
 
 #basecardcol2 {
     position: relative;
-    top: 20vh;
+    top: 6vh;
 }
 
 #randomizertitle {
     position: relative;
-    top: 10vh;
+    top: 10%;
 }
 
 .drink.box {
@@ -99,4 +99,22 @@ nav {
 
 .drink hr {
     margin: 7px 0 6px 0;
+}
+
+#resultcard {
+    position: relative;
+    top: 10vh;
+    left: 50vh;
+}
+
+#randomizeagainbutton {
+    min-width: 300px;
+}
+
+#newbasebutton {
+    min-width: 300px;
+}
+#resultheader {
+    position: relative;
+    top: 10%;
 }
