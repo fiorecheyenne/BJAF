@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <div>
             <LazyHero
-                imageSrc="/images/lotsocups.jpg"
+                imageSrc="/image/lotsocups.jpg"
                 color="#9a82b5"
                 minHeight="100vh"
                 opacity="0.6"
