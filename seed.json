@@ -398,55 +398,175 @@
     },
     "rebel-options": {
         "base": "Rebel",
-        "presets": [
-            "Aftershock",
-            "Ameretto",
-            "Aquaberry",
-            "Astronaut",
-            "Bubblegum",
-            "Cherry Blossom",
-            "Cotton Candy",
-            "Dinosaur Egg",
-            "Double Rainbro",
-            "Dragon Slayer",
-            "Dutch Mojito",
-            "Eclipse",
-            "Electric Berry",
-            "Fire Lizard",
-            "Freedom",
-            "Gummy Bear",
-            "Hawaiian",
-            "Hyperchrome",
-            "Irie",
-            "Laser Cat",
-            "Majestic Forest",
-            "Marmalade",
-            "Midnight",
-            "OG Gummer Bear",
-            "Orangesicle",
-            "Palm Beach",
-            "Palm Tree",
-            "Passion Water",
-            "Peach Cobbler",
-            "Peach Ring",
-            "Pink Flamingo",
-            "Ray of Sunshine",
-            "Red, White, & Blue",
-            "Rocky Point",
-            "Shark Attack",
-            "Starry Night",
-            "Stop Light",
-            "Sweet Sunrise",
-            "The Juice",
-            "The Vampire Slayer",
-            "Tiger's Blood",
-            "Tricky Tre",
-            "Trixie",
-            "Tropical",
-            "Unicorn Blood",
-            "Galaxy Fish",
-            "Gem Berry",
-            "Grape"
+        "presets": [{
+                "name":"Aftershock" ,
+                "flavor":"Strawberry, Blackberry, Raspberry, Lime"
+            },
+            {
+                "name":"Ameretto" ,
+                "flavor":"Amaretto, Cherry"
+            },
+            {
+                "name":"Aquaberry" ,
+                "flavor":"Strawberry, Kiwi, Blue Raspberry, Watermelon"
+            },
+            {
+                "name":"Astronaut" ,
+                "flavor": "Blackberry, Raspberry, Almond"
+            },
+            {
+                "name": "Bubblegum",
+                "flavor":"Banana, Strawberry, Vanilla"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor":"White Chocolate, Cherry"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor":"Blue Raspberry, White Chocolate"
+            },
+            {
+                "name": "Dinosaur Egg",
+                "flavor":"Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
+            },
+            {
+                "name":"Double Rainbro" ,
+                "flavor":"Strawberry, Peach, Coconut"
+            },
+            {
+                "name": "Dragon Slayer",
+                "flavor":"Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+            },
+            {
+                "name": "Dutch Mojito",
+                "flavor":"Coconut, Lime, Cremne De Menthe"
+            },
+            {
+                "name": "Eclipse",
+                "flavor":"PEach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+            },
+            {
+                "name": "Electric Berry",
+                "flavor": "Lime, Blue Rapberry"
+            },
+            {
+                "name": "Fire Lizard",
+                "flavor": " Strawberry, Banana, Orange"
+            },
+            {
+                "name": "Freedom",
+                "flavor":"Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+            },
+            {
+                "name": "Gummy Bear",
+                "flavor":"Kiwi, Lime, White Chocolate"
+            },
+            {
+                "name": "Hawaiian",
+                "flavor":"Banana, Orange, Peach, Strawberry"
+            },
+            {
+                "name": "Hyperchrome",
+                "flavor":"Orange, Passionfruit, Pomegranate"
+            },
+            {
+                "name": "Irie",
+                "flavor":"Banana, Coconut"
+            },
+            {
+                "name": "Laser Cat",
+                "flavor":"Rasperry, Coconut"
+            },
+            {
+                "name": "Majestic Forest",
+                "flavor":"Blackberry, Blue Raspberry, Kiwi"
+            },
+            {
+                "name":"Marmalade" ,
+                "flavor":"Strawberry, Orange, Grapefruit"
+            },
+            {
+                "name":"Midnight" ,
+                "flavor":"Blackberry, Pomegranate"
+            },
+            {
+                "name": "OG Gummy Bear",
+                "flavor":"Pomegranate, Passion Fruit, Watermelon, Grapefruit"
+            },
+            {
+                "name":"Orangesicle", 
+                "flavor":"Orange, Vanilla"
+            },{
+                "name": "Palm Beach",
+                "flavor":"Pomegranate, Peach"
+            },{
+                "name": "Palm Tree",
+                "flavor":"Pomegranate, Passion Fruit, Lime"
+            },{
+                "name": "Passion Water",
+                "flavor":"Passion Fruit, Watermelon"
+            },{
+                "name": "Peach Cobbler" ,
+                "flavor":"White Chocolate, Peach, Chocolate Macadamia"
+            },{
+                "name": "Peach Ring",
+                "flavor":"White Chocolate, Passion Fruit, Peach Drizzle"
+            },{
+                "name": "Pink Flamingo",
+                "flavor":"Peach, Strawberry, White Chocolate"
+            },{
+                "name": "Ray of Sunshine",
+                "flavor":"Blackberry, Peach, Grapefruit"
+            },{
+                "name": "Red, White, & Blue",
+                "flavor":"Raspberry, Blue Raspberry, White Chocolate"
+            },{
+                "name":"Rocky Point" ,
+                "flavor":"Blackberry,Peach, Coconut, Orange"
+            },{
+                "name":"Shark Attack" ,
+                "flavor":"Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+            },{
+                "name": "Starry Night",
+                "flavor":"Blue Raspberry, Blackberry"
+            },{
+                "name": "Stop Light",
+                "flavor":"Pomegranate, Passion Fruit, Kiwi"
+            },{
+                "name": "Sweet Sunrise" ,
+                "flavor":"Peach, Passion Fruit, Orange, Banana"
+            },{
+                "name": "The Juice",
+                "flavor":"Blackberry, Cherry, Pomegranate"
+            },{
+                "name": "The Vampire Slayer",
+                "flavor":"Srawberry, Pomegranate"
+            },{
+                "name": "Tiger's Blood",
+                "flavor":"Strawberry, Coconut"
+            },{
+                "name": "Tricky Tre",
+                "flavor":"Orange Peach"
+            },{
+                "name": "Trixie",
+                "flavor":"Almond, Orange, Pomegranate"
+            },{
+                "name": "Tropical",
+                "flavor":"Passion Fruit, Coconut, Blue Rasperry"
+            },{
+                "name": "Unicorn Blood",
+                "flavor":"Strawberry, White Chocolate, Almond"
+            },{
+                "name": "Galaxy Fish",
+                "flavor":"Strawberry, Lime, Passion Fruit"
+            },{
+                "name": "Gem Berry",
+                "flavor":"Blackberry, Vanilla, Raspberry"
+            },{
+                "name":"Grape" ,
+                "flavor":"Strawberry, Passion Fruit, Blue Raspberry"
+            }
         ],
         "flavors": [
             "Blackberry",
