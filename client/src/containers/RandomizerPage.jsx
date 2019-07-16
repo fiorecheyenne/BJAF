@@ -12,18 +12,21 @@ const center = {
     marginBottom: "12px",
 };
 
+const imageSize = {
+    maxHeight: "190px",
+};
 //TODO: fix card display - desktop 2 rows of 5, mobile side by side - 200px md cards - 150 mobile cards - 300 lrg cards
 export default function RandomizerPage(props) {
     return (
         <main>
             <div class="column is-full is-centered has-text-centered" id="randomizertitle">
-                <p class="title is-1">CHOOSE YOUR BASE:</p>
+                <p class="title is-2">CHOOSE YOUR BASE:</p>
             </div>
             <div class="columns is-multiline is-centered is-mobile" id="basecardcol">
                 {/* coffee card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=coffee")}>
-                        <img src="/image/coffee.png" />
+                        <img src="/image/coffee.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             COFFEE
                         </p>
@@ -32,7 +35,7 @@ export default function RandomizerPage(props) {
                 {/* Tea card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=tea")}>
-                        <img src="/image/tea.png" />
+                        <img src="/image/tea.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             TEA
                         </p>
@@ -42,7 +45,7 @@ export default function RandomizerPage(props) {
                 {/* Lemonade card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=lemonade")}>
-                        <img src="/image/lemonade.png" />
+                        <img src="/image/lemonade.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             LEMONADE
                         </p>
@@ -52,7 +55,7 @@ export default function RandomizerPage(props) {
                 {/* Rebel card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=rebel")}>
-                        <img src="/image/rebel.png" />
+                        <img src="/image/rebel.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             REBEL
                         </p>
@@ -62,7 +65,7 @@ export default function RandomizerPage(props) {
                 {/* Smoothie card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=smoothie")}>
-                        <img src="/image/smoothie.png" />
+                        <img src="/image/smoothie.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             SMOOTHIE
                         </p>
@@ -72,7 +75,7 @@ export default function RandomizerPage(props) {
                 {/* Frost card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=frost")}>
-                        <img src="/image/frost.png" />
+                        <img src="/image/frost.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             FROST
                         </p>
@@ -82,7 +85,7 @@ export default function RandomizerPage(props) {
                 {/* Soda card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=soda")}>
-                        <img src="/image/soda.png" />
+                        <img src="/image/soda.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             SODA
                         </p>
@@ -92,7 +95,7 @@ export default function RandomizerPage(props) {
                 {/* Chai card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=chai")}>
-                        <img src="/image/chai.png" />
+                        <img src="/image/chai.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             CHAI
                         </p>
@@ -101,7 +104,7 @@ export default function RandomizerPage(props) {
                 {/* Cocoa card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=cocoa")}>
-                        <img src="/image/cocoa.png" />
+                        <img src="/image/cocoa.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             COCOA
                         </p>
@@ -110,7 +113,7 @@ export default function RandomizerPage(props) {
                 {/* Mocha card */}
                 <div class="column is-narrow">
                     <div className="base box" style={basebox} onClick={() => props.history.push("results?base=mocha")}>
-                        <img src="/image/mocha.png" />
+                        <img src="/image/mocha.png" style={imageSize} />
                         <p class="title is-4" style={center}>
                             MOCHA
                         </p>

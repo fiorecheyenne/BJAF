@@ -3,10 +3,9 @@ import useFavorite from "../hooks/useFavorite";
 import IconButton from "../shared/IconButton";
 
 const constraints = {
-    minWidth: "300px",
-    // width: "350px",
+    maxWidth: "300px",
     position: "relative",
-    top: "1px",
+    // top: "1px",
     margin: "1rem",
     display: "block",
 };
@@ -24,6 +23,10 @@ const favoritesButton = {
     transform: "translate(-28%, 28%)",
 };
 
+const imageSize = {
+    minWidth: "200px",
+    maxHeight: "220px",
+};
 export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }) {
     const [favorite, toggleFavorite] = useFavorite(
         {
@@ -57,7 +60,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
         <div className="drink box" style={constraints}>
             {base && (
                 <div style={centerContainer}>
-                    <img src={`/image/${imgName}.png`} alt={base + " drink"} />
+                    <img src={`/image/${imgName}.png`} alt={base + " drink"} style={imageSize} />
                 </div>
             )}
             <hr />
