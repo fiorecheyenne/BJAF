@@ -11,7 +11,7 @@ $link: #654791;
 
 #root {
     min-height: 100vh;
-    background: url("./image/lotsocups.jpg");
+    background: url("/image/lotsocups.jpg");
     background-size: cover;
     overflow: hidden;
     background-color: rgba(234, 220, 250, 0.7);
@@ -67,24 +67,54 @@ nav {
 
 #basecardcol {
     position: relative;
-    top: 15vh;
+    top: 5vh;
 }
 
 #basecardcol2 {
     position: relative;
-    top: 20vh;
+    top: 6vh;
 }
 
 #randomizertitle {
     position: relative;
-    top: 10vh;
+    top: 10%;
 }
 
 .drink.box {
-    padding-top: 0;
     display: inline-block;
 }
 
 .drink hr {
     margin: 7px 0 6px 0;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.drink.box {
+    display: inline-block;
+}
+
+.drink hr {
+    margin: 7px 0 6px 0;
+}
+
+#resultcard {
+    position: relative;
+    top: 10vh;
+    left: 50vh;
+}
+
+#randomizeagainbutton {
+    min-width: 250px;
+}
+
+#newbasebutton {
+    min-width: 250px;
+}
+#resultheader {
+    position: relative;
+    top: 10%;
 }
