@@ -2,61 +2,226 @@
     "coffee-options": {
         "base": "Coffee",
         "presets": [
-            { "name": "Almond Bar", "flavor": "White Chocolate, Almond" },
-            { "name": "Ameretto", "flavor": "Almond, Cherry" },
-            { "name": "Annihilator", "flavor": "Chocolate Macadamia Nut" },
-            { "name": "B-52", "flavor": "Orange, Irish Cream" },
-            { "name": "Ba-Nay-Nay", "flavor": "Banana, Dark Chocolate" },
-            { "name": "Banana Bread", "flavor": "Banana, Hazelnut" },
-            { "name": "Banana Cream Pie", "flavor": "Banana, White Chocolate" },
-            { "name": "Banana Split", "flavor": "Vanilla, Banana, Dark Chocolate" },
-            { "name": "Billy Jean", "flavor": "White Chocolate, Coconut" },
-            { "name": "Birthday Cake", "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles" },
-            { "name": "Black Forest", "flavor": "Dark Chocolate, Cherry" },
-            { "name": "Breve", "flavor": "" },
-            { "name": "Cake Batter", "flavor": "Almond Roca, White Chocolate" },
-            { "name": "Cherry Blossom", "flavor": "White Chocolate, Cherry" },
-            { "name": "Cinnamon Dolce", "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles" },
-            { "name": "Cinnamon Roll", "flavor": "Cinnamon, White Chocolate" },
-            { "name": "Cocomo", "flavor": "Coconut, Mocha" },
-            { "name": "Cookie", "flavor": "White Chocolate, Chocolate Macadamia Nut" },
-            { "name": "Cookies & Cream", "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle" },
-            { "name": "Cotton Candy", "flavor": "Blue Rasberry, White Chocolate" },
-            { "name": "Crazy Hawaiian", "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate" },
-            { "name": "Dream Weaver", "flavor": "Hazelnut, White Chocolate" },
-            { "name": "Double Chocolate Mocha", "flavor": "Dark Chocolate Mocha" },
-            { "name": "Double Torture", "flavor": "Extra Shot Vanilla Mocha" },
-            { "name": "Dutch Canyon", "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate" },
-            { "name": "Flap Jack", "flavor": "Salted Caramel, White Chocolate, Vanilla" },
-            { "name": "French Toast", "flavor": "White Chocolate, Brown Sugar Cinnamon" },
-            { "name": "French Vanilla Bean", "flavor": "Vanilla, Caramel" },
-            { "name": "German Chocolate", "flavor": "Caramel, Coconut, Dark Chocolate" },
-            { "name": "Golden Eagle", "flavor": "Vanilla, Caramel w/ Caramel Drizzle" },
-            { "name": "Grasshoper", "flavor": "Creme De Menthe, Dark Chocolate" },
-            { "name": "Horchata", "flavor": "Caramel, White Chocolate, Cinnamon" },
-            { "name": "Irie", "flavor": "Banana, Coconut" },
-            { "name": "Islander", "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla" },
-            { "name": "Jelly Donut", "flavor": "Salted Caramel, Raspberry, Almond" },
-            { "name": "Kicker", "flavor": "Irish Cream" },
-            { "name": "Molten Lava", "flavor": "Cinnamon, Dark Chocolate" },
-            { "name": "Ninja", "flavor": "Creme De Menthe, White Chocolate" },
-            { "name": "Nutty Irishman", "flavor": "Irish Cream, Hazelnut" },
-            { "name": "Peach Cobbler", "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut" },
-            { "name": "Peppermint Bark", "flavor": "White Chocolate, Dark Chocolate, Peppermint" },
-            { "name": "Raspberry Truffle", "flavor": "White Chocolate, Raspberry, English Toffee" },
-            { "name": "S'Mores", "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon" },
-            { "name": "Snickerdoodle", "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles" },
-            { "name": "Sugar Cookie", "flavor": "Almond Roca, Vanilla, White Chocolate" },
-            { "name": "The Bob", "flavor": "Banana, Coconut, Dark Chocolate" },
-            { "name": "Toasted Mellow", "flavor": "Vanilla, Chocolate Macadamia Nut" },
-            { "name": "Trifecta", "flavor": "Caramel, White Chocolate, Dark Chocolate" },
-            { "name": "Tuxedo", "flavor": "White Chocolate, Dark Chocolate" },
-            { "name": "Vanilla Bean", "flavor": "Vanilla, Chocolate Macadamia Nut" },
-            { "name": "Wallaby", "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel" },
-            { "name": "White Angel", "flavor": "White Chocolate, Coconut, Vanilla" },
-            { "name": "White Zombie", "flavor": "White Chocolate, Vanilla" },
-            { "name": "White Mocha", "flavor": "White Chocolate Mocha" },
-            { "name": "911", "flavor": "Extra Shot, Irish Cream" }
+            {
+                "name": "Almond Bar",
+                "flavor": "White Chocolate, Almond"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Almond, Cherry"
+            },
+            {
+                "name": "Annihilator",
+                "flavor": "Chocolate Macadamia Nut"
+            },
+            {
+                "name": "B-52",
+                "flavor": "Orange, Irish Cream"
+            },
+            {
+                "name": "Ba-Nay-Nay",
+                "flavor": "Banana, Dark Chocolate"
+            },
+            {
+                "name": "Banana Bread",
+                "flavor": "Banana, Hazelnut"
+            },
+            {
+                "name": "Banana Cream Pie",
+                "flavor": "Banana, White Chocolate"
+            },
+            {
+                "name": "Banana Split",
+                "flavor": "Vanilla, Banana, Dark Chocolate"
+            },
+            {
+                "name": "Billy Jean",
+                "flavor": "White Chocolate, Coconut"
+            },
+            {
+                "name": "Birthday Cake",
+                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+            },
+            {
+                "name": "Black Forest",
+                "flavor": "Dark Chocolate, Cherry"
+            },
+            {
+                "name": "Breve",
+                "flavor": ""
+            },
+            {
+                "name": "Cake Batter",
+                "flavor": "Almond Roca, White Chocolate"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor": "White Chocolate, Cherry"
+            },
+            {
+                "name": "Cinnamon Dolce",
+                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Cinnamon Roll",
+                "flavor": "Cinnamon, White Chocolate"
+            },
+            {
+                "name": "Cocomo",
+                "flavor": "Coconut, Mocha"
+            },
+            {
+                "name": "Cookie",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Cookies & Cream",
+                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor": "Blue Rasberry, White Chocolate"
+            },
+            {
+                "name": "Crazy Hawaiian",
+                "flavor": "Caramel, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Dream Weaver",
+                "flavor": "Hazelnut, White Chocolate"
+            },
+            {
+                "name": "Double Chocolate Mocha",
+                "flavor": "Dark Chocolate Mocha"
+            },
+            {
+                "name": "Double Torture",
+                "flavor": "Extra Shot Vanilla Mocha"
+            },
+            {
+                "name": "Dutch Canyon",
+                "flavor": "White Chocolate, Chocolate Macadamia Nut, Dark Chocolate"
+            },
+            {
+                "name": "Flap Jack",
+                "flavor": "Salted Caramel, White Chocolate, Vanilla"
+            },
+            {
+                "name": "French Toast",
+                "flavor": "White Chocolate, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "French Vanilla Bean",
+                "flavor": "Vanilla, Caramel"
+            },
+            {
+                "name": "German Chocolate",
+                "flavor": "Caramel, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Golden Eagle",
+                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+            },
+            {
+                "name": "Grasshoper",
+                "flavor": "Creme De Menthe, Dark Chocolate"
+            },
+            {
+                "name": "Horchata",
+                "flavor": "Caramel, White Chocolate, Cinnamon"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Islander",
+                "flavor": "Chocolate Macadamia Nut, Coconut, Vanilla"
+            },
+            {
+                "name": "Jelly Donut",
+                "flavor": "Salted Caramel, Raspberry, Almond"
+            },
+            {
+                "name": "Kicker",
+                "flavor": "Irish Cream"
+            },
+            {
+                "name": "Molten Lava",
+                "flavor": "Cinnamon, Dark Chocolate"
+            },
+            {
+                "name": "Ninja",
+                "flavor": "Creme De Menthe, White Chocolate"
+            },
+            {
+                "name": "Nutty Irishman",
+                "flavor": "Irish Cream, Hazelnut"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Peppermint Bark",
+                "flavor": "White Chocolate, Dark Chocolate, Peppermint"
+            },
+            {
+                "name": "Raspberry Truffle",
+                "flavor": "White Chocolate, Raspberry, English Toffee"
+            },
+            {
+                "name": "S'Mores",
+                "flavor": "Dark Chocolate, White Chocolate, Chocolate Macadamia Nut, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "Snickerdoodle",
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Sugar Cookie",
+                "flavor": "Almond Roca, Vanilla, White Chocolate"
+            },
+            {
+                "name": "The Bob",
+                "flavor": "Banana, Coconut, Dark Chocolate"
+            },
+            {
+                "name": "Toasted Mellow",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Trifecta",
+                "flavor": "Caramel, White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Tuxedo",
+                "flavor": "White Chocolate, Dark Chocolate"
+            },
+            {
+                "name": "Vanilla Bean",
+                "flavor": "Vanilla, Chocolate Macadamia Nut"
+            },
+            {
+                "name": "Wallaby",
+                "flavor": "Chocolate Macadamia Nut, Dark Chocolate, Caramel"
+            },
+            {
+                "name": "White Angel",
+                "flavor": "White Chocolate, Coconut, Vanilla"
+            },
+            {
+                "name": "White Zombie",
+                "flavor": "White Chocolate, Vanilla"
+            },
+            {
+                "name": "White Mocha",
+                "flavor": "White Chocolate Mocha"
+            },
+            {
+                "name": "911",
+                "flavor": "Extra Shot, Irish Cream"
+            }
         ],
         "flavors": [
             "Almond Roca",
@@ -80,48 +245,178 @@
     "tea-options": {
         "base": "Tea",
         "presets": [
-            "Decaf Ceylon Tea",
-            "Double Rainbro",
-            "Earl Grey Tea",
-            "Electric Berry",
-            "Freedom",
-            "Hawaiian",
-            "Hot Cinnamon Spice Tea",
-            "Irie",
-            "Laser Cat",
-            "Midnight",
-            "Orangesicle",
-            "Paris Tea",
-            "Passion Water",
-            "Red, White, & Blue",
-            "Shark Attack",
-            "Starry Night",
-            "Stop Light",
-            "Sweet Sunrise",
-            "The Vampire Slayer",
-            "Tiger's Blood",
-            "Tricky Tre",
-            "Trixie",
-            "Tropical",
-            "Aftershock",
-            "Aquaberry",
-            "Astronaut",
-            "Dragon Slayer",
-            "Dutch Mojito",
-            "Eclipse",
-            "Fire Lizard",
-            "Galaxy Fish",
-            "Gem Berry",
-            "Grape",
-            "Hyperchrome",
-            "Majestic Forest",
-            "Marmalade",
-            "OG Gummer Bear",
-            "Palm Beach",
-            "Palm Tree",
-            "Ray of Sunshine",
-            "Rocky Point",
-            "The Juice"
+            {
+                "name": "Earl Grey Tea",
+                "flavor": ""
+            },
+            {
+                "name": "Hot Cinnamon Spice Tea",
+                "flavor": ""
+            },
+            {
+                "name": "Paris Tea",
+                "flavor": ""
+            },
+            {
+                "name": "Aftershock",
+                "flavor": "Strawberry, Blackberry, Raspberry, Lime"
+            },
+            {
+                "name": "Aquaberry",
+                "flavor": "Strawberry, Kiwi, Blue Raspberry, Watermelon"
+            },
+            {
+                "name": "Astronaut",
+                "flavor": "Blackberry, Raspberry, Almond"
+            },
+            {
+                "name": "Decaf Ceylon Tea",
+                "flavor": ""
+            },
+            {
+                "name": "Double Rainbro",
+                "flavor": "Strawberry, Peach, Coconut"
+            },
+            {
+                "name": "Dragon Slayer",
+                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+            },
+            {
+                "name": "Dutch Mojito",
+                "flavor": "Coconut, Lime, Cremne De Menthe"
+            },
+            {
+                "name": "Eclipse",
+                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+            },
+            {
+                "name": "Electric Berry",
+                "flavor": "Lime, Blue Rapberry"
+            },
+            {
+                "name": "Fire Lizard",
+                "flavor": "Strawberry, Banana, Orange"
+            },
+            {
+                "name": "Freedom",
+                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+            },
+            {
+                "name": "Hawaiian",
+                "flavor": "Banana, Orange, Peach, Strawberry"
+            },
+            {
+                "name": "Hyperchrome",
+                "flavor": "Orange, Passionfruit, Pomegranate"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Laser Cat",
+                "flavor": "Rasperry, Coconut"
+            },
+            {
+                "name": "Majestic Forest",
+                "flavor": "Blackberry, Blue Raspberry, Kiwi"
+            },
+            {
+                "name": "Marmalade",
+                "flavor": "Strawberry, Orange, Grapefruit"
+            },
+            {
+                "name": "Midnight",
+                "flavor": "Blackberry, Pomegranate"
+            },
+            {
+                "name": "OG Gummy Bear",
+                "flavor": "Pomegranate, Passion Fruit, Watermelon, Grapefruit"
+            },
+            {
+                "name": "Orangesicle",
+                "flavor": "Orange, Vanilla"
+            },
+            {
+                "name": "Palm Beach",
+                "flavor": "Pomegranate, Peach"
+            },
+            {
+                "name": "Palm Tree",
+                "flavor": "Pomegranate, Passion Fruit, Lime"
+            },
+            {
+                "name": "Passion Water",
+                "flavor": "Passion Fruit, Watermelon"
+            },
+            {
+                "name": "Ray of Sunshine",
+                "flavor": "Blackberry, Peach, Grapefruit"
+            },
+            {
+                "name": "Red, White, & Blue",
+                "flavor": "Raspberry, Blue Raspberry, White Chocolate"
+            },
+            {
+                "name": "Rocky Point",
+                "flavor": "Blackberry,Peach, Coconut, Orange"
+            },
+            {
+                "name": "Shark Attack",
+                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+            },
+            {
+                "name": "Starry Night",
+                "flavor": "Blue Raspberry, Blackberry"
+            },
+            {
+                "name": "Stop Light",
+                "flavor": "Pomegranate, Passion Fruit, Kiwi"
+            },
+            {
+                "name": "Sweet Sunrise",
+                "flavor": "Peach, Passion Fruit, Orange, Banana"
+            },
+            {
+                "name": "The Juice",
+                "flavor": "Blackberry, Cherry, Pomegranate"
+            },
+            {
+                "name": "The Vampire Slayer",
+                "flavor": "Srawberry, Pomegranate"
+            },
+            {
+                "name": "Tiger's Blood",
+                "flavor": "Strawberry, Coconut"
+            },
+            {
+                "name": "Tricky Tre",
+                "flavor": "Orange Peach"
+            },
+            {
+                "name": "Trixie",
+                "flavor": "Almond, Orange, Pomegranate"
+            },
+            {
+                "name": "Tropical",
+                "flavor": "Passion Fruit, Coconut, Blue Rasperry"
+            },
+            {
+                "name": "Unicorn Blood",
+                "flavor": "Strawberry, White Chocolate, Almond"
+            },
+            {
+                "name": "Galaxy Fish",
+                "flavor": "Strawberry, Lime, Passion Fruit"
+            },
+            {
+                "name": "Gem Berry",
+                "flavor": "Blackberry, Vanilla, Raspberry"
+            },
+            {
+                "name": "Grape",
+                "flavor": "Strawberry, Passion Fruit, Blue Raspberry"
+            }
         ],
         "flavors": [
             "Blackberry",
@@ -149,54 +444,198 @@
     "soda-options": {
         "base": "Italian Soda",
         "presets": [
-            "Aftershock",
-            "Ameretto",
-            "Aquaberry",
-            "Astronaut",
-            "Bubblegum",
-            "Cherry Blossom",
-            "Cotton Candy",
-            "Dinosaur Egg",
-            "Double Rainbro",
-            "Dragon Slayer",
-            "Dutch Mojito",
-            "Eclipse",
-            "Electric Berry",
-            "Fire Lizard",
-            "Freedom",
-            "Gummy Bear",
-            "Hawaiian",
-            "Hyperchrome",
-            "Irie",
-            "Laser Cat",
-            "Majestic Forest",
-            "Marmalade",
-            "Midnight",
-            "OG Gummer Bear",
-            "Orangesicle",
-            "Palm Beach",
-            "Palm Tree",
-            "Passion Water",
-            "Peach Cobbler",
-            "Peach Ring",
-            "Pink Flamingo",
-            "Ray of Sunshine",
-            "Red, White, & Blue",
-            "Rocky Point",
-            "Shark Attack",
-            "Starry Night",
-            "Stop Light",
-            "Sweet Sunrise",
-            "The Juice",
-            "The Vampire Slayer",
-            "Tiger's Blood",
-            "Tricky Tre",
-            "Trixie",
-            "Tropical",
-            "Unicorn Blood",
-            "Galaxy Fish",
-            "Gem Berry",
-            "Grape"
+            {
+                "name": "Aftershock",
+                "flavor": "Strawberry, Blackberry, Raspberry, Lime"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Amaretto, Cherry"
+            },
+            {
+                "name": "Aquaberry",
+                "flavor": "Strawberry, Kiwi, Blue Raspberry, Watermelon"
+            },
+            {
+                "name": "Astronaut",
+                "flavor": "Blackberry, Raspberry, Almond"
+            },
+            {
+                "name": "Bubblegum",
+                "flavor": "Banana, Strawberry, Vanilla"
+            },
+            {
+                "name": "Cherry Blossom",
+                "flavor": "White Chocolate, Cherry"
+            },
+            {
+                "name": "Cotton Candy",
+                "flavor": "Blue Raspberry, White Chocolate"
+            },
+            {
+                "name": "Dinosaur Egg",
+                "flavor": "Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
+            },
+            {
+                "name": "Double Rainbro",
+                "flavor": "Strawberry, Peach, Coconut"
+            },
+            {
+                "name": "Dragon Slayer",
+                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+            },
+            {
+                "name": "Dutch Mojito",
+                "flavor": "Coconut, Lime, Cremne De Menthe"
+            },
+            {
+                "name": "Eclipse",
+                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+            },
+            {
+                "name": "Electric Berry",
+                "flavor": "Lime, Blue Rapberry"
+            },
+            {
+                "name": "Fire Lizard",
+                "flavor": "Strawberry, Banana, Orange"
+            },
+            {
+                "name": "Freedom",
+                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+            },
+            {
+                "name": "Gummy Bear",
+                "flavor": "Kiwi, Lime, White Chocolate"
+            },
+            {
+                "name": "Hawaiian",
+                "flavor": "Banana, Orange, Peach, Strawberry"
+            },
+            {
+                "name": "Hyperchrome",
+                "flavor": "Orange, Passionfruit, Pomegranate"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Laser Cat",
+                "flavor": "Rasperry, Coconut"
+            },
+            {
+                "name": "Majestic Forest",
+                "flavor": "Blackberry, Blue Raspberry, Kiwi"
+            },
+            {
+                "name": "Marmalade",
+                "flavor": "Strawberry, Orange, Grapefruit"
+            },
+            {
+                "name": "Midnight",
+                "flavor": "Blackberry, Pomegranate"
+            },
+            {
+                "name": "OG Gummy Bear",
+                "flavor": "Pomegranate, Passion Fruit, Watermelon, Grapefruit"
+            },
+            {
+                "name": "Orangesicle",
+                "flavor": "Orange, Vanilla"
+            },
+            {
+                "name": "Palm Beach",
+                "flavor": "Pomegranate, Peach"
+            },
+            {
+                "name": "Palm Tree",
+                "flavor": "Pomegranate, Passion Fruit, Lime"
+            },
+            {
+                "name": "Passion Water",
+                "flavor": "Passion Fruit, Watermelon"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia"
+            },
+            {
+                "name": "Peach Ring",
+                "flavor": "White Chocolate, Passion Fruit, Peach Drizzle"
+            },
+            {
+                "name": "Pink Flamingo",
+                "flavor": "Peach, Strawberry, White Chocolate"
+            },
+            {
+                "name": "Ray of Sunshine",
+                "flavor": "Blackberry, Peach, Grapefruit"
+            },
+            {
+                "name": "Red, White, & Blue",
+                "flavor": "Raspberry, Blue Raspberry, White Chocolate"
+            },
+            {
+                "name": "Rocky Point",
+                "flavor": "Blackberry,Peach, Coconut, Orange"
+            },
+            {
+                "name": "Shark Attack",
+                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+            },
+            {
+                "name": "Starry Night",
+                "flavor": "Blue Raspberry, Blackberry"
+            },
+            {
+                "name": "Stop Light",
+                "flavor": "Pomegranate, Passion Fruit, Kiwi"
+            },
+            {
+                "name": "Sweet Sunrise",
+                "flavor": "Peach, Passion Fruit, Orange, Banana"
+            },
+            {
+                "name": "The Juice",
+                "flavor": "Blackberry, Cherry, Pomegranate"
+            },
+            {
+                "name": "The Vampire Slayer",
+                "flavor": "Srawberry, Pomegranate"
+            },
+            {
+                "name": "Tiger's Blood",
+                "flavor": "Strawberry, Coconut"
+            },
+            {
+                "name": "Tricky Tre",
+                "flavor": "Orange Peach"
+            },
+            {
+                "name": "Trixie",
+                "flavor": "Almond, Orange, Pomegranate"
+            },
+            {
+                "name": "Tropical",
+                "flavor": "Passion Fruit, Coconut, Blue Rasperry"
+            },
+            {
+                "name": "Unicorn Blood",
+                "flavor": "Strawberry, White Chocolate, Almond"
+            },
+            {
+                "name": "Galaxy Fish",
+                "flavor": "Strawberry, Lime, Passion Fruit"
+            },
+            {
+                "name": "Gem Berry",
+                "flavor": "Blackberry, Vanilla, Raspberry"
+            },
+            {
+                "name": "Grape",
+                "flavor": "Strawberry, Passion Fruit, Blue Raspberry"
+            }
         ],
         "flavors": [
             "Blackberry",
@@ -222,44 +661,162 @@
     "lemonade-options": {
         "base": "Lemonade",
         "presets": [
-            "Aftershock",
-            "Ameretto",
-            "Aquaberry",
-            "Astronaut",
-            "Double Rainbro",
-            "Dragon Slayer",
-            "Dutch Mojito",
-            "Eclipse",
-            "Electric Berry",
-            "Fire Lizard",
-            "Hawaiian",
-            "Hyperchrome",
-            "Irie",
-            "Laser Cat",
-            "Majestic Forest",
-            "Marmalade",
-            "Midnight",
-            "OG Gummer Bear",
-            "Orangesicle",
-            "Palm Beach",
-            "Palm Tree",
-            "Passion Water",
-            "Ray of Sunshine",
-            "Rocky Point",
-            "Shark Attack",
-            "Starry Night",
-            "Stop Light",
-            "Sweet Sunrise",
-            "The Juice",
-            "The Vampire Slayer",
-            "Tiger's Blood",
-            "Tricky Tre",
-            "Trixie",
-            "Tropical",
-            "Galaxy Fish",
-            "Gem Berry",
-            "Grape",
-            "Green Tea Lemonade"
+            {
+                "name": "Aftershock",
+                "flavor": "Strawberry, Blackberry, Raspberry, Lime"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Amaretto, Cherry"
+            },
+            {
+                "name": "Aquaberry",
+                "flavor": "Strawberry, Kiwi, Blue Raspberry, Watermelon"
+            },
+            {
+                "name": "Astronaut",
+                "flavor": "Blackberry, Raspberry, Almond"
+            },
+            {
+                "name": "Double Rainbro",
+                "flavor": "Strawberry, Peach, Coconut"
+            },
+            {
+                "name": "Dragon Slayer",
+                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+            },
+            {
+                "name": "Dutch Mojito",
+                "flavor": "Coconut, Lime, Cremne De Menthe"
+            },
+            {
+                "name": "Eclipse",
+                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+            },
+            {
+                "name": "Electric Berry",
+                "flavor": "Lime, Blue Rapberry"
+            },
+            {
+                "name": "Fire Lizard",
+                "flavor": " Strawberry, Banana, Orange"
+            },
+            {
+                "name": "Hawaiian",
+                "flavor": "Banana, Orange, Peach, Strawberry"
+            },
+            {
+                "name": "Hyperchrome",
+                "flavor": "Orange, Passionfruit, Pomegranate"
+            },
+            {
+                "name": "Irie",
+                "flavor": "Banana, Coconut"
+            },
+            {
+                "name": "Laser Cat",
+                "flavor": "Rasperry, Coconut"
+            },
+            {
+                "name": "Majestic Forest",
+                "flavor": "Blackberry, Blue Raspberry, Kiwi"
+            },
+            {
+                "name": "Marmalade",
+                "flavor": "Strawberry, Orange, Grapefruit"
+            },
+            {
+                "name": "Midnight",
+                "flavor": "Blackberry, Pomegranate"
+            },
+            {
+                "name": "OG Gummy Bear",
+                "flavor": "Pomegranate, Passion Fruit, Watermelon, Grapefruit"
+            },
+            {
+                "name": "Orangesicle",
+                "flavor": "Orange, Vanilla"
+            },
+            {
+                "name": "Palm Beach",
+                "flavor": "Pomegranate, Peach"
+            },
+            {
+                "name": "Palm Tree",
+                "flavor": "Pomegranate, Passion Fruit, Lime"
+            },
+            {
+                "name": "Passion Water",
+                "flavor": "Passion Fruit, Watermelon"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia"
+            },
+            {
+                "name": "Ray of Sunshine",
+                "flavor": "Blackberry, Peach, Grapefruit"
+            },
+            {
+                "name": "Rocky Point",
+                "flavor": "Blackberry,Peach, Coconut, Orange"
+            },
+            {
+                "name": "Shark Attack",
+                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+            },
+            {
+                "name": "Starry Night",
+                "flavor": "Blue Raspberry, Blackberry"
+            },
+            {
+                "name": "Stop Light",
+                "flavor": "Pomegranate, Passion Fruit, Kiwi"
+            },
+            {
+                "name": "Sweet Sunrise",
+                "flavor": "Peach, Passion Fruit, Orange, Banana"
+            },
+            {
+                "name": "The Juice",
+                "flavor": "Blackberry, Cherry, Pomegranate"
+            },
+            {
+                "name": "The Vampire Slayer",
+                "flavor": "Srawberry, Pomegranate"
+            },
+            {
+                "name": "Tiger's Blood",
+                "flavor": "Strawberry, Coconut"
+            },
+            {
+                "name": "Tricky Tre",
+                "flavor": "Orange Peach"
+            },
+            {
+                "name": "Trixie",
+                "flavor": "Almond, Orange, Pomegranate"
+            },
+            {
+                "name": "Tropical",
+                "flavor": "Passion Fruit, Coconut, Blue Rasperry"
+            },
+            {
+                "name": "Galaxy Fish",
+                "flavor": "Strawberry, Lime, Passion Fruit"
+            },
+            {
+                "name": "Gem Berry",
+                "flavor": "Blackberry, Vanilla, Raspberry"
+            },
+            {
+                "name": "Grape",
+                "flavor": "Strawberry, Passion Fruit, Blue Raspberry"
+            },
+            {
+                "name": "Green Tea Lemonade",
+                "flavor": "Green Tea, Lemonade"
+            }
         ],
         "flavors": [
             "Blackberry",
@@ -321,9 +878,18 @@
     "cocoa-options": {
         "base": "Hot Cocoa",
         "presets": [
-            { "name": "Hot Cocoa", "flavor": "Traditional Hot Chocolate" },
-            { "name": "Almond Bar", "flavor": "White Chocolate, Almond" },
-            { "name": "Ameretto", "flavor": "Almond, Cherry" },
+            {
+                "name": "Hot Cocoa",
+                "flavor": "Traditional Hot Chocolate"
+            },
+            {
+                "name": "Almond Bar",
+                "flavor": "White Chocolate, Almond"
+            },
+            {
+                "name": "Ameretto",
+                "flavor": "Almond, Cherry"
+            },
             {
                 "name": "Annihilator",
                 "flavor": "Chocolate Macadamia Nut"
@@ -558,53 +1124,54 @@
     },
     "rebel-options": {
         "base": "Rebel",
-        "presets": [{
-                "name":"Aftershock" ,
-                "flavor":"Strawberry, Blackberry, Raspberry, Lime"
+        "presets": [
+            {
+                "name": "Aftershock",
+                "flavor": "Strawberry, Blackberry, Raspberry, Lime"
             },
             {
-                "name":"Ameretto" ,
-                "flavor":"Amaretto, Cherry"
+                "name": "Ameretto",
+                "flavor": "Amaretto, Cherry"
             },
             {
-                "name":"Aquaberry" ,
-                "flavor":"Strawberry, Kiwi, Blue Raspberry, Watermelon"
+                "name": "Aquaberry",
+                "flavor": "Strawberry, Kiwi, Blue Raspberry, Watermelon"
             },
             {
-                "name":"Astronaut" ,
+                "name": "Astronaut",
                 "flavor": "Blackberry, Raspberry, Almond"
             },
             {
                 "name": "Bubblegum",
-                "flavor":"Banana, Strawberry, Vanilla"
+                "flavor": "Banana, Strawberry, Vanilla"
             },
             {
                 "name": "Cherry Blossom",
-                "flavor":"White Chocolate, Cherry"
+                "flavor": "White Chocolate, Cherry"
             },
             {
                 "name": "Cotton Candy",
-                "flavor":"Blue Raspberry, White Chocolate"
+                "flavor": "Blue Raspberry, White Chocolate"
             },
             {
                 "name": "Dinosaur Egg",
-                "flavor":"Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
+                "flavor": "Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
             },
             {
-                "name":"Double Rainbro" ,
-                "flavor":"Strawberry, Peach, Coconut"
+                "name": "Double Rainbro",
+                "flavor": "Strawberry, Peach, Coconut"
             },
             {
                 "name": "Dragon Slayer",
-                "flavor":"Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
             },
             {
                 "name": "Dutch Mojito",
-                "flavor":"Coconut, Lime, Cremne De Menthe"
+                "flavor": "Coconut, Lime, Cremne De Menthe"
             },
             {
                 "name": "Eclipse",
-                "flavor":"PEach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
             },
             {
                 "name": "Electric Berry",
@@ -612,120 +1179,143 @@
             },
             {
                 "name": "Fire Lizard",
-                "flavor": " Strawberry, Banana, Orange"
+                "flavor": "Strawberry, Banana, Orange"
             },
             {
                 "name": "Freedom",
-                "flavor":"Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
             },
             {
                 "name": "Gummy Bear",
-                "flavor":"Kiwi, Lime, White Chocolate"
+                "flavor": "Kiwi, Lime, White Chocolate"
             },
             {
                 "name": "Hawaiian",
-                "flavor":"Banana, Orange, Peach, Strawberry"
+                "flavor": "Banana, Orange, Peach, Strawberry"
             },
             {
                 "name": "Hyperchrome",
-                "flavor":"Orange, Passionfruit, Pomegranate"
+                "flavor": "Orange, Passionfruit, Pomegranate"
             },
             {
                 "name": "Irie",
-                "flavor":"Banana, Coconut"
+                "flavor": "Banana, Coconut"
             },
             {
                 "name": "Laser Cat",
-                "flavor":"Rasperry, Coconut"
+                "flavor": "Rasperry, Coconut"
             },
             {
                 "name": "Majestic Forest",
-                "flavor":"Blackberry, Blue Raspberry, Kiwi"
+                "flavor": "Blackberry, Blue Raspberry, Kiwi"
             },
             {
-                "name":"Marmalade" ,
-                "flavor":"Strawberry, Orange, Grapefruit"
+                "name": "Marmalade",
+                "flavor": "Strawberry, Orange, Grapefruit"
             },
             {
-                "name":"Midnight" ,
-                "flavor":"Blackberry, Pomegranate"
+                "name": "Midnight",
+                "flavor": "Blackberry, Pomegranate"
             },
             {
                 "name": "OG Gummy Bear",
-                "flavor":"Pomegranate, Passion Fruit, Watermelon, Grapefruit"
+                "flavor": "Pomegranate, Passion Fruit, Watermelon, Grapefruit"
             },
             {
-                "name":"Orangesicle", 
-                "flavor":"Orange, Vanilla"
-            },{
+                "name": "Orangesicle",
+                "flavor": "Orange, Vanilla"
+            },
+            {
                 "name": "Palm Beach",
-                "flavor":"Pomegranate, Peach"
-            },{
+                "flavor": "Pomegranate, Peach"
+            },
+            {
                 "name": "Palm Tree",
-                "flavor":"Pomegranate, Passion Fruit, Lime"
-            },{
+                "flavor": "Pomegranate, Passion Fruit, Lime"
+            },
+            {
                 "name": "Passion Water",
-                "flavor":"Passion Fruit, Watermelon"
-            },{
-                "name": "Peach Cobbler" ,
-                "flavor":"White Chocolate, Peach, Chocolate Macadamia"
-            },{
+                "flavor": "Passion Fruit, Watermelon"
+            },
+            {
+                "name": "Peach Cobbler",
+                "flavor": "White Chocolate, Peach, Chocolate Macadamia"
+            },
+            {
                 "name": "Peach Ring",
-                "flavor":"White Chocolate, Passion Fruit, Peach Drizzle"
-            },{
+                "flavor": "White Chocolate, Passion Fruit, Peach Drizzle"
+            },
+            {
                 "name": "Pink Flamingo",
-                "flavor":"Peach, Strawberry, White Chocolate"
-            },{
+                "flavor": "Peach, Strawberry, White Chocolate"
+            },
+            {
                 "name": "Ray of Sunshine",
-                "flavor":"Blackberry, Peach, Grapefruit"
-            },{
+                "flavor": "Blackberry, Peach, Grapefruit"
+            },
+            {
                 "name": "Red, White, & Blue",
-                "flavor":"Raspberry, Blue Raspberry, White Chocolate"
-            },{
-                "name":"Rocky Point" ,
-                "flavor":"Blackberry,Peach, Coconut, Orange"
-            },{
-                "name":"Shark Attack" ,
-                "flavor":"Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
-            },{
+                "flavor": "Raspberry, Blue Raspberry, White Chocolate"
+            },
+            {
+                "name": "Rocky Point",
+                "flavor": "Blackberry,Peach, Coconut, Orange"
+            },
+            {
+                "name": "Shark Attack",
+                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+            },
+            {
                 "name": "Starry Night",
-                "flavor":"Blue Raspberry, Blackberry"
-            },{
+                "flavor": "Blue Raspberry, Blackberry"
+            },
+            {
                 "name": "Stop Light",
-                "flavor":"Pomegranate, Passion Fruit, Kiwi"
-            },{
-                "name": "Sweet Sunrise" ,
-                "flavor":"Peach, Passion Fruit, Orange, Banana"
-            },{
+                "flavor": "Pomegranate, Passion Fruit, Kiwi"
+            },
+            {
+                "name": "Sweet Sunrise",
+                "flavor": "Peach, Passion Fruit, Orange, Banana"
+            },
+            {
                 "name": "The Juice",
-                "flavor":"Blackberry, Cherry, Pomegranate"
-            },{
+                "flavor": "Blackberry, Cherry, Pomegranate"
+            },
+            {
                 "name": "The Vampire Slayer",
-                "flavor":"Srawberry, Pomegranate"
-            },{
+                "flavor": "Srawberry, Pomegranate"
+            },
+            {
                 "name": "Tiger's Blood",
-                "flavor":"Strawberry, Coconut"
-            },{
+                "flavor": "Strawberry, Coconut"
+            },
+            {
                 "name": "Tricky Tre",
-                "flavor":"Orange Peach"
-            },{
+                "flavor": "Orange Peach"
+            },
+            {
                 "name": "Trixie",
-                "flavor":"Almond, Orange, Pomegranate"
-            },{
+                "flavor": "Almond, Orange, Pomegranate"
+            },
+            {
                 "name": "Tropical",
-                "flavor":"Passion Fruit, Coconut, Blue Rasperry"
-            },{
+                "flavor": "Passion Fruit, Coconut, Blue Rasperry"
+            },
+            {
                 "name": "Unicorn Blood",
-                "flavor":"Strawberry, White Chocolate, Almond"
-            },{
+                "flavor": "Strawberry, White Chocolate, Almond"
+            },
+            {
                 "name": "Galaxy Fish",
-                "flavor":"Strawberry, Lime, Passion Fruit"
-            },{
+                "flavor": "Strawberry, Lime, Passion Fruit"
+            },
+            {
                 "name": "Gem Berry",
-                "flavor":"Blackberry, Vanilla, Raspberry"
-            },{
-                "name":"Grape" ,
-                "flavor":"Strawberry, Passion Fruit, Blue Raspberry"
+                "flavor": "Blackberry, Vanilla, Raspberry"
+            },
+            {
+                "name": "Grape",
+                "flavor": "Strawberry, Passion Fruit, Blue Raspberry"
             }
         ],
         "flavors": [
