@@ -1,7 +1,8 @@
 import { useState, useCallback } from "react";
 
-export default function useLocalStorage(key, initialValue = {}) {
-    const persist = JSON.parse(window.localStorage.getItem(key));
+export default function useLocalStorage(key: string, initialValue = {}) {
+    const stored = window.localStorage.getItem(key);
+    const persist = stored ? JSON.parse(stored) : null;
     const [storedValue, setStoredValue] = useState(persist ? persist : initialValue);
     if (persist && JSON.stringify(persist) !== JSON.stringify(storedValue)) {
         setStoredValue(persist);
