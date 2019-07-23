@@ -1,8 +1,9 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
 $navbar-background-color: transparent;
-$primary: #aa91c7;
+$primary: #156299;
 $link: #654791;
+$info: #f8e316;
 // $link: #7e49c9;
 .title {
     font-family: "Poiret One", cursive;
@@ -10,14 +11,46 @@ $link: #654791;
 @import "../node_modules/bulma/bulma.sass";
 
 #root {
-    min-height: 100vh;
-    background: url("/image/lotsocups.jpg");
-    background-size: cover;
+    top: 0;
+    height: 100vh;
     overflow: hidden;
-    background-color: rgba(234, 220, 250, 0.7);
-    background-blend-mode: lighten;
 }
 
+.bg {
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/rainbrowdropshdw.svg");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.basebg {
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/blueblobs.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.resultbg {
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/redblobs.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 button {
     @extend .button;
 }
@@ -28,6 +61,7 @@ nav {
 
 #random {
     font-size: 2.5em;
+    color: #ffffff;
 }
 
 #randombig {
@@ -41,16 +75,21 @@ nav {
 }
 #divleft {
     position: relative;
-    top: 30vh;
-}
+    top: 10vh;
 
-#randomizebutton {
-    position: relative;
-    top: 35vh;
+    color: white;
 }
-#basebutton {
-    position: relative;
-    top: 35vh;
+.mixtly {
+    font-size: 70px;
+    font-family: "Poiret One", cursive;
+    font-weight: bolder;
+    letter-spacing: 2rem;
+}
+.button {
+    margin: 10px;
+}
+.buttongroup {
+    left: 5%;
 }
 
 #randomizerbox {
@@ -77,7 +116,7 @@ nav {
 
 #randomizertitle {
     position: relative;
-    top: 10%;
+    top: 8vh;
 }
 
 .drink.box {
@@ -117,4 +156,48 @@ nav {
 #resultheader {
     position: relative;
     top: 10%;
+}
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+
+    > * {
+        display: block;
+        position: absolute;
+        top: 30vh;
+        left: 50%;
+        width: $item-size;
+        height: $item-size;
+        margin: -($item-size / 2);
+        -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+        -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+        box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+
+        $angle: (360 / $item-count);
+        $rot: 0;
+
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+            }
+            $rot: $rot + $angle;
+        }
+    }
+}
+.circleContainer {
+    @include on-circle($item-count: 10, $circle-size: 40em, $item-size: 10em);
+    margin: 5em auto 0;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+
+    .img {
+        transition: 0.15s;
+        transform: rotate(0deg);
+        transition: transform 0.7s linear;
+    }
 }

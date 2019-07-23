@@ -14,8 +14,8 @@ export default function Nav(props) {
                 <div class="navbar-brand">
                     <Link to="/">
                         <a class="navbar-item">
-                            <i class="fas fa-random" id="random" />
-                            <span id="appname">MIXTLY</span>
+                            <i class="fal fa-random" id="random" />
+                            {/* <span id="appname">MIXTLY</span> */}
                         </a>
                     </Link>
                     {!signupVisible && (

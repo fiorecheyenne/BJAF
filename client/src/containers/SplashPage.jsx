@@ -6,25 +6,26 @@ export default function SplashPage(props) {
     // const [redirect, setRedirect] = useState("");
     return (
         <main>
-            <div class="column is-full has-text-centered" id="divleft">
+            <div class="bg" />
+            <div class="column is-offset-4 is-4 has-text-centered" id="divleft">
                 <p>
-                    <h1>Welcome to mixtly</h1>
+                    <span class="mixtly">MIXTLY</span>
+                    <br />
+                    Like Dutch Bros? Us too. <br />
+                    Mixtly allows you to choose a drink type - such as coffee, tea, etc.
+                    <br /> Once chosen, a randomly generated drink will appear for you! <br />
+                    Randomize All will randomize all drink types and give you your selected drink! <br />
+                    Lets get started!
+                    <br />
                 </p>
-                <i class="fas fa-random" id="randombig" />
-            </div>
-            <div class="columns is-vcentered">
-                <div
-                    class="column is-offset-one-quarter is-one-quarter has-text-right is-full-mobile is-full-mobile has-text-centered-mobile"
-                    id="basebutton">
+                <p class="buttongroup">
                     <Link to="/randomizer">
-                        <button class="button is-primary is-medium">Select a Base</button>
+                        <a class="button is-primary is-medium is-rounded">Select drink type</a>
                     </Link>
-                </div>
-                <div class="column is-one-quarter is-full-mobile has-text-centered-mobile" id="randomizebutton">
-                    <button class="button is-primary is-medium" onClick={() => props.history.push("/results")}>
+                    <a class="button is-info has-text-dark is-medium is-rounded" onClick={() => props.history.push("/results")}>
                         Randomize All
-                    </button>
-                </div>
+                    </a>
+                </p>
             </div>
         </main>
     );

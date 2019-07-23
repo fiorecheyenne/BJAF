@@ -70,6 +70,7 @@ export default function ResultsPage(props) {
 
     return (
         <main>
+            <div class="resultbg" />
             <p class="title is-2 has-text-centered" id="resultheader">
                 YOUR DRINK:
             </p>
