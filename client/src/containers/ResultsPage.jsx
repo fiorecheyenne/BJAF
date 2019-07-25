@@ -74,7 +74,9 @@ export default function ResultsPage(props) {
             <p class="title is-2 has-text-centered" id="resultheader">
                 YOUR DRINK:
             </p>
-            <div style={centerConstraints}>{result && <DrinkCard id="resultcard" {...result} />}</div>
+            <div style={centerConstraints} id="resultdiv">
+                {result && <DrinkCard id="resultcard" {...result} />}
+            </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
                 <button class="button is-primary" id="randomizeagainbutton" onClick={() => setRefetch(true)}>

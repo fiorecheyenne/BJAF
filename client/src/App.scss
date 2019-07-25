@@ -34,7 +34,7 @@ $info: #f8e316;
     overflow: hidden;
     position: absolute;
     width: 100%;
-    background-image: url("/image/blueblobs.svg");
+    background-image: url("/image/radial.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -119,6 +119,9 @@ nav {
     top: 8vh;
 }
 
+.title {
+    color: white;
+}
 .drink.box {
     display: inline-block;
 }
@@ -158,22 +161,34 @@ nav {
     top: 10%;
 }
 
+//randomizer page circle container and children
 @mixin on-circle($item-count, $circle-size, $item-size) {
     position: relative;
+
     width: $circle-size;
     height: $circle-size;
-    padding: 0;
+    padding: 0px;
     border-radius: 50%;
+
     list-style: none;
+    padding-inline-start: 0px;
+    // overflow: hidden;
+
+    // transform: rotate(0deg);
+    // transition: transform 0.7s linear;
 
     > * {
         display: block;
         position: absolute;
-        top: 30vh;
+        top: 40%;
         left: 50%;
+
+        transform: rotate(0deg);
+        transition: transform 0.7s linear;
         width: $item-size;
         height: $item-size;
         margin: -($item-size / 2);
+
         -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
         -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
         box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
@@ -190,14 +205,18 @@ nav {
     }
 }
 .circleContainer {
-    @include on-circle($item-count: 10, $circle-size: 40em, $item-size: 10em);
+    @include on-circle($item-count: 10, $circle-size: 40em, $item-size: 8em);
     margin: 5em auto 0;
+    // border: 1px solid;
+    // border-color: red;
+
     transform: rotate(0deg);
     transition: transform 0.7s linear;
 
     .img {
-        transition: 0.15s;
+        // transition: 0.15s;
         transform: rotate(0deg);
-        transition: transform 0.7s linear;
+        // transition: transform 0.7s linear;
+        // max-height: 190px;
     }
 }

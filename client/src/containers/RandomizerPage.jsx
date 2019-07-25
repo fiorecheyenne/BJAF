@@ -1,24 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { relative } from "path";
 
 const basebox = {
     maxWidth: "200px",
     borderRadius: "50%",
-    marginTop: "5px",
+    marginTop: "10px",
+    position: "absolute",
 };
-
+const position = {
+    position: "relative",
+    top: "7vh",
+    height: "50em",
+    width: "100%",
+};
 const center = {
     display: "flex",
     justifyContent: "center",
     marginTop: "20px",
     marginBottom: "5px",
+    width: "5em",
 };
 
 const imageSize = {
-    // maxHeight: "190px",
+    // maxHeight: "180px",
+    // marginTop: "5px",
 };
 
-//TODO: fix card display - desktop 2 rows of 5, mobile side by side - 200px md cards - 150 mobile cards - 300 lrg cards
+//TODO: change display for mobile
 export default function RandomizerPage(props) {
+    const [shouldAnimateRotation, setShouldAnimationRotate] = useState(false);
+    const [shouldChildAnimate, setShouldChildAnimationRotate] = useState(false);
+
     return (
         <main>
             <div class="basebg" />
@@ -27,26 +39,50 @@ export default function RandomizerPage(props) {
                 <p class="title is-2">CHOOSE YOUR BASE:</p>
             </div>
 
-            <ul class="circleContainer">
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=coffee")}>
-                    <img class="img" src="/image/coffee.png" style={imageSize} />
+            <ul class={"circleContainer" + (shouldAnimateRotation ? " rotateActive" : "")} style={position}>
+                {/* Coffee Card */}
+                <li
+                    className={"base box " + (shouldChildAnimate ? " rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        // setTimeout(() => props.history.push("results?base=coffee"), 2000);
+                    }}>
+                    <img class="img" src="/image/coffee.png" alt="coffee" style={imageSize} />
                     <span class="title is-4" style={center}>
                         COFFEE
                     </span>
                 </li>
-                {/* Tea card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=tea")}>
-                    <img class="img" src="/image/tea.png" style={imageSize} />
+                {/* Tea card */}
+                <li
+                    className={"base box " + (shouldChildAnimate ? " rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=tea"), 2000);
+                    }}>
+                    <img class="img" src="/image/tea.png" alt="tea" style={imageSize} />
                     <span class="title is-4" style={center}>
                         TEA
                     </span>
                 </li>
 
                 {/* Lemonade card */}
-
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=lemonade")}>
-                    <img class="img" src="/image/lemonade.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? " rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=lemonade"), 2000);
+                    }}>
+                    <img class="img" src="/image/lemonade.png" alt="lemonade" style={imageSize} />
                     <span class="title is-4" style={center}>
                         LEMONADE
                     </span>
@@ -54,8 +90,16 @@ export default function RandomizerPage(props) {
 
                 {/* Rebel card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=rebel")}>
-                    <img class="img" src="/image/rebel.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=rebel"), 2000);
+                    }}>
+                    <img class="img" src="/image/rebel.png" alt="rebel" style={imageSize} />
                     <span class="title is-4" style={center}>
                         REBEL
                     </span>
@@ -63,8 +107,16 @@ export default function RandomizerPage(props) {
 
                 {/* Smoothie card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=smoothie")}>
-                    <img class="img" src="/image/smoothie.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=smoothie"), 2000);
+                    }}>
+                    <img class="img" src="/image/smoothie.png" alt="smoothie" style={imageSize} />
                     <span class="title is-4" style={center}>
                         SMOOTHIE
                     </span>
@@ -72,8 +124,16 @@ export default function RandomizerPage(props) {
 
                 {/* Frost card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=frost")}>
-                    <img class="img" src="/image/frost.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=frost"), 2000);
+                    }}>
+                    <img class="img" src="/image/frost.png" alt="frost" style={imageSize} />
                     <span class="title is-4" style={center}>
                         FROST
                     </span>
@@ -81,8 +141,16 @@ export default function RandomizerPage(props) {
 
                 {/* Soda card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=soda")}>
-                    <img src="/image/soda.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=soda"), 2000);
+                    }}>
+                    <img class="img" src="/image/soda.png" alt="soda" style={imageSize} />
                     <span class="title is-4" style={center}>
                         SODA
                     </span>
@@ -90,8 +158,16 @@ export default function RandomizerPage(props) {
 
                 {/* Chai card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=chai")}>
-                    <img class="img" src="/image/chai.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=chai"), 2000);
+                    }}>
+                    <img class="img" src="/image/chai.png" clat="chai" style={imageSize} />
                     <span class="title is-4" style={center}>
                         CHAI
                     </span>
@@ -99,16 +175,32 @@ export default function RandomizerPage(props) {
 
                 {/* Cocoa card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=cocoa")}>
-                    <img class="img" src="/image/cocoa.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=cocoa"), 2000);
+                    }}>
+                    <img class="img" src="/image/cocoa.png" alt="cocoa" style={imageSize} />
                     <span class="title is-4" style={center}>
                         COCOA
                     </span>
                 </li>
                 {/* Mocha card */}
 
-                <li className="base box" style={basebox} onClick={() => props.history.push("results?base=mocha")}>
-                    <img class="img" src="/image/mocha.png" style={imageSize} />
+                <li
+                    className={"base box " + (shouldChildAnimate ? "rotateBox" : "")}
+                    style={basebox}
+                    onClick={event => {
+                        event.preventDefault();
+                        setShouldAnimationRotate(!shouldAnimateRotation);
+                        setShouldChildAnimationRotate(!shouldChildAnimate);
+                        setTimeout(() => props.history.push("results?base=mocha"), 2000);
+                    }}>
+                    <img class="img" src="/image/mocha.png" alt="mocha" style={imageSize} />
                     <span class="title is-4" style={center}>
                         MOCHA
                     </span>
