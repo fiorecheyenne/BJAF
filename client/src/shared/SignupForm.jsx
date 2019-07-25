@@ -38,6 +38,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
     );
 
     const [processingSignup, setProcessingSignup] = useState(false);
+    const [serverIssue, setServerIssue] = useState("");
 
     const onSignupFormDidSubmit = useCallback(
         event => {
@@ -55,15 +56,17 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
             })
                 .then(data => data.json())
                 .then(createdUser => {
+                    if (!createdUser.success) {
+                        throw createdUser;
+                    }
                     setUserToken(createdUser);
+                    onSignupCompleted && onSignupCompleted();
                 })
                 .catch(err => {
-                    console.warn(err);
-                    // TODO: Show server signup error message to end user
+                    setServerIssue("There was an issue trying to create your account.");
                 })
                 .finally(() => {
                     setProcessingSignup(false);
-                    onSignupCompleted && onSignupCompleted();
                 });
         },
         [processingSignup, username, email, password, validateSignupInfo, setUserToken, onSignupCompleted]
@@ -148,6 +151,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
                 {triggerValidation && !termsChecked && (
                     <p className="help is-danger">Please agree to the terms and conditions to create your account.</p>
                 )}
+                {serverIssue.length > 0 ? <p className="has-text-danger">{serverIssue}</p> : ""}
                 <hr />
                 <div className="field is-grouped is-grouped-right is-vertical-center">
                     {onRequestLoginForm && (
