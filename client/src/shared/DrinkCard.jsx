@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import useFavorite from "../hooks/useFavorite";
+import useFavorite from "../hooks/useFavorite.tsx";
 import IconButton from "../shared/IconButton";
 
 const constraints = {
