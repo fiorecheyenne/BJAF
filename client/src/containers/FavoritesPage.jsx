@@ -12,7 +12,7 @@ export default function FavoritesPage() {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Auth-Token": token.token,
+                    "Auth-Token": token.token.token,
                 },
             })
                 .then(response => response.json())

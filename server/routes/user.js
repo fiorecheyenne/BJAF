@@ -9,10 +9,14 @@ const tokenKey = process.env.TOKEN_KEY;
 module.exports = {
     GET: async function(request, response) {
         // receive Token
-        let userToke = request.get("Auth-Token");
+        let userToken = request.get("Auth-Token");
         // Decode Token
-        let payload = decoder(userToke);
-        // find a user by _id:
+        let payload = decoder(userToken);
+        if (!payload) {
+            response.json({ username: "", faves: {} });
+            return;
+        }
+        console.log(payload, userToken);
         let loginUser = await User.findOne({
             _id: payload.payload,
         });
