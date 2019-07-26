@@ -103,16 +103,6 @@ nav {
     }
 }
 
-// #basecardcol {
-//     position: relative;
-//     top: 5vh;
-// }
-
-// #basecardcol2 {
-//     position: relative;
-//     top: 6vh;
-// }
-
 #randomizertitle {
     position: relative;
     top: 5%;
@@ -203,9 +193,6 @@ nav {
     @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
     margin-top: 0px !important;
     margin: 5em auto;
-    border: 1px solid;
-    border-color: red;
-
     transform: rotate(0deg);
     transition: transform 0.7s linear;
 
