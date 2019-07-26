@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
+import Modal, { ModalProps } from "./Modal";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-export default function SignupLoginModal(props) {
+type Form = "LOGIN" | "SIGNUP";
+
+type SignupLoginModalProps = {
+    visibleForm: Form;
+    setVisibleForm: (visibleForm: Form) => void;
+} & ModalProps;
+
+export default function SignupLoginModal(props: SignupLoginModalProps) {
     const { visibleForm, setVisibleForm } = props;
     return (
         <Modal {...props}>
