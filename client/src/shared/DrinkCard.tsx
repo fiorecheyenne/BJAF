@@ -32,7 +32,7 @@ const favoritesButton: CSSProperties = {
     transform: "translate(-28%, 28%)",
 };
 
-const imageSize = {
+const imageSize: CSSProperties = {
     minWidth: "200px",
     maxHeight: "220px",
 };
