@@ -11,7 +11,7 @@ export default function SignupLoginModal(props) {
                 <LoginForm onRequestSignupForm={() => setVisibleForm("SIGNUP")} onLoginCompleted={props.onClose} />
             )}
             {visibleForm === "SIGNUP" && (
-                <SignupForm onRequestLoginForm={() => setVisibleForm("LOGIN")} onLoginCompleted={props.onClose} />
+                <SignupForm onRequestLoginForm={() => setVisibleForm("LOGIN")} onSignupCompleted={props.onClose} />
             )}
         </Modal>
     );

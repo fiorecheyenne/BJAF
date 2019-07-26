@@ -8,6 +8,7 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }) {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
 
+    const [loginIssue, setLoginIssue] = useState("");
     const onLoginFormDidSubmit = useCallback(
         event => {
             event.preventDefault();
@@ -26,15 +27,18 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }) {
             })
                 .then(data => data.json())
                 .then(loginData => {
+                    if (!loginData.success) {
+                        throw loginData;
+                    }
                     setUserToken(loginData);
+                    setLoginIssue("");
+                    onLoginCompleted && onLoginCompleted();
                 })
                 .catch(err => {
-                    // TODO: Show user server login error
-                    console.warn(err);
+                    setLoginIssue(err.errorMessage);
                 })
                 .finally(() => {
                     setProcessingLogin(false);
-                    onLoginCompleted && onLoginCompleted();
                 });
         },
         [processingLogin, user, password, setUserToken, onLoginCompleted]
@@ -55,7 +59,7 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }) {
                             value={user}
                             onChange={event => setUser(event.target.value)}
                             type="text"
-                            className="input"
+                            className={"input" + (loginIssue.length > 0 ? " is-danger" : "")}
                             autoComplete="username"
                         />
                     </div>
@@ -67,11 +71,12 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }) {
                             value={password}
                             onChange={event => setPassword(event.target.value)}
                             type="password"
-                            className="input"
+                            className={"input" + (loginIssue.length > 0 ? " is-danger" : "")}
                             autoComplete="current-password"
                         />
                     </div>
                 </div>
+                {loginIssue.length > 0 ? <p className="has-text-danger">{loginIssue}</p> : null}
                 <hr />
                 <div className="field is-grouped is-grouped-right is-vertical-center">
                     {onRequestSignupForm && (

@@ -1,25 +1,21 @@
-.rotateContainer {
-    -webkit-transition: 2s;
-}
-/* .rotateBox {
-    -webkit-animation: rotateChild 0.7s linear;
-} */
-
 .rotateActive {
     -webkit-animation: rotateContainer 2s linear;
 }
 
 @-webkit-keyframes rotateContainer {
     0% {
-        -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(0deg);
+        opacity: 1;
         -webkit-transform-origin: 50% 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
     }
 }
 
 @-webkit-keyframes rotateChild {
     0% {
-        -webkit-transition: opacity 1s ease-out;
-        opacity: 5;
         -webkit-transform: rotate(-360deg);
     }
 }
@@ -32,5 +28,5 @@
     }
 }
 #resultdiv {
-    -webkit-animation: fadein 5s;
+    -webkit-animation: fadein 4s;
 }

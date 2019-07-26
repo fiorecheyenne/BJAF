@@ -22,17 +22,33 @@ module.exports = {
     },
 
     POST: async function(request, response) {
-        let salt = bcrypt.genSaltSync(10);
-        let hash = bcrypt.hashSync(request.body.password, salt);
-        var userData = request.body;
-        var newUser = await User.create({
-            name: userData.name,
-            email: userData.email,
-            username: userData.username,
-            password: hash,
-            faves: userData.faves,
-        });
-        response.send(tokenizer(newUser));
+        try {
+            let salt = bcrypt.genSaltSync(10);
+            let hash = bcrypt.hashSync(request.body.password, salt);
+            var userData = request.body;
+            var newUser = await User.create({
+                name: userData.name,
+                email: userData.email,
+                username: userData.username,
+                password: hash,
+                faves: userData.faves,
+            });
+            response
+                .send({
+                    success: true,
+                    errorMessage: "",
+                    token: tokenizer(newUser),
+                })
+                .end();
+        } catch (err) {
+            response
+                .send({
+                    success: false,
+                    errorMessage: "Was unable to create the user",
+                    token: null,
+                })
+                .end();
+        }
     },
 
     DELETE: function(request, response) {

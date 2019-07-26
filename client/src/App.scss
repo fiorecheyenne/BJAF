@@ -4,22 +4,36 @@ $navbar-background-color: transparent;
 $primary: #156299;
 $link: #654791;
 $info: #f8e316;
+// $body-overflow-x: hidden;
+$body-overflow-y: hidden;
 // $link: #7e49c9;
 .title {
     font-family: "Poiret One", cursive;
 }
 @import "../node_modules/bulma/bulma.sass";
 
+button {
+    @extend .button;
+}
+
+nav {
+    @extend .navbar;
+}
+
 #root {
     top: 0;
     height: 100vh;
-    overflow: hidden;
 }
-
+// html,
+// body {
+//     top: 0;
+//     height: 100vh;
+//     width: 100vw;
+// }
 .bg {
     top: 0;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    // overflow: hidden;
     position: absolute;
     width: 100%;
     background-image: url("/image/rainbrowdropshdw.svg");
@@ -51,13 +65,6 @@ $info: #f8e316;
     background-size: cover;
     background-repeat: no-repeat;
 }
-button {
-    @extend .button;
-}
-
-nav {
-    @extend .navbar;
-}
 
 #random {
     font-size: 2.5em;
@@ -75,12 +82,12 @@ nav {
 }
 #divleft {
     position: relative;
-    top: 10vh;
+    top: 5%;
 
     color: white;
 }
 .mixtly {
-    font-size: 70px;
+    font-size: 65px;
     font-family: "Poiret One", cursive;
     font-weight: bolder;
     letter-spacing: 2rem;
@@ -104,19 +111,9 @@ nav {
     }
 }
 
-#basecardcol {
-    position: relative;
-    top: 5vh;
-}
-
-#basecardcol2 {
-    position: relative;
-    top: 6vh;
-}
-
 #randomizertitle {
     position: relative;
-    top: 8vh;
+    top: 5%;
 }
 
 .title {
@@ -172,10 +169,6 @@ nav {
 
     list-style: none;
     padding-inline-start: 0px;
-    // overflow: hidden;
-
-    // transform: rotate(0deg);
-    // transition: transform 0.7s linear;
 
     > * {
         display: block;
@@ -205,18 +198,13 @@ nav {
     }
 }
 .circleContainer {
-    @include on-circle($item-count: 10, $circle-size: 40em, $item-size: 8em);
-    margin: 5em auto 0;
-    // border: 1px solid;
-    // border-color: red;
-
+    @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
+    margin-top: 0px !important;
+    margin: 5em auto;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
 
     .img {
-        // transition: 0.15s;
         transform: rotate(0deg);
-        // transition: transform 0.7s linear;
-        // max-height: 190px;
     }
 }
