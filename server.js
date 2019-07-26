@@ -24,9 +24,11 @@ const apollo = new ApolloServer(graphqlSetup);
 apollo.applyMiddleware({ app });
 
 // Default React route
-app.get("/*", (_, response) => {
-    response.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+    app.get("/*", (_, response) => {
+        response.sendFile(path.join(__dirname, "./client/build/index.html"));
+    });
+}
 
 app.listen(PORT, () => {
     if (process.env.NODE_ENV === "development") {

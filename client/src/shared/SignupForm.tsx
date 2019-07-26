@@ -2,9 +2,14 @@ import React, { useState, useCallback } from "react";
 import IconButton from "./IconButton";
 import useUserToken from "../hooks/useUserToken";
 
+type SignupFormProps = {
+    onRequestLoginForm: () => void;
+    onSignupCompleted: () => void;
+};
+
 const emailMatch = /.{2,}@.{2,}\..{2,}/;
 
-export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
+export default function SignupForm({ onRequestLoginForm, onSignupCompleted }: SignupFormProps) {
     const [, setUserToken] = useUserToken();
 
     const [username, setUsername] = useState("");
@@ -136,7 +141,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
                 <div className="field is-grouped is-vertical-center">
                     <div className="control">
                         <IconButton
-                            icon={termsChecked && "check"}
+                            icon={termsChecked ? "check" : ""}
                             onClick={() => setTermsChecked(!termsChecked)}
                             iconSize="small"
                             buttonSize="small"

@@ -44,7 +44,6 @@ module.exports = {
             },
             { $pull: { faves: item } }
         ).catch(err => {
-            console.log("error!!!!!:" + err);
             response.send(`ERROR WILL ROBINSON!: ${err}`);
         });
         let isDeleted = pullFave.nModified;

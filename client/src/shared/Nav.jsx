@@ -36,7 +36,7 @@ export default function Nav(props) {
                         <div class="navbar-end">
                             <div class="navbar-item">
                                 <div class="buttons">
-                                    {token && token.token ? (
+                                    {token && token.token && token.token.token ? (
                                         <>
                                             <button
                                                 onClick={() => {

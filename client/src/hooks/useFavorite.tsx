@@ -1,7 +1,9 @@
 import { useMemo, useReducer, useEffect } from "react";
 import useUserToken from "./useUserToken";
 
-export default function useFavorite(drink = {}, isFavorite) {
+type FavoriteState = "LOADING" | "PROCESSING" | "IS_FAVORITE" | "IS_NOT_FAVORITE";
+
+export default function useFavorite(drink = {}, isFavorite = false): [FavoriteState, () => void] {
     const [loggedInUser] = useUserToken();
     const favoriteItem = useMemo(
         () =>
@@ -18,7 +20,7 @@ export default function useFavorite(drink = {}, isFavorite) {
                     fetch("/api/faves", {
                         method: "PUT",
                         headers: {
-                            "Auth-Token": loggedInUser.token,
+                            "Auth-Token": loggedInUser.token.token,
                             "Content-Type": "application/json",
                         },
                         body: favoriteItem,
@@ -29,7 +31,7 @@ export default function useFavorite(drink = {}, isFavorite) {
                     fetch("/api/faves", {
                         method: "DELETE",
                         headers: {
-                            "Auth-Token": loggedInUser.token,
+                            "Auth-Token": loggedInUser.token.token,
                             "Content-Type": "application/json",
                         },
                         body: favoriteItem,
@@ -44,7 +46,7 @@ export default function useFavorite(drink = {}, isFavorite) {
                     return "PROCESSING";
             }
         },
-        isFavorite !== undefined ? (isFavorite ? "IS_FAVORITE" : "IS_NOT_FAVORITE") : "LOADING"
+        isFavorite !== undefined ? (isFavorite ? "IS_FAVORITE" : "IS_NOT_FAVORITE") : undefined
     );
     useEffect(() => {
         if (isFavorite === undefined) {
@@ -58,7 +60,7 @@ export default function useFavorite(drink = {}, isFavorite) {
                 .then(response => response.json())
                 .then(userData => {
                     if (userData) {
-                        if (userData.faves.map(favorite => JSON.stringify(favorite)).includes(JSON.stringify(drink))) {
+                        if (userData.faves.map((favorite: any) => JSON.stringify(favorite)).includes(JSON.stringify(drink))) {
                             dispatch("FINISHED_FAVORITE");
                         } else {
                             dispatch("FINISHED_UNFAVORITE");
