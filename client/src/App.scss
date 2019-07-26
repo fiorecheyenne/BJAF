@@ -9,16 +9,22 @@ $info: #f8e316;
     font-family: "Poiret One", cursive;
 }
 @import "../node_modules/bulma/bulma.sass";
+button {
+    @extend .button;
+}
+
+nav {
+    @extend .navbar;
+}
 
 #root {
     top: 0;
     height: 100vh;
-    overflow: hidden;
 }
 
 .bg {
     top: 0;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -50,13 +56,6 @@ $info: #f8e316;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-button {
-    @extend .button;
-}
-
-nav {
-    @extend .navbar;
 }
 
 #random {
@@ -104,19 +103,19 @@ nav {
     }
 }
 
-#basecardcol {
-    position: relative;
-    top: 5vh;
-}
+// #basecardcol {
+//     position: relative;
+//     top: 5vh;
+// }
 
-#basecardcol2 {
-    position: relative;
-    top: 6vh;
-}
+// #basecardcol2 {
+//     position: relative;
+//     top: 6vh;
+// }
 
 #randomizertitle {
     position: relative;
-    top: 8vh;
+    top: 5%;
 }
 
 .title {
@@ -172,10 +171,6 @@ nav {
 
     list-style: none;
     padding-inline-start: 0px;
-    // overflow: hidden;
-
-    // transform: rotate(0deg);
-    // transition: transform 0.7s linear;
 
     > * {
         display: block;
@@ -205,18 +200,16 @@ nav {
     }
 }
 .circleContainer {
-    @include on-circle($item-count: 10, $circle-size: 40em, $item-size: 8em);
-    margin: 5em auto 0;
-    // border: 1px solid;
-    // border-color: red;
+    @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
+    margin-top: 0px !important;
+    margin: 5em auto;
+    border: 1px solid;
+    border-color: red;
 
     transform: rotate(0deg);
     transition: transform 0.7s linear;
 
     .img {
-        // transition: 0.15s;
         transform: rotate(0deg);
-        // transition: transform 0.7s linear;
-        // max-height: 190px;
     }
 }
