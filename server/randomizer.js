@@ -36,6 +36,4 @@ const randomizer = option => {
     };
 };
 
-console.log("test =>", randomizer("coffee"));
-
 module.exports = randomizer;

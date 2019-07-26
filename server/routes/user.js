@@ -16,7 +16,6 @@ module.exports = {
             response.json({ username: "", faves: {} });
             return;
         }
-        console.log(payload, userToken);
         let loginUser = await User.findOne({
             _id: payload.payload,
         });

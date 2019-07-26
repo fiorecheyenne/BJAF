@@ -1,8 +1,17 @@
-import React, { useMemo } from "react";
-import useFavorite from "../hooks/useFavorite.tsx";
-import IconButton from "../shared/IconButton";
+import React, { useMemo, CSSProperties } from "react";
+import useFavorite from "../hooks/useFavorite";
+import IconButton from "./IconButton";
 
-const constraints = {
+type DrinkCardProps = {
+    base: any;
+    preset: any;
+    flavors: any;
+    milk: any;
+    variation: any;
+    isFavorite: any;
+};
+
+const constraints: CSSProperties = {
     maxWidth: "300px",
     position: "relative",
     // top: "1px",
@@ -10,24 +19,25 @@ const constraints = {
     display: "block",
 };
 
-const centerContainer = {
+const centerContainer: CSSProperties = {
     display: "flex",
     justifyContent: "center",
     marginBottom: "12px",
 };
 
-const favoritesButton = {
+const favoritesButton: CSSProperties = {
     position: "absolute",
     right: "0",
     top: "0",
     transform: "translate(-28%, 28%)",
 };
 
-const imageSize = {
+const imageSize: CSSProperties = {
     minWidth: "200px",
     maxHeight: "220px",
 };
-export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }) {
+
+export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }: DrinkCardProps) {
     const [favorite, toggleFavorite] = useFavorite(
         {
             base,
@@ -73,7 +83,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
                     <p>
                         <strong>Flavors</strong>:
                     </p>
-                    {flavors.map((flavor, key) => (
+                    {flavors.map((flavor: string, key: number) => (
                         <p key={key}> + {flavor}</p>
                     ))}
                 </>
@@ -98,7 +108,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
                 </>
             )}
             <div style={favoritesButton}>
-                <IconButton icon="heart" extras={buttonDisplayState} onClick={toggleFavorite} />
+                <IconButton icon="heart" extras={buttonDisplayState} onClick={() => toggleFavorite()} />
             </div>
         </div>
     );

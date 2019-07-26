@@ -65,7 +65,6 @@ export default function ResultsPage(props) {
                     console.warn(error);
                 });
         }
-        console.log(props.location);
     }, [refetch]);
 
     return (

@@ -1,9 +1,9 @@
 import { useMemo, useReducer, useEffect } from "react";
 import useUserToken from "./useUserToken";
 
-type FavoriteState = "LOADING" | "PROCESSING";
+type FavoriteState = "LOADING" | "PROCESSING" | "IS_FAVORITE" | "IS_NOT_FAVORITE";
 
-export default function useFavorite(drink = {}, isFavorite = false) {
+export default function useFavorite(drink = {}, isFavorite = false): [FavoriteState, () => void] {
     const [loggedInUser] = useUserToken();
     const favoriteItem = useMemo(
         () =>

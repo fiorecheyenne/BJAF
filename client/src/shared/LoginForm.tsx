@@ -1,7 +1,12 @@
 import React, { useState, useCallback } from "react";
 import useUserToken from "../hooks/useUserToken";
 
-export default function LoginForm({ onRequestSignupForm, onLoginCompleted }) {
+type LoginFormProps = {
+    onRequestSignupForm: () => void;
+    onLoginCompleted: () => void;
+};
+
+export default function LoginForm({ onRequestSignupForm, onLoginCompleted }: LoginFormProps) {
     const [, setUserToken] = useUserToken();
 
     const [processingLogin, setProcessingLogin] = useState(false);
