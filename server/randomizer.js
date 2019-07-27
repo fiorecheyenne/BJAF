@@ -24,7 +24,7 @@ const randomizer = option => {
             flavors = null;
         } else {
             preset = randomPreset ? randomPreset.name : null;
-            flavors = randomPresent ? randomPreset.flavor.split(", ") : null;
+            flavors = randomPreset ? randomPreset.flavor.split(", ") : null;
         }
     } else {
         let flavorCount = rand(2) + 1;
