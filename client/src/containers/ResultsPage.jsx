@@ -36,22 +36,7 @@ export default function ResultsPage(props) {
             fetch(base ? "/api/randomizer?base=" + base : "/api/randomizer")
                 .then(res => res.json())
                 .then(result => {
-                    let generatedResult = {
-                        base: result.randomizedBase,
-                        milk: result.randomizedMilk,
-                        variation: result.randomizedVariation,
-                    };
-                    if (typeof result.randomizedFlavor === "string") {
-                        generatedResult = {
-                            ...generatedResult,
-                            preset: result.randomizedFlavor,
-                        };
-                    } else {
-                        generatedResult = {
-                            ...generatedResult,
-                            flavors: result.randomizedFlavor,
-                        };
-                    }
+                    let generatedResult = result;
                     if (generatedResult.milk === "none") {
                         generatedResult.milk = undefined;
                     }

@@ -2,13 +2,20 @@ import React, { useMemo, CSSProperties } from "react";
 import useFavorite from "../hooks/useFavorite";
 import IconButton from "./IconButton";
 
+type Preset =
+    | string
+    | {
+          name: string;
+          flavor: string;
+      };
+
 type DrinkCardProps = {
-    base: any;
-    preset: any;
-    flavors: any;
-    milk: any;
-    variation: any;
-    isFavorite: any;
+    base: string;
+    preset?: Preset;
+    flavors?: string[];
+    milk?: string;
+    variation?: string;
+    isFavorite?: boolean;
 };
 
 const constraints: CSSProperties = {
@@ -80,20 +87,13 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
             <hr />
             {flavors && (
                 <>
-                    <p>
-                        <strong>Flavors</strong>:
-                    </p>
-                    {flavors.map((flavor: string, key: number) => (
-                        <p key={key}> + {flavor}</p>
-                    ))}
-                </>
-            )}
-            {preset && (
-                <>
-                    <p>
-                        <strong>Drink</strong>:
-                    </p>
-                    <p>{preset}</p>
+                    {preset && <p>{preset}:</p>}
+                    {flavors.map((flavor: Preset, key: number) => {
+                        if (typeof flavor === "string") {
+                            return <p key={key}> + {flavor}</p>;
+                        }
+                        return null;
+                    })}
                 </>
             )}
             {milk && (

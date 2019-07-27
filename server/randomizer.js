@@ -1,5 +1,7 @@
 const seedData = require("../seed.json");
 
+let rand = n => Math.floor(Math.random() * n);
+
 const randomizer = option => {
     const randomBase = function(obj) {
         let keys = Object.keys(obj);
@@ -12,27 +14,27 @@ const randomizer = option => {
         option = seedData[option + "-options"];
     }
 
-    if (Math.random() * 100 > 50) {
-        randomBlend = [];
-        randomPreset = option.presets[Math.floor(Math.random() * option.presets.length)];
-        randomBlend.push(randomPreset);
+    let preset = "";
+    let flavors = [];
+
+    if (rand(100) < 33) {
+        let randomPreset = option.presets[rand(option.presets.length)];
+        preset = randomPreset.name;
+        flavors = randomPreset.flavor.split(", ");
     } else {
-        randomBlend = [];
-        const x = [Math.random() * 3];
-
-        for (i = 0; i < x; i++) {
-            randomFlavors = [option.flavors[Math.floor(Math.random() * option.flavors.length)]];
-            randomBlend.push(...randomFlavors);
+        let flavorCount = rand(2) + 1;
+        for (let n = 0; n < flavorCount; n++) {
+            flavors.push(option.flavors[rand(option.flavors.length)]);
         }
-
-        randomBlend = new Array(...new Set(randomBlend));
+        flavors = new Array(...new Set(flavors));
     }
 
     return {
-        randomizedBase: option.base,
-        randomizedFlavor: randomBlend,
-        randomizedMilk: randomBase(option.milk),
-        randomizedVariation: randomBase(option.variation),
+        base: option.base,
+        flavors: flavors,
+        preset: preset,
+        milk: randomBase(option.milk),
+        variation: randomBase(option.variation),
     };
 };
 
