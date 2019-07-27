@@ -19,8 +19,13 @@ const randomizer = option => {
 
     if (rand(100) < 33) {
         let randomPreset = option.presets[rand(option.presets.length)];
-        preset = randomPreset.name;
-        flavors = randomPreset.flavor.split(", ");
+        if (typeof randomPreset === "string") {
+            preset = randomPreset;
+            flavors = null;
+        } else {
+            preset = randomPreset ? randomPreset.name : null;
+            flavors = randomPresent ? randomPreset.flavor.split(", ") : null;
+        }
     } else {
         let flavorCount = rand(2) + 1;
         for (let n = 0; n < flavorCount; n++) {
