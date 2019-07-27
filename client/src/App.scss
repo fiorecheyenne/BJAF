@@ -186,11 +186,6 @@ nav {
     top: 10%;
 }
 
-li {
-    @include size(mobile-only) {
-        width: 50%;
-    }
-}
 //randomizer page circle container and children
 @media only screen and (min-width: $laptop) {
     @mixin on-circle($item-count, $circle-size, $item-size) {
@@ -201,11 +196,6 @@ li {
         border-radius: 50%;
         list-style: none;
         padding-inline-start: 0px;
-
-        // @include size(mobile-only) {
-        //     width: 100%;
-        //     height: 100%;
-        // }
 
         > * {
             display: block;
@@ -240,14 +230,27 @@ li {
         margin: 5em auto;
         transform: rotate(0deg);
         transition: transform 0.7s linear;
-        // border-style: solid;
-        // border-color: red;
+        position: relative;
+        height: 90vh;
+        width: 100%;
 
-        @include size(mobile-only) {
-            border-radius: 0;
-        }
         .img {
             transform: rotate(0deg);
         }
     }
+}
+
+.boxcard {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-top: 0px;
+    position: absolute;
+}
+
+.basecenter {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 5em;
 }
