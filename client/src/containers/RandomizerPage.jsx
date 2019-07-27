@@ -4,13 +4,13 @@ import { relative } from "path";
 const basebox = {
     maxWidth: "200px",
     borderRadius: "50%",
-    marginTop: "10px",
+    marginTop: "1%",
     position: "absolute",
 };
 const position = {
     position: "relative",
 
-    height: "50em",
+    height: "90vh",
     width: "100%",
 };
 const center = {
@@ -48,7 +48,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=coffee"), 2000);
+                        // setTimeout(() => props.history.push("results?base=coffee"), 2000);
                     }}>
                     <img class="img" src="/image/coffee.png" alt="coffee" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -64,7 +64,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=tea"), 2000);
+                        // setTimeout(() => props.history.push("results?base=tea"), 2000);
                     }}>
                     <img class="img" src="/image/tea.png" alt="tea" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -80,7 +80,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=lemonade"), 2000);
+                        // setTimeout(() => props.history.push("results?base=lemonade"), 2000);
                     }}>
                     <img class="img" src="/image/lemonade.png" alt="lemonade" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -97,7 +97,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=rebel"), 2000);
+                        // setTimeout(() => props.history.push("results?base=rebel"), 2000);
                     }}>
                     <img class="img" src="/image/rebel.png" alt="rebel" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -114,7 +114,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=smoothie"), 2000);
+                        // setTimeout(() => props.history.push("results?base=smoothie"), 2000);
                     }}>
                     <img class="img" src="/image/smoothie.png" alt="smoothie" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -131,7 +131,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=frost"), 2000);
+                        // setTimeout(() => props.history.push("results?base=frost"), 2000);
                     }}>
                     <img class="img" src="/image/frost.png" alt="frost" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -148,7 +148,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=soda"), 2000);
+                        // setTimeout(() => props.history.push("results?base=soda"), 2000);
                     }}>
                     <img class="img" src="/image/soda.png" alt="soda" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -165,7 +165,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=chai"), 2000);
+                        // setTimeout(() => props.history.push("results?base=chai"), 2000);
                     }}>
                     <img class="img" src="/image/chai.png" clat="chai" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -182,7 +182,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=cocoa"), 2000);
+                        // setTimeout(() => props.history.push("results?base=cocoa"), 2000);
                     }}>
                     <img class="img" src="/image/cocoa.png" alt="cocoa" style={imageSize} />
                     <span class="title is-4" style={center}>
@@ -198,7 +198,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        setTimeout(() => props.history.push("results?base=mocha"), 2000);
+                        // setTimeout(() => props.history.push("results?base=mocha"), 2000);
                     }}>
                     <img class="img" src="/image/mocha.png" alt="mocha" style={imageSize} />
                     <span class="title is-4" style={center}>

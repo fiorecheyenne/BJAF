@@ -1,21 +1,62 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 $navbar-background-color: transparent;
 $primary: #156299;
 $link: #654791;
 $info: #f8e316;
+$dark: hsl(0, 0%, 10%);
+$font-family: "Raleway", sans-serif;
+$button-padding-horizontal: 1em;
 // $body-overflow-x: hidden;
 $body-overflow-y: hidden;
-// $link: #7e49c9;
+
 .title {
     font-family: "Poiret One", cursive;
 }
 @import "../node_modules/bulma/bulma.sass";
 
+// $mobileS: 320px;
+// $mobileM: 375px;
+// $mobileL: 425px;
+// $tablet: 768px;
+$laptop: 1025px;
+// $laptopL: 1440px;
+// $desktop: 2560px;
+
+//mix in for media queries
+@mixin size($size) {
+    @if $size == mobile-only {
+        @media (max-width: 599px) {
+            @content;
+        }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) {
+            @content;
+        }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) {
+            @content;
+        }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+}
 button {
     @extend .button;
 }
-
+.button {
+    margin: 5px;
+    cursor: pointer;
+}
 nav {
     @extend .navbar;
 }
@@ -24,12 +65,7 @@ nav {
     top: 0;
     height: 100vh;
 }
-// html,
-// body {
-//     top: 0;
-//     height: 100vh;
-//     width: 100vw;
-// }
+
 .bg {
     top: 0;
     height: 100%;
@@ -71,45 +107,36 @@ nav {
     color: #ffffff;
 }
 
-#randombig {
-    font-size: 10em;
-    color: #575757;
-}
-#appname {
-    font-family: "Poiret One", cursive;
-    font-weight: bolder;
-    font-size: 35px;
-}
 #divleft {
     position: relative;
     top: 5%;
-
     color: white;
 }
-.mixtly {
-    font-size: 65px;
+#mixtly {
+    font-size: 100px;
     font-family: "Poiret One", cursive;
     font-weight: bolder;
-    letter-spacing: 2rem;
-}
-.button {
-    margin: 10px;
-}
-.buttongroup {
-    left: 5%;
+    letter-spacing: 1rem;
+    text-align: center;
+
+    @include size(mobile-only) {
+        font-size: 40px;
+        letter-spacing: 0.5em;
+        margin-left: 10px;
+    }
 }
 
 #randomizerbox {
     position: relative;
     top: 20vh;
 }
-#full {
-    height: 100%;
-    .is-vertical-center {
-        display: flex;
-        align-items: center;
-    }
-}
+// #full {
+//     height: 100%;
+//     .is-vertical-center {
+//         display: flex;
+//         align-items: center;
+//     }
+// }
 
 #randomizertitle {
     position: relative;
@@ -140,12 +167,6 @@ nav {
     margin: 7px 0 6px 0;
 }
 
-#resultcard {
-    position: relative;
-    top: 10vh;
-    left: 50vh;
-}
-
 #randomizeagainbutton {
     min-width: 250px;
 }
@@ -158,53 +179,68 @@ nav {
     top: 10%;
 }
 
-//randomizer page circle container and children
-@mixin on-circle($item-count, $circle-size, $item-size) {
-    position: relative;
-
-    width: $circle-size;
-    height: $circle-size;
-    padding: 0px;
-    border-radius: 50%;
-
-    list-style: none;
-    padding-inline-start: 0px;
-
-    > * {
-        display: block;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-
-        transform: rotate(0deg);
-        transition: transform 0.7s linear;
-        width: $item-size;
-        height: $item-size;
-        margin: -($item-size / 2);
-
-        -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
-        -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
-        box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
-
-        $angle: (360 / $item-count);
-        $rot: 0;
-
-        @for $i from 1 through $item-count {
-            &:nth-of-type(#{$i}) {
-                transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
-            }
-            $rot: $rot + $angle;
-        }
+li {
+    @include size(mobile-only) {
+        width: 50%;
     }
 }
-.circleContainer {
-    @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
-    margin-top: 0px !important;
-    margin: 5em auto;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
+//randomizer page circle container and children
+@media only screen and (min-width: $laptop) {
+    @mixin on-circle($item-count, $circle-size, $item-size) {
+        position: relative;
+        width: $circle-size;
+        height: $circle-size;
+        padding: 0px;
+        border-radius: 50%;
+        list-style: none;
+        padding-inline-start: 0px;
 
-    .img {
+        // @include size(mobile-only) {
+        //     width: 100%;
+        //     height: 100%;
+        // }
+
+        > * {
+            display: block;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: rotate(0deg);
+            transition: transform 0.7s linear;
+            width: $item-size;
+            height: $item-size;
+            margin: -($item-size / 2);
+
+            -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+            -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+            box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+
+            $angle: (360 / $item-count);
+            $rot: 0;
+
+            @for $i from 1 through $item-count {
+                &:nth-of-type(#{$i}) {
+                    transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+                }
+                $rot: $rot + $angle;
+            }
+        }
+    }
+
+    .circleContainer {
+        @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
+        margin-top: 0px !important;
+        margin: 5em auto;
         transform: rotate(0deg);
+        transition: transform 0.7s linear;
+        border-style: solid;
+        border-color: red;
+
+        @include size(mobile-only) {
+            border-radius: 0;
+        }
+        .img {
+            transform: rotate(0deg);
+        }
     }
 }

@@ -13,6 +13,11 @@ const buttonPadding = {
     margin: "0px",
 };
 
+const cardProps = {
+    position: "relative",
+    top: "10vh",
+    left: "50vh",
+};
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
     const { base } = props.location;
@@ -74,7 +79,7 @@ export default function ResultsPage(props) {
                 YOUR DRINK:
             </p>
             <div style={centerConstraints} id="resultdiv">
-                {result && <DrinkCard id="resultcard" {...result} />}
+                {result && <DrinkCard style={cardProps} {...result} />}
             </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
