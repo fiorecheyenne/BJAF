@@ -13,13 +13,14 @@ export default function Nav(props) {
             <nav class="navbar" role="navigation">
                 <div class="navbar-brand">
                     <Link to="/">
-                        <a class="navbar-item">
+                        <a href="#" class="navbar-item">
                             <i class="fas fa-random" id="random" />
                             <span id="appname">MIXTLY</span>
                         </a>
                     </Link>
                     {!signupVisible && (
                         <a
+                            href="#"
                             role="button"
                             class={"navbar-burger" + (mobileNavActive ? " is-active" : "")}
                             aria-label="menu"
@@ -36,7 +37,7 @@ export default function Nav(props) {
                         <div class="navbar-end">
                             <div class="navbar-item">
                                 <div class="buttons">
-                                    {token && token.token ? (
+                                    {token && token.token && token.token.token ? (
                                         <>
                                             <button
                                                 onClick={() => {

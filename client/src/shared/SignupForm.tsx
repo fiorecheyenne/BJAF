@@ -2,9 +2,14 @@ import React, { useState, useCallback } from "react";
 import IconButton from "./IconButton";
 import useUserToken from "../hooks/useUserToken";
 
+type SignupFormProps = {
+    onRequestLoginForm: () => void;
+    onSignupCompleted: () => void;
+};
+
 const emailMatch = /.{2,}@.{2,}\..{2,}/;
 
-export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
+export default function SignupForm({ onRequestLoginForm, onSignupCompleted }: SignupFormProps) {
     const [, setUserToken] = useUserToken();
 
     const [username, setUsername] = useState("");
@@ -38,6 +43,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
     );
 
     const [processingSignup, setProcessingSignup] = useState(false);
+    const [serverIssue, setServerIssue] = useState("");
 
     const onSignupFormDidSubmit = useCallback(
         event => {
@@ -55,15 +61,17 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
             })
                 .then(data => data.json())
                 .then(createdUser => {
+                    if (!createdUser.success) {
+                        throw createdUser;
+                    }
                     setUserToken(createdUser);
+                    onSignupCompleted && onSignupCompleted();
                 })
                 .catch(err => {
-                    console.warn(err);
-                    // TODO: Show server signup error message to end user
+                    setServerIssue("There was an issue trying to create your account.");
                 })
                 .finally(() => {
                     setProcessingSignup(false);
-                    onSignupCompleted && onSignupCompleted();
                 });
         },
         [processingSignup, username, email, password, validateSignupInfo, setUserToken, onSignupCompleted]
@@ -133,7 +141,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
                 <div className="field is-grouped is-vertical-center">
                     <div className="control">
                         <IconButton
-                            icon={termsChecked && "check"}
+                            icon={termsChecked ? "check" : ""}
                             onClick={() => setTermsChecked(!termsChecked)}
                             iconSize="small"
                             buttonSize="small"
@@ -141,19 +149,20 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }) {
                     </div>
                     <div className="control">
                         <p>
-                            I agree to the <a href="">Terms and Conditions</a>.
+                            I agree to the <a href="https://en.wikipedia.org/wiki/Terms_of_service">Terms and Conditions</a>.
                         </p>
                     </div>
                 </div>
                 {triggerValidation && !termsChecked && (
                     <p className="help is-danger">Please agree to the terms and conditions to create your account.</p>
                 )}
+                {serverIssue.length > 0 ? <p className="has-text-danger">{serverIssue}</p> : ""}
                 <hr />
                 <div className="field is-grouped is-grouped-right is-vertical-center">
                     {onRequestLoginForm && (
                         <div className="control">
                             <a
-                                href=""
+                                href="#"
                                 onClick={event => {
                                     event.preventDefault();
                                     onRequestLoginForm();

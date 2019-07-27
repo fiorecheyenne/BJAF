@@ -1,6 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default function Modal({ children, isVisible, onClose }) {
+export type ModalProps = {
+    children: ReactNode;
+    isVisible: boolean;
+    onClose?: () => void;
+};
+
+export default function Modal({ children, isVisible, onClose }: ModalProps) {
     return (
         <div className={`modal ${isVisible && "is-active"}`}>
             <div className="modal-background" onClick={onClose} />

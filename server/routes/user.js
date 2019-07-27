@@ -9,10 +9,13 @@ const tokenKey = process.env.TOKEN_KEY;
 module.exports = {
     GET: async function(request, response) {
         // receive Token
-        let userToke = request.get("Auth-Token");
+        let userToken = request.get("Auth-Token");
         // Decode Token
-        let payload = decoder(userToke);
-        // find a user by _id:
+        let payload = decoder(userToken);
+        if (!payload) {
+            response.json({ username: "", faves: {} });
+            return;
+        }
         let loginUser = await User.findOne({
             _id: payload.payload,
         });
@@ -22,17 +25,33 @@ module.exports = {
     },
 
     POST: async function(request, response) {
-        let salt = bcrypt.genSaltSync(10);
-        let hash = bcrypt.hashSync(request.body.password, salt);
-        var userData = request.body;
-        var newUser = await User.create({
-            name: userData.name,
-            email: userData.email,
-            username: userData.username,
-            password: hash,
-            faves: userData.faves,
-        });
-        response.send(tokenizer(newUser));
+        try {
+            let salt = bcrypt.genSaltSync(10);
+            let hash = bcrypt.hashSync(request.body.password, salt);
+            var userData = request.body;
+            var newUser = await User.create({
+                name: userData.name,
+                email: userData.email,
+                username: userData.username,
+                password: hash,
+                faves: userData.faves,
+            });
+            response
+                .send({
+                    success: true,
+                    errorMessage: "",
+                    token: tokenizer(newUser),
+                })
+                .end();
+        } catch (err) {
+            response
+                .send({
+                    success: false,
+                    errorMessage: "Was unable to create the user",
+                    token: null,
+                })
+                .end();
+        }
     },
 
     DELETE: function(request, response) {

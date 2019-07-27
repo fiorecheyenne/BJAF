@@ -1,8 +1,24 @@
-import React, { useMemo } from "react";
+import React, { useMemo, CSSProperties } from "react";
 import useFavorite from "../hooks/useFavorite";
-import IconButton from "../shared/IconButton";
+import IconButton from "./IconButton";
 
-const constraints = {
+type Preset =
+    | string
+    | {
+          name: string;
+          flavor: string;
+      };
+
+type DrinkCardProps = {
+    base: string;
+    preset?: Preset;
+    flavors?: string[];
+    milk?: string;
+    variation?: string;
+    isFavorite?: boolean;
+};
+
+const constraints: CSSProperties = {
     maxWidth: "300px",
     position: "relative",
     // top: "1px",
@@ -10,24 +26,25 @@ const constraints = {
     display: "block",
 };
 
-const centerContainer = {
+const centerContainer: CSSProperties = {
     display: "flex",
     justifyContent: "center",
     marginBottom: "12px",
 };
 
-const favoritesButton = {
+const favoritesButton: CSSProperties = {
     position: "absolute",
     right: "0",
     top: "0",
     transform: "translate(-28%, 28%)",
 };
 
-const imageSize = {
+const imageSize: CSSProperties = {
     minWidth: "200px",
     maxHeight: "220px",
 };
-export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }) {
+
+export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }: DrinkCardProps) {
     const [favorite, toggleFavorite] = useFavorite(
         {
             base,
@@ -70,20 +87,13 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
             <hr />
             {flavors && (
                 <>
-                    <p>
-                        <strong>Flavors</strong>:
-                    </p>
-                    {flavors.map((flavor, key) => (
-                        <p key={key}> + {flavor}</p>
-                    ))}
-                </>
-            )}
-            {preset && (
-                <>
-                    <p>
-                        <strong>Drink</strong>:
-                    </p>
-                    <p>{preset}</p>
+                    {preset && <p>{preset}:</p>}
+                    {flavors.map((flavor: Preset, key: number) => {
+                        if (typeof flavor === "string") {
+                            return <p key={key}> + {flavor}</p>;
+                        }
+                        return null;
+                    })}
                 </>
             )}
             {milk && (
@@ -98,7 +108,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
                 </>
             )}
             <div style={favoritesButton}>
-                <IconButton icon="heart" extras={buttonDisplayState} onClick={toggleFavorite} />
+                <IconButton icon="heart" extras={buttonDisplayState} onClick={() => toggleFavorite()} />
             </div>
         </div>
     );

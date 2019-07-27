@@ -40,7 +40,7 @@
             },
             {
                 "name": "Birthday Cake",
-                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+                "flavor": "Almond Roca, White Chocolate,  Confetti Sprinkles"
             },
             {
                 "name": "Black Forest",
@@ -60,7 +60,7 @@
             },
             {
                 "name": "Cinnamon Dolce",
-                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, English Toffee, Cinnamon Sprinkles"
             },
             {
                 "name": "Cinnamon Roll",
@@ -76,7 +76,7 @@
             },
             {
                 "name": "Cookies & Cream",
-                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+                "flavor": "White Chocolate, White Coffee Breve,  Chocolate Drizzle"
             },
             {
                 "name": "Cotton Candy",
@@ -120,7 +120,7 @@
             },
             {
                 "name": "Golden Eagle",
-                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+                "flavor": "Vanilla, Caramel  Caramel Drizzle"
             },
             {
                 "name": "Grasshoper",
@@ -176,7 +176,7 @@
             },
             {
                 "name": "Snickerdoodle",
-                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate  Cinnamon Sprinkles"
             },
             {
                 "name": "Sugar Cookie",
@@ -246,15 +246,15 @@
         "base": "Tea",
         "presets": [
             {
-                "name": "Earl Grey Tea",
+                "name": "Earl Grey",
                 "flavor": ""
             },
             {
-                "name": "Hot Cinnamon Spice Tea",
+                "name": "Hot Cinnamon Spice",
                 "flavor": ""
             },
             {
-                "name": "Paris Tea",
+                "name": "Paris",
                 "flavor": ""
             },
             {
@@ -270,7 +270,7 @@
                 "flavor": "Blackberry, Raspberry, Almond"
             },
             {
-                "name": "Decaf Ceylon Tea",
+                "name": "Decaf Ceylon",
                 "flavor": ""
             },
             {
@@ -279,7 +279,7 @@
             },
             {
                 "name": "Dragon Slayer",
-                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+                "flavor": "Raspberry, Blue Raspberry  Blackberry Drizzle"
             },
             {
                 "name": "Dutch Mojito",
@@ -287,7 +287,7 @@
             },
             {
                 "name": "Eclipse",
-                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+                "flavor": "Peach, Passion Fruit  Blackberry, Blue Raspberry Drizzle"
             },
             {
                 "name": "Electric Berry",
@@ -299,7 +299,7 @@
             },
             {
                 "name": "Freedom",
-                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+                "flavor": "Vanilla  Blue Rapberry, Raspberry, Raspberry Drizzle"
             },
             {
                 "name": "Hawaiian",
@@ -363,7 +363,7 @@
             },
             {
                 "name": "Shark Attack",
-                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+                "flavor": "Blue Raspberry, Coconut, Lime  Pomegranate Drizzle"
             },
             {
                 "name": "Starry Night",
@@ -474,7 +474,7 @@
             },
             {
                 "name": "Dinosaur Egg",
-                "flavor": "Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
+                "flavor": "Blue Raspberry  Strawberry, White Chocolate, Almond Drizzle"
             },
             {
                 "name": "Double Rainbro",
@@ -482,7 +482,7 @@
             },
             {
                 "name": "Dragon Slayer",
-                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+                "flavor": "Raspberry, Blue Raspberry  Blackberry Drizzle"
             },
             {
                 "name": "Dutch Mojito",
@@ -490,7 +490,7 @@
             },
             {
                 "name": "Eclipse",
-                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+                "flavor": "Peach, Passion Fruit  Blackberry, Blue Raspberry Drizzle"
             },
             {
                 "name": "Electric Berry",
@@ -502,7 +502,7 @@
             },
             {
                 "name": "Freedom",
-                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+                "flavor": "Vanilla  Blue Rapberry, Raspberry, Raspberry Drizzle"
             },
             {
                 "name": "Gummy Bear",
@@ -582,7 +582,7 @@
             },
             {
                 "name": "Shark Attack",
-                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+                "flavor": "Blue Raspberry, Coconut, Lime  Pomegranate Drizzle"
             },
             {
                 "name": "Starry Night",
@@ -683,7 +683,7 @@
             },
             {
                 "name": "Dragon Slayer",
-                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+                "flavor": "Raspberry, Blue Raspberry  Blackberry Drizzle"
             },
             {
                 "name": "Dutch Mojito",
@@ -691,7 +691,7 @@
             },
             {
                 "name": "Eclipse",
-                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+                "flavor": "Peach, Passion Fruit  Blackberry, Blue Raspberry Drizzle"
             },
             {
                 "name": "Electric Berry",
@@ -763,7 +763,7 @@
             },
             {
                 "name": "Shark Attack",
-                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+                "flavor": "Blue Raspberry, Coconut, Lime  Pomegranate Drizzle"
             },
             {
                 "name": "Starry Night",
@@ -946,7 +946,7 @@
             },
             {
                 "name": "Birthday Cake",
-                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+                "flavor": "Almond Roca, White Chocolate  Confetti Sprinkles"
             },
             {
                 "name": "Black Forest",
@@ -966,7 +966,7 @@
             },
             {
                 "name": "Cinnamon Dolce",
-                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, English Toffee  Cinnamon Sprinkles"
             },
             {
                 "name": "Cinnamon Roll",
@@ -982,7 +982,7 @@
             },
             {
                 "name": "Cookies & Cream",
-                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+                "flavor": "White Chocolate, White Coffee Breve,  Chocolate Drizzle"
             },
             {
                 "name": "Cotton Candy",
@@ -1026,7 +1026,7 @@
             },
             {
                 "name": "Golden Eagle",
-                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+                "flavor": "Vanilla, Caramel  Caramel Drizzle"
             },
             {
                 "name": "Grasshoper",
@@ -1082,7 +1082,7 @@
             },
             {
                 "name": "Snickerdoodle",
-                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate  Cinnamon Sprinkles"
             },
             {
                 "name": "Sugar Cookie",
@@ -1181,7 +1181,7 @@
             },
             {
                 "name": "Dinosaur Egg",
-                "flavor": "Blue Raspberry W/ Strawberry, White Chocolate, Almond Drizzle"
+                "flavor": "Blue Raspberry  Strawberry, White Chocolate, Almond Drizzle"
             },
             {
                 "name": "Double Rainbro",
@@ -1189,7 +1189,7 @@
             },
             {
                 "name": "Dragon Slayer",
-                "flavor": "Raspberry, Blue Raspberry W/ Blackberry Drizzle"
+                "flavor": "Raspberry, Blue Raspberry  Blackberry Drizzle"
             },
             {
                 "name": "Dutch Mojito",
@@ -1197,7 +1197,7 @@
             },
             {
                 "name": "Eclipse",
-                "flavor": "Peach, Passion Fruit W/ Blackberry, Blue Raspberry Drizzle"
+                "flavor": "Peach, Passion Fruit  Blackberry, Blue Raspberry Drizzle"
             },
             {
                 "name": "Electric Berry",
@@ -1209,7 +1209,7 @@
             },
             {
                 "name": "Freedom",
-                "flavor": "Vanilla W/ Blue Rapberry, Raspberry, Raspberry Drizzle"
+                "flavor": "Vanilla  Blue Rapberry, Raspberry, Raspberry Drizzle"
             },
             {
                 "name": "Gummy Bear",
@@ -1289,7 +1289,7 @@
             },
             {
                 "name": "Shark Attack",
-                "flavor": "Blue Raspberry, Coconut, Lime W/ Pomegranate Drizzle"
+                "flavor": "Blue Raspberry, Coconut, Lime  Pomegranate Drizzle"
             },
             {
                 "name": "Starry Night",
@@ -1406,7 +1406,7 @@
             },
             {
                 "name": "Birthday Cake",
-                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+                "flavor": "Almond Roca, White Chocolate  Confetti Sprinkles"
             },
             {
                 "name": "Black Forest",
@@ -1426,7 +1426,7 @@
             },
             {
                 "name": "Cinnamon Dolce",
-                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, English Toffee  Cinnamon Sprinkles"
             },
             {
                 "name": "Cinnamon Roll",
@@ -1442,7 +1442,7 @@
             },
             {
                 "name": "Cookies & Cream",
-                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+                "flavor": "White Chocolate, White Coffee Breve,  Chocolate Drizzle"
             },
             {
                 "name": "Cotton Candy",
@@ -1486,7 +1486,7 @@
             },
             {
                 "name": "Golden Eagle",
-                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+                "flavor": "Vanilla, Caramel  Caramel Drizzle"
             },
             {
                 "name": "Grasshoper",
@@ -1542,7 +1542,7 @@
             },
             {
                 "name": "Snickerdoodle",
-                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate  Cinnamon Sprinkles"
             },
             {
                 "name": "Sugar Cookie",
@@ -1669,7 +1669,7 @@
             },
             {
                 "name": "Birthday Cake",
-                "flavor": "Almond Roca, White Chocolate w/ Confetti Sprinkles"
+                "flavor": "Almond Roca, White Chocolate  Confetti Sprinkles"
             },
             {
                 "name": "Black Forest",
@@ -1689,7 +1689,7 @@
             },
             {
                 "name": "Cinnamon Dolce",
-                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, English Toffee  Cinnamon Sprinkles"
             },
             {
                 "name": "Cinnamon Roll",
@@ -1705,7 +1705,7 @@
             },
             {
                 "name": "Cookies & Cream",
-                "flavor": "White Chocolate, White Coffee Breve, w/ Chocolate Drizzle"
+                "flavor": "White Chocolate, White Coffee Breve,  Chocolate Drizzle"
             },
             {
                 "name": "Cotton Candy",
@@ -1749,7 +1749,7 @@
             },
             {
                 "name": "Golden Eagle",
-                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+                "flavor": "Vanilla, Caramel  Caramel Drizzle"
             },
             {
                 "name": "Grasshoper",
@@ -1805,7 +1805,7 @@
             },
             {
                 "name": "Snickerdoodle",
-                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate w/ Cinnamon Sprinkles"
+                "flavor": "Cinnamon, Chocolate Macadamia Nut, White Chocolate  Cinnamon Sprinkles"
             },
             {
                 "name": "Sugar Cookie",

@@ -11,5 +11,4 @@ module.exports = function() {
     Options.createCollection();
     const Users = require("./models/User");
     Users.createCollection();
-    console.log("Database initialized");
 };

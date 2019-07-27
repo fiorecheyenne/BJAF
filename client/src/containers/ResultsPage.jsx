@@ -15,7 +15,6 @@ const buttonPadding = {
 
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
-    const { base } = props.location;
     const params = useMemo(() => {
         let params = {};
         props.location.search
@@ -26,7 +25,7 @@ export default function ResultsPage(props) {
                 params[key] = value;
             });
         return params;
-    }, []);
+    }, [props.location.search]);
 
     const [refetch, setRefetch] = useState(true);
 
@@ -37,22 +36,7 @@ export default function ResultsPage(props) {
             fetch(base ? "/api/randomizer?base=" + base : "/api/randomizer")
                 .then(res => res.json())
                 .then(result => {
-                    let generatedResult = {
-                        base: result.randomizedBase,
-                        milk: result.randomizedMilk,
-                        variation: result.randomizedVariation,
-                    };
-                    if (typeof result.randomizedFlavor === "string") {
-                        generatedResult = {
-                            ...generatedResult,
-                            preset: result.randomizedFlavor,
-                        };
-                    } else {
-                        generatedResult = {
-                            ...generatedResult,
-                            flavors: result.randomizedFlavor,
-                        };
-                    }
+                    let generatedResult = result;
                     if (generatedResult.milk === "none") {
                         generatedResult.milk = undefined;
                     }
@@ -65,7 +49,6 @@ export default function ResultsPage(props) {
                     console.warn(error);
                 });
         }
-        console.log(props.location);
     }, [refetch]);
 
     return (
