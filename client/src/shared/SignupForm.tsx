@@ -149,7 +149,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }: Si
                     </div>
                     <div className="control">
                         <p>
-                            I agree to the <a href="">Terms and Conditions</a>.
+                            I agree to the <a href="https://en.wikipedia.org/wiki/Terms_of_service">Terms and Conditions</a>.
                         </p>
                     </div>
                 </div>
@@ -162,7 +162,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }: Si
                     {onRequestLoginForm && (
                         <div className="control">
                             <a
-                                href=""
+                                href="#"
                                 onClick={event => {
                                     event.preventDefault();
                                     onRequestLoginForm();

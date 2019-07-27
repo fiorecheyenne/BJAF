@@ -20,6 +20,7 @@ export default function Nav(props) {
                     </Link>
                     {!signupVisible && (
                         <a
+                            href="#"
                             role="button"
                             class={"navbar-burger" + (mobileNavActive ? " is-active" : "")}
                             aria-label="menu"
