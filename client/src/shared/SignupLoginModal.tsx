@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal, { ModalProps } from "./Modal";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
