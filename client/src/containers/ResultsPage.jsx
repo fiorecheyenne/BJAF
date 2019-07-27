@@ -15,7 +15,6 @@ const buttonPadding = {
 
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
-    const { base } = props.location;
     const params = useMemo(() => {
         let params = {};
         props.location.search
@@ -26,7 +25,7 @@ export default function ResultsPage(props) {
                 params[key] = value;
             });
         return params;
-    }, []);
+    }, [props.location.search]);
 
     const [refetch, setRefetch] = useState(true);
 

@@ -16,7 +16,7 @@ export default function useLocalStorage(key: string, initialValue = {}) {
             }
             setStoredValue(newValue);
         },
-        [storedValue, setStoredValue]
+        [key, setStoredValue]
     );
     return [storedValue, setValue];
 }
