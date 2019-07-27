@@ -870,7 +870,33 @@
     },
     "smoothie-options": {
         "base": "Smoothie",
-        "presets": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
+        "presets": [
+            { "name": "Blueberry Pomegranate", "flavor": "Blueberry, Pomegranate" },
+            {
+                "name": "Caramel Apple",
+                "flavor": "Caramel Apple"
+            },
+            {
+                "name": "Green Apple",
+                "flavor": "Green Apple"
+            },
+            {
+                "name": "Mango",
+                "flavor": "Mango"
+            },
+            {
+                "name": "Peach",
+                "flavor": "Peach"
+            },
+            {
+                "name": "Strawberry",
+                "flavor": "Strawberry"
+            },
+            {
+                "name": "Wildberry",
+                "flavor": "Wildberry"
+            }
+        ],
         "flavors": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
         "milk": ["none"],
         "variation": ["none"]
