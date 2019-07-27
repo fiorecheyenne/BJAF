@@ -12,6 +12,10 @@
         -webkit-transform-origin: 50% 50%;
         opacity: 0;
     }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @-webkit-keyframes rotateChild {

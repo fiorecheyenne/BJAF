@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { relative } from "path";
 
 const basebox = {
     maxWidth: "200px",
@@ -48,7 +47,7 @@ export default function RandomizerPage(props) {
                         event.preventDefault();
                         setShouldAnimationRotate(!shouldAnimateRotation);
                         setShouldChildAnimationRotate(!shouldChildAnimate);
-                        // setTimeout(() => props.history.push("results?base=coffee"), 2000);
+                        setTimeout(() => props.history.push("results?base=coffee"), 2000);
                     }}>
                     <img class="img" src="/image/coffee.png" alt="coffee" style={imageSize} />
                     <span class="title is-4" style={center}>

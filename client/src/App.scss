@@ -17,6 +17,13 @@ $body-overflow-y: hidden;
     font-family: "Poiret One", cursive;
 }
 @import "../node_modules/bulma/bulma.sass";
+button {
+    @extend .button;
+}
+
+nav {
+    @extend .navbar;
+}
 
 // $mobileS: 320px;
 // $mobileM: 375px;
