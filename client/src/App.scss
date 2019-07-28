@@ -11,7 +11,7 @@ $dark: hsl(0, 0%, 10%);
 $font-family: "Raleway", sans-serif;
 $button-padding-horizontal: 1em;
 // $body-overflow-x: hidden;
-$body-overflow-y: hidden;
+// $body-overflow-y: hidden;
 
 .title {
     font-family: "Poiret One", cursive;
@@ -87,7 +87,8 @@ nav {
 
 .basebg {
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 40px;
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -228,15 +229,74 @@ nav {
         @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
         margin-top: 0px !important;
         margin: 5em auto;
+        margin-bottom: 0;
         transform: rotate(0deg);
         transition: transform 0.7s linear;
         position: relative;
-        height: 90vh;
+        height: calc(90vh - 40px);
         width: 100%;
 
         .img {
             transform: rotate(0deg);
         }
+
+        span.title {
+            margin-left: -20px;
+            width: 128px;
+        }
+    }
+}
+
+@media only screen and (max-width: $laptop) {
+    // $body-overflow-y: scroll;
+    main {
+        overflow: scroll !important;
+    }
+    ul.circleContainer {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        z-index: 10;
+        min-height: 0;
+
+        li.boxcard {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-content: center;
+            justify-items: center;
+            border-radius: 10px;
+            @media only screen and (max-width: $tablet) {
+                min-width: calc(100vw - 4rem);
+                margin: 2rem;
+            }
+            @media only screen and (min-width: $tablet) {
+                min-width: calc(50vw - 2rem);
+                margin: 1rem;
+            }
+            img.img {
+                display: block;
+                width: 100%;
+            }
+            // overflow flex fix
+            min-height: 0;
+        }
+
+        span.title {
+            color: #222;
+            text-align: center;
+            display: block;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .navbar-menu.is-active {
+        box-shadow: none;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
 }
 
