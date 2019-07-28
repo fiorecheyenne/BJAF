@@ -6,4 +6,5 @@ module.exports = {
     resolvers: require("./resolvers"),
     context: require("./context"),
     playground: true,
+    introspection: true,
 };

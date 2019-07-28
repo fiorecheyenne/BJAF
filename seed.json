@@ -839,15 +839,42 @@
     "chai-options": {
         "base": "Chai",
         "presets": [
-            "Christmas Morning",
-            "Cinnamon Dolce",
-            "Cinnamon Roll",
-            "Dirty Chai",
-            "French Toast",
-            "French Vanilla Bean",
-            "Golden Eagle",
-            "Horchata",
-            "White Zombie"
+            {
+                "name": "Christmas Morning",
+                "flavor": "White Chocolaate Chai"
+            },
+            {
+                "name": "Cinnamon Dolce",
+                "flavor": "Cinnamon, English Toffee w/ Cinnamon Sprinkles"
+            },
+            {
+                "name": "Cinnamon Roll",
+                "flavor": "Cinnamon, White Chocolate"
+            },
+            {
+                "name": "Dirty Chai",
+                "flavor": "Traditional Chai with Added Shots"
+            },
+            {
+                "name": "French Toast",
+                "flavor": "White Chocolate, Brown Sugar Cinnamon"
+            },
+            {
+                "name": "French Vanilla Bean",
+                "flavor": "Vanilla, Caramel"
+            },
+            {
+                "name": "Golden Eagle",
+                "flavor": "Vanilla, Caramel w/ Caramel Drizzle"
+            },
+            {
+                "name": "Horchata",
+                "flavor": "Caramel, White Chocolate, Cinnamon"
+            },
+            {
+                "name": "White Zombie",
+                "flavor": "White Chocolate, Vanilla"
+            }
         ],
         "flavors": [
             "Almond Roca",
@@ -870,7 +897,33 @@
     },
     "smoothie-options": {
         "base": "Smoothie",
-        "presets": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
+        "presets": [
+            { "name": "Blueberry Pomegranate", "flavor": "Blueberry, Pomegranate" },
+            {
+                "name": "Caramel Apple",
+                "flavor": "Caramel Apple"
+            },
+            {
+                "name": "Green Apple",
+                "flavor": "Green Apple"
+            },
+            {
+                "name": "Mango",
+                "flavor": "Mango"
+            },
+            {
+                "name": "Peach",
+                "flavor": "Peach"
+            },
+            {
+                "name": "Strawberry",
+                "flavor": "Strawberry"
+            },
+            {
+                "name": "Wildberry",
+                "flavor": "Wildberry"
+            }
+        ],
         "flavors": ["Blueberry Pomegranate", "Caramel Apple", "Green Apple", "Mango", "Peach", "Strawberry", "Wildberry"],
         "milk": ["none"],
         "variation": ["none"]

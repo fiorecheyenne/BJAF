@@ -15,21 +15,20 @@ type DutchBrosOption {
     base: String
     presets: [String]
     flavors: [String]
-    milk: [String]
-    variation: [String]
+    milks: [String]
+    variations: [String]
 }
 
-scalar Blend
-
-type RandomizedDutchBrosOption {
+type DutchBrosDrink {
     base: String
-    blend: Blend
+    preset: String
+    flavors: [String]
     milk: String
     variation: String
 }
 
 type Query {
-    allDutchBrosOptions: [DutchBrosOption]
-    dutchBrosOption(base: DutchBrosBase): DutchBrosOption
-    randomDutchBrosOption(base: DutchBrosBase): RandomizedDutchBrosOption
+    all: [DutchBrosOption]
+    option(base: DutchBrosBase!): DutchBrosOption
+    random(base: DutchBrosBase): DutchBrosDrink
 }
