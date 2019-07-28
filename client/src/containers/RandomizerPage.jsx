@@ -17,6 +17,10 @@ export default function RandomizerPage(props) {
     const animateOnClick = useCallback(
         (event, base) => {
             event.preventDefault();
+            if (window.screenY < 1025) {
+                props.history.push("results?base=" + base);
+                return;
+            }
             setShouldAnimationRotate(!shouldAnimateRotation);
             setShouldChildAnimationRotate(!shouldChildAnimate);
             setTimeout(() => props.history.push("results?base=" + base), 2000);
