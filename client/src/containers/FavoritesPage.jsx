@@ -27,6 +27,7 @@ export default function FavoritesPage() {
     }, [token]);
     return (
         <div className="section">
+            <div id="favoritesbg" />
             <div className="columns is-multiline">
                 {favorites.map((favorite, key) => (
                     <div className="column is-narrow is-paddingless">

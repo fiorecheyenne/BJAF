@@ -156,6 +156,13 @@ nav {
     }
 }
 
+#favoritesbg {
+    background-image: url("/image/favbg.svg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 #login-form,
 #signup-form {
     background-image: url("/image/waveh.svg");
