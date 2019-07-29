@@ -183,8 +183,9 @@ nav {
     min-width: 250px;
 }
 #resultheader {
+    color: black !important;
     position: relative;
-    top: 10%;
+    top: 20px;
 }
 
 //randomizer page circle container and children
@@ -268,11 +269,11 @@ nav {
             border-radius: 10px;
             cursor: pointer;
             @media only screen and (max-width: $tablet) {
-                min-width: calc(50vw - 2rem);
-                margin: 1rem;
+                min-width: calc(100vw - 4rem);
+                margin: 2rem;
             }
             @media only screen and (min-width: $tablet) {
-                min-width: calc(33vw - 2rem);
+                min-width: calc(50vw - 2rem);
                 margin: 1rem;
             }
             img.img {
@@ -306,7 +307,6 @@ nav {
     border-radius: 50%;
     margin-top: 0px;
     position: absolute;
-    cursor: pointer;
 }
 
 .basecenter {

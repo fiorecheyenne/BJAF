@@ -59,9 +59,9 @@ export default function ResultsPage(props) {
     return (
         <main>
             <div class="resultbg" />
-            <p class="title is-2 has-text-centered" id="resultheader">
+            <div class="title is-2 has-text-centered" id="resultheader">
                 YOUR DRINK:
-            </p>
+            </div>
             <div style={centerConstraints} id="resultdiv">
                 {result && <DrinkCard style={cardProps} {...result} />}
             </div>

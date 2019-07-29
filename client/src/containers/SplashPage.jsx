@@ -9,17 +9,18 @@ export default function SplashPage(props) {
     return (
         <main>
             <div class="bg" />
-            <div class="column is-12-mobile is-8-desktop is-offset-2-desktop has-text-centered" id="divleft">
+            <div class="column is-12-mobile is-4-desktop is-offset-4-desktop has-text-centered" id="divleft">
                 <span id="mixtly"> MIXTLY</span>
                 <br />
                 <span id="splash-font">
                     Like Dutch Bros? Us too. <br />
                     Sometimes we dont always know what we want, though! The menu is so vast, deciding can be overwhelming.
-                    <u>Especially</u> if you haven't been there! Thus, MIXTLY WAS BORN! Let us create a drink for you, based on
-                    either your drink type choice <i>(Tea, coffee, etc)</i>, or we'll randomize the whole menu for you. <br />
-                    <span id="calltoaction">What would you like to do? </span>
+                    Especially if you haven't been there!
+                    <br /> Thus, MIXTLY WAS BORN! Let us create a drink for you, based on either your drink type choice{" "}
+                    <i>(Tea, coffee, etc)</i>, or we'll randomize the whole menu for you. <br />
                     <br />
                 </span>
+                <span id="calltoaction">WHAT WOULD YOU LIKE TO DO? </span>
                 <div class="buttongroup" style={margin}>
                     <Link to="/randomizer">
                         <a class="button is-primary is-medium is-rounded ">Select Drink Type</a>

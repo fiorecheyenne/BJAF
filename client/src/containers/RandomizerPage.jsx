@@ -9,7 +9,6 @@ const imageSize = {
     // marginTop: "5px",
 };
 
-//TODO: change display for mobile
 export default function RandomizerPage(props) {
     const [shouldAnimateRotation, setShouldAnimationRotate] = useState(false);
     const [shouldChildAnimate, setShouldChildAnimationRotate] = useState(false);
