@@ -51,6 +51,7 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }: Log
 
     return (
         <div id="login-form" className="box container">
+            <div id="loginbg" />
             <div className="columns is-centered">
                 <h2 className="is-size-3" style={{ margin: "1.15rem" }}>
                     <strong>Login</strong>
