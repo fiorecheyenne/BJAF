@@ -60,7 +60,7 @@ export default function ResultsPage(props) {
         <main>
             <div class="resultbg" />
             <div class="title is-2 has-text-centered" id="resultheader">
-                YOUR DRINK:
+                YOUR DRINK
             </div>
             <div style={centerConstraints} id="resultdiv">
                 {result && <DrinkCard style={cardProps} {...result} />}
@@ -68,12 +68,15 @@ export default function ResultsPage(props) {
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
                 <button class="button is-primary" id="randomizeagainbutton" onClick={() => setRefetch(true)}>
-                    Nah, try again
+                    Randomize again
                 </button>
             </div>
 
-            <div class="column is-full is-mobile has-text-centered">
-                <button class="button is-primary " id="newbasebutton" onClick={() => props.history.push("/randomizer")}>
+            <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
+                <button
+                    class="button is-info has-text-dark "
+                    id="newbasebutton"
+                    onClick={() => props.history.push("/randomizer")}>
                     Pick a new base
                 </button>
             </div>

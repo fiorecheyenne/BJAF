@@ -30,8 +30,10 @@ export default function RandomizerPage(props) {
     return (
         <main>
             <div class="basebg">
-                <div class="column is-full is-centered has-text-centered" id="randomizertitle">
-                    <p class="title is-2">CHOOSE YOUR BASE:</p>
+                <div class="column is-full is-full-mobile is-centered has-text-centered" id="randomizertitle">
+                    <p class="title is-2" id="baseheader">
+                        CHOOSE YOUR BASE
+                    </p>
                 </div>
 
                 <ul class={"circleContainer" + (shouldAnimateRotation ? " rotateActive" : "")} style={position}>

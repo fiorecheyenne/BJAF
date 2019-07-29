@@ -92,24 +92,67 @@ nav {
     overflow: hidden;
     position: absolute;
     width: 100%;
-    background-image: url("/image/radial.svg");
+    background-image: url("/image/basepagebg.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include size(mobile-only) {
+        background-image: url("/image/header.svg");
+        background-position: center;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
+.navbar-burger {
+    color: whitesmoke !important;
+}
 .resultbg {
     bottom: 0;
     height: 100vh;
     overflow: hidden;
     position: absolute;
     width: 100%;
-    background-image: url("/image/redblobs.svg");
+    background-image: url("/image/colors.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include size(mobile-only) {
+        background-image: url("/image/wavyheader.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
+#calltoaction {
+    @include size(mobile-only) {
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+}
+.drink {
+    background-image: url("/image/redcard3.svg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    max-width: 300px;
+    min-width: 299px;
+    position: relative;
+    top: 10vh;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease 0s;
+    @include size(mobile-only) {
+        min-width: 200px !important;
+        max-width: 250px !important;
+    }
+}
 #random {
     font-size: 2.5em;
     color: #ffffff;
@@ -134,6 +177,17 @@ nav {
     }
 }
 
+.drinkvariation {
+    strong {
+        color: whitesmoke;
+    }
+}
+
+#preset {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 #randomizerbox {
     position: relative;
     top: 20vh;
@@ -176,18 +230,54 @@ nav {
 }
 
 #randomizeagainbutton {
-    min-width: 250px;
+    min-width: 299px;
+    position: relative;
+    margin-top: 90px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    @include size(mobile-only) {
+        margin-top: 60px;
+        min-width: 250px !important;
+        max-width: 251px !important;
+    }
 }
 
 #newbasebutton {
-    min-width: 250px;
+    min-width: 299px;
+    position: relative;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+
+    @include size(mobile-only) {
+        min-width: 250px !important;
+        max-width: 251px !important;
+    }
 }
 #resultheader {
     color: black !important;
     position: relative;
-    top: 20px;
-}
+    top: 10vh;
+    letter-spacing: 0.3em;
+    font-weight: bolder;
 
+    @include size(mobile-only) {
+        position: fixed;
+        top: 10px;
+        font-size: 30px;
+        color: white;
+        z-index: 1;
+        width: 100%;
+    }
+}
+#baseheader {
+    @include size(mobile-only) {
+        position: fixed;
+        top: 10px;
+        font-size: 25px;
+        z-index: 1;
+        width: 100%;
+    }
+}
 //randomizer page circle container and children
 @media only screen and (min-width: $laptop) {
     @mixin on-circle($item-count, $circle-size, $item-size) {
@@ -268,13 +358,16 @@ nav {
             justify-items: center;
             border-radius: 10px;
             cursor: pointer;
+
             @media only screen and (max-width: $tablet) {
                 min-width: calc(100vw - 4rem);
                 margin: 2rem;
+                cursor: pointer;
             }
             @media only screen and (min-width: $tablet) {
                 min-width: calc(50vw - 2rem);
                 margin: 1rem;
+                cursor: pointer;
             }
             img.img {
                 display: block;
@@ -307,6 +400,7 @@ nav {
     border-radius: 50%;
     margin-top: 0px;
     position: absolute;
+    cursor: pointer;
 }
 
 .basecenter {
