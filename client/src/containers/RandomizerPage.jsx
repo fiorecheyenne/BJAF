@@ -17,7 +17,7 @@ export default function RandomizerPage(props) {
     const animateOnClick = useCallback(
         (event, base) => {
             event.preventDefault();
-            if (window.screenY < 1025) {
+            if (window.document.documentElement.clientWidth < 1025) {
                 props.history.push("results?base=" + base);
                 return;
             }
