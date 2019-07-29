@@ -19,7 +19,8 @@ type DrinkCardProps = {
 };
 
 const constraints: CSSProperties = {
-    maxWidth: "300px",
+    // maxWidth: "300px",
+    // minWidth: "299px",
     position: "relative",
     // top: "1px",
     margin: "1rem",
@@ -81,13 +82,13 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
                 </div>
             )}
             <hr />
-            <h3 className="is-size-5">
+            <h3 className="is-size-5 has-text-centered drinkvariation">
                 <strong>{variation ? `${variation} ${base}` : base}</strong>
             </h3>
             <hr />
             {flavors && (
                 <>
-                    {preset && <p>{preset}:</p>}
+                    {preset && <p id="preset">{preset}:</p>}
                     {flavors.map((flavor: Preset, key: number) => {
                         if (typeof flavor === "string") {
                             return <p key={key}> + {flavor}</p>;

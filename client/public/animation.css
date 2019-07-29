@@ -1,0 +1,39 @@
+.rotateActive {
+    -webkit-animation: rotateContainer 2s linear;
+}
+
+@-webkit-keyframes rotateContainer {
+    0% {
+        /* -webkit-transform: rotate(0deg); */
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform-origin: 50% 50%;
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes rotateChild {
+    0% {
+        -webkit-transform: rotate(-360deg);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#resultdiv {
+    -webkit-animation: fadein 4s;
+}

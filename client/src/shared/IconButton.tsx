@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent, CSSProperties } from "react";
 
 type IconButtonProps = {
     icon: string;
@@ -10,6 +10,9 @@ type IconButtonProps = {
     onClick: (event: any) => void;
 };
 
+const buttonConstraints: CSSProperties = {
+    margin: "0px",
+};
 export default function IconButton({
     icon,
     iconGroup = "fas",
@@ -24,6 +27,7 @@ export default function IconButton({
             <p className="control">
                 <button
                     type="button"
+                    style={buttonConstraints}
                     onClick={onClick}
                     className={`button${buttonSize ? " is-" + buttonSize : ""}${isRound ? " is-rounded" : ""}${
                         extras ? " " + extras : ""

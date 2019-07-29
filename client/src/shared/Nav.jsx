@@ -10,12 +10,12 @@ export default function Nav(props) {
     const [token, setToken] = useUserToken();
     return (
         <>
-            <nav class="navbar" role="navigation">
+            <nav class="navbar is-fixed-top" role="navigation">
                 <div class="navbar-brand">
                     <Link to="/">
-                        <a href="#" class="navbar-item">
-                            <i class="fas fa-random" id="random" />
-                            <span id="appname">MIXTLY</span>
+                        <a class="navbar-item">
+                            <i class="fal fa-random" id="random" />
+                            {/* <span id="appname">MIXTLY</span> */}
                         </a>
                     </Link>
                     {!signupVisible && (

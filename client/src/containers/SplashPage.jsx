@@ -1,29 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// TODO: Design initial index/splash page
+const margin = {
+    marginTop: "15px",
+};
 export default function SplashPage(props) {
     // const [redirect, setRedirect] = useState("");
     return (
         <main>
-            <div class="column is-full has-text-centered" id="divleft">
-                <p>
-                    <h1>Welcome to mixtly</h1>
-                </p>
-                <i class="fas fa-random" id="randombig" />
-            </div>
-            <div class="columns is-vcentered">
-                <div
-                    class="column is-offset-one-quarter is-one-quarter has-text-right is-full-mobile is-full-mobile has-text-centered-mobile"
-                    id="basebutton">
+            <div class="bg" />
+            <div class="column is-12-mobile is-4-desktop is-offset-4-desktop has-text-centered" id="divleft">
+                <span id="mixtly"> MIXTLY</span>
+                <br />
+                <span id="splash-font">
+                    Like Dutch Bros? Us too. <br />
+                    Sometimes we dont always know what we want, though! The menu is so vast, deciding can be overwhelming.
+                    Especially if you haven't been there!
+                    <br /> Thus, MIXTLY WAS BORN! Let us create a drink for you, based on either your drink type choice{" "}
+                    <i>(Tea, coffee, etc)</i>, or we'll randomize the whole menu for you. <br />
+                    <br />
+                </span>
+                <span id="calltoaction">WHAT WOULD YOU LIKE TO DO? </span>
+                <div class="buttongroup" style={margin}>
                     <Link to="/randomizer">
-                        <button class="button is-primary is-medium">Select a Base</button>
+                        <a class="button is-primary is-medium is-rounded ">Select Drink Type</a>
                     </Link>
-                </div>
-                <div class="column is-one-quarter is-full-mobile has-text-centered-mobile" id="randomizebutton">
-                    <button class="button is-primary is-medium" onClick={() => props.history.push("/results")}>
-                        Randomize All
-                    </button>
+                    <a class="button is-info has-text-dark is-medium is-rounded" onClick={() => props.history.push("/results")}>
+                        Randomize Menu
+                    </a>
                 </div>
             </div>
         </main>

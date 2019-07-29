@@ -13,6 +13,11 @@ const buttonPadding = {
     margin: "0px",
 };
 
+const cardProps = {
+    position: "relative",
+    top: "10vh",
+    left: "50vh",
+};
 export default function ResultsPage(props) {
     const [result, setResult] = useState(null);
     const params = useMemo(() => {
@@ -53,19 +58,25 @@ export default function ResultsPage(props) {
 
     return (
         <main>
-            <p class="title is-2 has-text-centered" id="resultheader">
-                YOUR DRINK:
-            </p>
-            <div style={centerConstraints}>{result && <DrinkCard id="resultcard" {...result} />}</div>
+            <div class="resultbg" />
+            <div class="title is-2 has-text-centered" id="resultheader">
+                YOUR DRINK
+            </div>
+            <div style={centerConstraints} id="resultdiv">
+                {result && <DrinkCard style={cardProps} {...result} />}
+            </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
                 <button class="button is-primary" id="randomizeagainbutton" onClick={() => setRefetch(true)}>
-                    Nah, try again
+                    Randomize again
                 </button>
             </div>
 
-            <div class="column is-full is-mobile has-text-centered">
-                <button class="button is-primary " id="newbasebutton" onClick={() => props.history.push("/randomizer")}>
+            <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
+                <button
+                    class="button is-info has-text-dark "
+                    id="newbasebutton"
+                    onClick={() => props.history.push("/randomizer")}>
                     Pick a new base
                 </button>
             </div>

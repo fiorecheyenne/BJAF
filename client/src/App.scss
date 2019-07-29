@@ -1,23 +1,22 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 $navbar-background-color: transparent;
-$primary: #aa91c7;
+$primary: #156299;
 $link: #654791;
-// $link: #7e49c9;
+$info: #f8e316;
+$dark: hsl(0, 0%, 10%);
+$font-family: "Raleway", sans-serif;
+$button-padding-horizontal: 1em;
+// $body-overflow-x: hidden;
+// $body-overflow-y: hidden;
+
 .title {
     font-family: "Poiret One", cursive;
 }
 @import "../node_modules/bulma/bulma.sass";
-
-#root {
-    min-height: 100vh;
-    background: url("/image/lotsocups.jpg");
-    background-size: cover;
-    overflow: hidden;
-    background-color: rgba(234, 220, 250, 0.7);
-    background-blend-mode: lighten;
-}
-
 button {
     @extend .button;
 }
@@ -26,60 +25,189 @@ nav {
     @extend .navbar;
 }
 
+// $mobileS: 320px;
+// $mobileM: 375px;
+// $mobileL: 425px;
+// $tablet: 768px;
+$laptop: 1025px;
+// $laptopL: 1440px;
+// $desktop: 2560px;
+
+//mix in for media queries
+@mixin size($size) {
+    @if $size == mobile-only {
+        @media (max-width: 599px) {
+            @content;
+        }
+    } @else if $size == tablet-portrait-up {
+        @media (min-width: 600px) {
+            @content;
+        }
+    } @else if $size == tablet-landscape-up {
+        @media (min-width: 900px) {
+            @content;
+        }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == big-desktop-up {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+}
+button {
+    @extend .button;
+}
+.button {
+    margin: 5px;
+    cursor: pointer;
+}
+nav {
+    @extend .navbar;
+}
+
+#root {
+    top: 0;
+    height: 100vh;
+}
+
+.bg {
+    top: 0;
+    height: 100%;
+    // overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/rainbrowdropshdw.svg");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.basebg {
+    top: 0;
+    min-height: 100vh;
+    padding-top: 40px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/basepagebg.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include size(mobile-only) {
+        background-image: url("/image/header.svg");
+        background-position: center;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.navbar-burger {
+    color: whitesmoke !important;
+}
+.resultbg {
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    background-image: url("/image/colors.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include size(mobile-only) {
+        background-image: url("/image/wavyheader.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+#calltoaction {
+    @include size(mobile-only) {
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+}
+.drink {
+    background-image: url("/image/redcard3.svg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    max-width: 300px;
+    min-width: 299px;
+    position: relative;
+    top: 10vh;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease 0s;
+    @include size(mobile-only) {
+        min-width: 200px !important;
+        max-width: 250px !important;
+    }
+}
 #random {
     font-size: 2.5em;
+    color: #ffffff;
 }
 
-#randombig {
-    font-size: 10em;
-    color: #575757;
-}
-#appname {
-    font-family: "Poiret One", cursive;
-    font-weight: bolder;
-    font-size: 35px;
-}
 #divleft {
     position: relative;
-    top: 30vh;
+    top: 5%;
+    color: white;
+}
+#mixtly {
+    font-size: 100px;
+    font-family: "Poiret One", cursive;
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    text-align: center;
+
+    @include size(mobile-only) {
+        font-size: 40px;
+        letter-spacing: 0.5em;
+        margin-left: 10px;
+    }
 }
 
-#randomizebutton {
-    position: relative;
-    top: 35vh;
-}
-#basebutton {
-    position: relative;
-    top: 35vh;
+.drinkvariation {
+    strong {
+        color: whitesmoke;
+    }
 }
 
+#preset {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 #randomizerbox {
     position: relative;
     top: 20vh;
 }
-#full {
-    height: 100%;
-    .is-vertical-center {
-        display: flex;
-        align-items: center;
-    }
-}
-
-#basecardcol {
-    position: relative;
-    top: 5vh;
-}
-
-#basecardcol2 {
-    position: relative;
-    top: 6vh;
-}
+// #full {
+//     height: 100%;
+//     .is-vertical-center {
+//         display: flex;
+//         align-items: center;
+//     }
+// }
 
 #randomizertitle {
     position: relative;
-    top: 10%;
+    top: 5%;
 }
 
+.title {
+    color: white;
+}
 .drink.box {
     display: inline-block;
 }
@@ -101,20 +229,184 @@ nav {
     margin: 7px 0 6px 0;
 }
 
-#resultcard {
-    position: relative;
-    top: 10vh;
-    left: 50vh;
-}
-
 #randomizeagainbutton {
-    min-width: 250px;
+    min-width: 299px;
+    position: relative;
+    margin-top: 90px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+    @include size(mobile-only) {
+        margin-top: 60px;
+        min-width: 250px !important;
+        max-width: 251px !important;
+    }
 }
 
 #newbasebutton {
-    min-width: 250px;
+    min-width: 299px;
+    position: relative;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+
+    @include size(mobile-only) {
+        min-width: 250px !important;
+        max-width: 251px !important;
+    }
 }
 #resultheader {
+    color: black !important;
     position: relative;
-    top: 10%;
+    top: 10vh;
+    letter-spacing: 0.3em;
+    font-weight: bolder;
+
+    @include size(mobile-only) {
+        position: fixed;
+        top: 10px;
+        font-size: 30px;
+        color: white;
+        z-index: 1;
+        width: 100%;
+    }
+}
+#baseheader {
+    @include size(mobile-only) {
+        position: fixed;
+        top: 10px;
+        font-size: 25px;
+        z-index: 1;
+        width: 100%;
+    }
+}
+//randomizer page circle container and children
+@media only screen and (min-width: $laptop) {
+    @mixin on-circle($item-count, $circle-size, $item-size) {
+        position: relative;
+        width: $circle-size;
+        height: $circle-size;
+        padding: 0px;
+        border-radius: 50%;
+        list-style: none;
+        padding-inline-start: 0px;
+
+        > * {
+            display: block;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: rotate(0deg);
+            transition: transform 0.7s linear;
+            width: $item-size;
+            height: $item-size;
+            margin: -($item-size / 2);
+            cursor: pointer;
+            -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+            -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+            box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
+
+            $angle: (360 / $item-count);
+            $rot: 0;
+
+            @for $i from 1 through $item-count {
+                &:nth-of-type(#{$i}) {
+                    transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+                }
+                $rot: $rot + $angle;
+            }
+        }
+    }
+
+    .circleContainer {
+        @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
+        margin-top: 0px !important;
+        margin: 5em auto;
+        margin-bottom: 0;
+        transform: rotate(0deg);
+        transition: transform 0.7s linear;
+        position: relative;
+        height: calc(90vh - 40px);
+        width: 100%;
+
+        .img {
+            transform: rotate(0deg);
+        }
+
+        span.title {
+            margin-left: -20px;
+            width: 128px;
+        }
+    }
+}
+
+@media only screen and (max-width: $laptop) {
+    // $body-overflow-y: scroll;
+    main {
+        overflow: scroll !important;
+    }
+    ul.circleContainer {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        z-index: 10;
+        min-height: 0;
+
+        li.boxcard {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-content: center;
+            justify-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+
+            @media only screen and (max-width: $tablet) {
+                min-width: calc(100vw - 4rem);
+                margin: 2rem;
+                cursor: pointer;
+            }
+            @media only screen and (min-width: $tablet) {
+                min-width: calc(50vw - 2rem);
+                margin: 1rem;
+                cursor: pointer;
+            }
+            img.img {
+                display: block;
+                width: 100%;
+            }
+            // overflow flex fix
+            min-height: 0;
+        }
+
+        span.title {
+            color: #222;
+            text-align: center;
+            display: block;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .navbar-menu.is-active {
+        box-shadow: none;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+.boxcard {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-top: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.basecenter {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 5em;
 }

@@ -1,124 +1,157 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
-const basebox = {
-    maxWidth: "200px",
-    padding: "5px",
-    position: "relative",
-};
-
-const center = {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "12px",
-};
+const basebox = {};
+const position = {};
+const center = {};
 
 const imageSize = {
-    maxHeight: "190px",
+    // maxHeight: "180px",
+    // marginTop: "5px",
 };
-//TODO: fix card display - desktop 2 rows of 5, mobile side by side - 200px md cards - 150 mobile cards - 300 lrg cards
+
 export default function RandomizerPage(props) {
+    const [shouldAnimateRotation, setShouldAnimationRotate] = useState(false);
+    const [shouldChildAnimate, setShouldChildAnimationRotate] = useState(false);
+
+    const animateOnClick = useCallback(
+        (event, base) => {
+            event.preventDefault();
+            if (window.document.documentElement.clientWidth < 1025) {
+                props.history.push("results?base=" + base);
+                return;
+            }
+            setShouldAnimationRotate(!shouldAnimateRotation);
+            setShouldChildAnimationRotate(!shouldChildAnimate);
+            setTimeout(() => props.history.push("results?base=" + base), 2000);
+        },
+        [shouldAnimateRotation, shouldChildAnimate, props.history]
+    );
+
     return (
         <main>
-            <div class="column is-full is-centered has-text-centered" id="randomizertitle">
-                <p class="title is-2">CHOOSE YOUR BASE:</p>
-            </div>
-            <div class="columns is-multiline is-centered is-mobile" id="basecardcol">
-                {/* coffee card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=coffee")}>
-                        <img src="/image/coffee.png" style={imageSize} alt="Coffee" />
-                        <p class="title is-4" style={center}>
+            <div class="basebg">
+                <div class="column is-full is-full-mobile is-centered has-text-centered" id="randomizertitle">
+                    <p class="title is-2" id="baseheader">
+                        CHOOSE YOUR BASE
+                    </p>
+                </div>
+
+                <ul class={"circleContainer" + (shouldAnimateRotation ? " rotateActive" : "")} style={position}>
+                    {/* Coffee Card */}
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? " rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "coffee")}>
+                        <img class="img" src="/image/coffee.png" alt="coffee" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             COFFEE
-                        </p>
-                    </div>
-                </div>
-                {/* Tea card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=tea")}>
-                        <img src="/image/tea.png" style={imageSize} alt="Tea" />
-                        <p class="title is-4" style={center}>
+                        </span>
+                    </li>
+
+                    {/* Tea card */}
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? " rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "tea")}>
+                        <img class="img" src="/image/tea.png" alt="tea" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             TEA
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Lemonade card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=lemonade")}>
-                        <img src="/image/lemonade.png" style={imageSize} alt="Lemonade" />
-                        <p class="title is-4" style={center}>
+                    {/* Lemonade card */}
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? " rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "lemonade")}>
+                        <img class="img" src="/image/lemonade.png" alt="lemonade" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             LEMONADE
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Rebel card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=rebel")}>
-                        <img src="/image/rebel.png" style={imageSize} alt="Rebel" />
-                        <p class="title is-4" style={center}>
+                    {/* Rebel card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "rebel")}>
+                        <img class="img" src="/image/rebel.png" alt="rebel" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             REBEL
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Smoothie card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=smoothie")}>
-                        <img src="/image/smoothie.png" style={imageSize} alt="Smoothie" />
-                        <p class="title is-4" style={center}>
+                    {/* Smoothie card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "smoothie")}>
+                        <img class="img" src="/image/smoothie.png" alt="smoothie" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             SMOOTHIE
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Frost card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=frost")}>
-                        <img src="/image/frost.png" style={imageSize} alt="Frost" />
-                        <p class="title is-4" style={center}>
+                    {/* Frost card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "frost")}>
+                        <img class="img" src="/image/frost.png" alt="frost" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             FROST
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Soda card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=soda")}>
-                        <img src="/image/soda.png" style={imageSize} alt="Soda" />
-                        <p class="title is-4" style={center}>
+                    {/* Soda card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "soda")}>
+                        <img class="img" src="/image/soda.png" alt="soda" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             SODA
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
 
-                {/* Chai card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=chai")}>
-                        <img src="/image/chai.png" style={imageSize} alt="Chai" />
-                        <p class="title is-4" style={center}>
+                    {/* Chai card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "chai")}>
+                        <img class="img" src="/image/chai.png" clat="chai" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             CHAI
-                        </p>
-                    </div>
-                </div>
-                {/* Cocoa card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=cocoa")}>
-                        <img src="/image/cocoa.png" style={imageSize} alt="Cocoa" />
-                        <p class="title is-4" style={center}>
+                        </span>
+                    </li>
+
+                    {/* Cocoa card */}
+
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "cocoa")}>
+                        <img class="img" src="/image/cocoa.png" alt="cocoa" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             COCOA
-                        </p>
-                    </div>
-                </div>
-                {/* Mocha card */}
-                <div class="column is-narrow">
-                    <div className="base box" style={basebox} onClick={() => props.history.push("results?base=mocha")}>
-                        <img src="/image/mocha.png" style={imageSize} alt="Mocha" />
-                        <p class="title is-4" style={center}>
+                        </span>
+                    </li>
+                    {/* Mocha card */}
+                    <li
+                        className={"base box boxcard " + (shouldChildAnimate ? "rotateBox" : "")}
+                        style={basebox}
+                        onClick={event => animateOnClick(event, "mocha")}>
+                        <img class="img" src="/image/mocha.png" alt="mocha" style={imageSize} />
+                        <span class="title is-4 basecenter" style={center}>
                             MOCHA
-                        </p>
-                    </div>
-                </div>
+                        </span>
+                    </li>
+                </ul>
             </div>
         </main>
     );
