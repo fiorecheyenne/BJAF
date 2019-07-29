@@ -208,7 +208,7 @@ nav {
             width: $item-size;
             height: $item-size;
             margin: -($item-size / 2);
-
+            cursor: pointer;
             -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
             -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
             box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
@@ -266,6 +266,7 @@ nav {
             align-content: center;
             justify-items: center;
             border-radius: 10px;
+            cursor: pointer;
             @media only screen and (max-width: $tablet) {
                 min-width: calc(100vw - 4rem);
                 margin: 2rem;
