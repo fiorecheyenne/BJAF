@@ -26,22 +26,23 @@ export default function FavoritesPage() {
         }
     }, [token]);
     return (
-        <div className="section">
-            <div id="favoritesbg" />
-            <div className="columns is-multiline">
-                {favorites.map((favorite, key) => (
-                    <div className="column is-narrow is-paddingless">
-                        <DrinkCard
-                            isFavorite
-                            key={key}
-                            base={favorite.base}
-                            preset={favorite.preset}
-                            flavors={favorite.flavors}
-                            milk={favorite.milk}
-                            img={"https://files.dutchbros.com/website/menu/drink-images/Americano_Americano_Hot.png"}
-                        />
-                    </div>
-                ))}
+        <div id="favoritesbg">
+            <div className="section">
+                <div className="columns is-multiline">
+                    {favorites.map((favorite, key) => (
+                        <div className="column is-narrow is-paddingless">
+                            <DrinkCard
+                                isFavorite
+                                key={key}
+                                base={favorite.base}
+                                preset={favorite.preset}
+                                flavors={favorite.flavors}
+                                milk={favorite.milk}
+                                img={"https://files.dutchbros.com/website/menu/drink-images/Americano_Americano_Hot.png"}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
