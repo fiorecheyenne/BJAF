@@ -128,7 +128,7 @@ nav {
 
 #calltoaction {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 16px;
     letter-spacing: 5px;
     @include size(mobile-only) {
         font-weight: 600;
@@ -158,6 +158,9 @@ nav {
 #favoritesbg {
     background-image: url("/image/favbg.svg");
     height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -296,6 +299,10 @@ nav {
 }
 //randomizer page circle container and children
 @media only screen and (min-width: $laptop) {
+    // #favoritesbg {
+    //     display: absolute;
+    //     top: 0;
+    // }
     @mixin on-circle($item-count, $circle-size, $item-size) {
         position: relative;
         width: $circle-size;
