@@ -24,7 +24,6 @@ button {
 nav {
     @extend .navbar;
 }
-
 // $mobileS: 320px;
 // $mobileM: 375px;
 // $mobileL: 425px;
@@ -407,8 +406,8 @@ nav {
         box-shadow: none;
         padding: 0;
         position: fixed;
-        top: 0;
-        left: 0;
+        top: -5px;
+        right: 40px;
     }
 }
 
