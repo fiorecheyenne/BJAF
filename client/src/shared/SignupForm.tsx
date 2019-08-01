@@ -81,7 +81,7 @@ export default function SignupForm({ onRequestLoginForm, onSignupCompleted }: Si
         <div id="signup-form" className="box container">
             <div className="columns is-centered">
                 <h2 className="is-size-3" style={{ margin: "1.15rem" }}>
-                    <strong>Sign Up</strong>
+                    <strong style={{ color: "white" }}>Sign Up</strong>
                 </h2>
             </div>
             <form onSubmit={onSignupFormDidSubmit}>

@@ -54,7 +54,7 @@ export default function LoginForm({ onRequestSignupForm, onLoginCompleted }: Log
             <div id="loginbg" />
             <div className="columns is-centered">
                 <h2 className="is-size-3" style={{ margin: "1.15rem" }}>
-                    <strong>Login</strong>
+                    <strong style={{ color: "white" }}>Login</strong>
                 </h2>
             </div>
             <form onSubmit={onLoginFormDidSubmit}>

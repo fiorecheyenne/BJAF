@@ -22,7 +22,7 @@ export default function RandomizerPage(props) {
             }
             setShouldAnimationRotate(!shouldAnimateRotation);
             setShouldChildAnimationRotate(!shouldChildAnimate);
-            setTimeout(() => props.history.push("results?base=" + base), 2000);
+            setTimeout(() => props.history.push("results?base=" + base), 1500);
         },
         [shouldAnimateRotation, shouldChildAnimate, props.history]
     );
