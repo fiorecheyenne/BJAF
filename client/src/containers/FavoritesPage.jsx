@@ -30,7 +30,7 @@ export default function FavoritesPage() {
             <div className="section">
                 <div className="columns is-multiline">
                     {favorites.map((favorite, key) => (
-                        <div className="column is-narrow is-paddingless">
+                        <div className="column is-narrow">
                             <DrinkCard
                                 isFavorite
                                 key={key}

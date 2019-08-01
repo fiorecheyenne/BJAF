@@ -1,13 +1,9 @@
 import React, { useMemo, CSSProperties } from "react";
 import useFavorite from "../hooks/useFavorite";
 import IconButton from "./IconButton";
+import useUserToken from "../hooks/useUserToken";
 
-type Preset =
-    | string
-    | {
-          name: string;
-          flavor: string;
-      };
+type Preset = { name: string; flavor: string } | string;
 
 type DrinkCardProps = {
     base: string;
@@ -74,6 +70,7 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
         const baseWords = base.toLowerCase().split(" ");
         return baseWords[baseWords.length - 1];
     }, [base]);
+    const [token] = useUserToken();
     return (
         <div className="drink box" style={constraints}>
             {base && (
@@ -108,9 +105,11 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
                     </div>
                 </>
             )}
-            <div style={favoritesButton}>
-                <IconButton icon="heart" extras={buttonDisplayState} onClick={() => toggleFavorite()} />
-            </div>
+            {token && token.token && (
+                <div style={favoritesButton}>
+                    <IconButton icon="heart" extras={buttonDisplayState} onClick={() => toggleFavorite()} />
+                </div>
+            )}
         </div>
     );
 }
