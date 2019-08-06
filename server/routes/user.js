@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 const User = require("../database/models/User");
 const tokenizer = require("../tokenizer");
 const decoder = require("../decoder");
-const tokenKey = process.env.TOKEN_KEY;
 
 // Handles the GET, POST, PUT, and DELETE routes for users
 module.exports = {
