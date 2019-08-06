@@ -1,5 +1,5 @@
 const seedData = require("../seed.json");
 
-module.exports = function creator(base) {
-        return seedData[base + "-options"];
+module.exports = function creator(base, subset) {
+        return (seedData[ base +`-options`][subset]);
 };
