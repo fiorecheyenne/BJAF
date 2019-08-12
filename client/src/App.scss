@@ -1,8 +1,11 @@
 @charset "utf-8";
+// imported fonts
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+//overrides for bulma defaults
 $navbar-background-color: transparent;
 $primary: #156299;
 $link: #654791;
@@ -12,19 +15,18 @@ $font-family: "Raleway", sans-serif;
 $button-padding-horizontal: 1em;
 $gap: 32px;
 $mobile: 320px;
-// $mobileS: 320px;
-// $mobileM: 375px;
-// $mobileL: 425px;
 $tablet: 768px;
 $tabletLrg: 960px;
 $desktop: 1000px + (2 * $gap);
-+
-// $body-overflow-y: hidden;
 
 .title {
     font-family: "Poiret One", cursive;
 }
+
+//import bulma
 @import "../node_modules/bulma/bulma.sass";
+
+//extending bulma classes into stylesheet
 button {
     @extend .button;
 }
@@ -33,50 +35,18 @@ nav {
     @extend .navbar;
 }
 
-//mix in for media queries
-// @mixin size($size) {
-//     @if $size == mobile-only {
-//         @media (max-width: 599px) {
-//             @content;
-//         }
-//     } @else if $size == tablet-portrait-up {
-//         @media (min-width: 600px) {
-//             @content;
-//         }
-//     } @else if $size == tablet-landscape-up {
-//         @media (min-width: 800px) {
-//             @content;
-//         }
-//     } @else if $size == ipad-pro {
-//         @media (min-width: 1024px) {
-//             @content;
-//         }
-//     } @else if $size == laptop-up {
-//         @media (min-width: 1100px) {
-//             @content;
-//         }
-//     } @else if $size == big-laptop-up {
-//         @media (min-width: 1400px) {
-//             @content;
-//         }
-//     } @else if $size == desktop-up {
-//         @media (min-width: 2000px) {
-//             @content;
-//         }
-//     }
-// }
 button {
     @extend .button;
 }
+
+//button style
 .button {
     margin: 5px;
     cursor: pointer;
     box-shadow: 0px 8px 13px rgba(115, 115, 115, 0.4);
     transition: all 0.3s ease 0s;
 }
-nav {
-    @extend .navbar;
-}
+//navbar style
 .navbar-burger {
     color: whitesmoke !important;
 }
@@ -84,11 +54,10 @@ nav {
     top: 0;
     height: 100vh;
 }
-
+//splashpage background
 .bg {
     top: 0;
     height: 100%;
-    // overflow: hidden;
     position: absolute;
     width: 100%;
     background-image: url("/image/rainbrowdropshdw.svg");
@@ -97,6 +66,7 @@ nav {
     background-repeat: no-repeat;
 }
 
+//base/randomizer page background
 .basebg {
     top: 0;
     min-height: 100vh;
@@ -109,6 +79,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 
+    //base/randomizer page background until tablet size
     @include until($tablet) {
         background-image: url("/image/header.svg");
         background-position: center;
@@ -118,6 +89,7 @@ nav {
     }
 }
 
+//result background
 .resultbg {
     bottom: 0;
     height: 100vh;
@@ -129,6 +101,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 
+    //result background until size tablet
     @include until($tablet) {
         background-image: url("/image/wavyheader.svg");
         background-position: center;
@@ -137,10 +110,12 @@ nav {
     }
 }
 
+//what would you like to do text on splash page
 #calltoaction {
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 5px;
+
     @include until($tablet) {
         font-weight: 600;
         font-size: 20px;
@@ -158,6 +133,7 @@ nav {
         }
     }
 }
+//result card styling
 .drink {
     background-image: url("/image/redcard3.svg");
     height: 100%;
@@ -177,6 +153,7 @@ nav {
     }
 }
 
+//favorites page background styling
 #favoritesbg {
     background-image: url("/image/favbg.svg");
     height: 100%;
@@ -187,6 +164,8 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+//login and signup background
 #login-form,
 #signup-form {
     background-image: url("/image/waveh.svg");
@@ -211,6 +190,8 @@ nav {
         }
     }
 }
+
+//"MIXTLY" splash page text styling
 #mixtly {
     font-size: 100px;
     font-family: "Poiret One", cursive;
@@ -235,22 +216,27 @@ nav {
     }
 }
 
+//result page drink variation styling
 .drinkvariation {
     strong {
         color: whitesmoke;
     }
 }
 
+//result page drink preset styling
 #preset {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+//randomize box styling
 #randomizerbox {
     position: relative;
     top: 20vh;
 }
 
+//splach page intro font styling
 #splash-font {
     @include from($desktop) {
         max-width: 30%;
@@ -285,16 +271,17 @@ nav {
         margin-left: 30%;
     }
 }
-
+//splash page buttons styling
 #drinktype,
 #randomizeall {
     border-style: solid;
     border-color: whitesmoke;
 }
 
+//base/randomizer header styling
 #randomizertitle {
     position: relative;
-    top: 5%;
+    top: 0%;
     @include from($tablet) {
         position: relative;
         top: 0%;
@@ -324,16 +311,19 @@ nav {
         font-size: 60px;
     }
     @include from($desktop) {
-        position: relative;
-        top: 0;
-        font-size: 50px;
+        position: fixed;
+        top: 0px;
+        font-size: 40px;
         align-content: center;
     }
 }
 
+//generic title class style
 .title {
     color: white;
 }
+
+//drink box class style
 .drink.box {
     display: inline-block;
 }
@@ -351,10 +341,7 @@ nav {
     display: inline-block;
 }
 
-.drink hr {
-    margin: 7px 0 6px 0;
-}
-
+//randomize again button style (result page)
 #randomizeagainbutton {
     min-width: 299px;
     position: relative;
@@ -368,7 +355,7 @@ nav {
         max-width: 251px !important;
     }
 }
-
+//pick new base button style (result page)
 #newbasebutton {
     min-width: 299px;
     position: relative;
@@ -380,6 +367,8 @@ nav {
         max-width: 251px !important;
     }
 }
+
+//result header style
 #resultheader {
     color: black !important;
     position: relative;
@@ -396,6 +385,8 @@ nav {
         width: 100%;
     }
 }
+
+//randomizer / base header style
 #baseheader {
     font-family: "Poiret One", cursive;
 
@@ -461,8 +452,7 @@ nav {
             width: ($item-size - 2);
             height: ($item-size - 2);
             margin: -($item-size / 3);
-            border-style: solid;
-            border-color: yellow;
+
             cursor: pointer;
             -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
             -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
@@ -523,12 +513,6 @@ nav {
             justify-items: center;
             border-radius: 10px;
             cursor: pointer;
-
-            // @media only screen and (max-width: $tablet) {
-            //     min-width: calc(100vw - 4rem);
-            //     margin: 2rem;
-            //     cursor: pointer;
-            // }
 
             @include until($tabletLrg) {
                 max-width: 35%;
