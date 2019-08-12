@@ -43,7 +43,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "coffee")}>
                         <img class="img" src="/image/coffee.png" alt="coffee" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             COFFEE
                         </span>
                     </li>
@@ -54,7 +54,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "tea")}>
                         <img class="img" src="/image/tea.png" alt="tea" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             TEA
                         </span>
                     </li>
@@ -65,7 +65,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "lemonade")}>
                         <img class="img" src="/image/lemonade.png" alt="lemonade" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             LEMONADE
                         </span>
                     </li>
@@ -77,7 +77,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "rebel")}>
                         <img class="img" src="/image/rebel.png" alt="rebel" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             REBEL
                         </span>
                     </li>
@@ -89,7 +89,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "smoothie")}>
                         <img class="img" src="/image/smoothie.png" alt="smoothie" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             SMOOTHIE
                         </span>
                     </li>
@@ -101,7 +101,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "frost")}>
                         <img class="img" src="/image/frost.png" alt="frost" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             FROST
                         </span>
                     </li>
@@ -113,7 +113,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "soda")}>
                         <img class="img" src="/image/soda.png" alt="soda" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             SODA
                         </span>
                     </li>
@@ -125,7 +125,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "chai")}>
                         <img class="img" src="/image/chai.png" clat="chai" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             CHAI
                         </span>
                     </li>
@@ -137,7 +137,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "cocoa")}>
                         <img class="img" src="/image/cocoa.png" alt="cocoa" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             COCOA
                         </span>
                     </li>
@@ -147,7 +147,7 @@ export default function RandomizerPage(props) {
                         style={basebox}
                         onClick={event => animateOnClick(event, "mocha")}>
                         <img class="img" src="/image/mocha.png" alt="mocha" style={imageSize} />
-                        <span class="title is-4 basecenter" style={center}>
+                        <span class="title is-5 basecenter" style={center}>
                             MOCHA
                         </span>
                     </li>

@@ -10,7 +10,15 @@ $info: #f8e316;
 $dark: hsl(0, 0%, 10%);
 $font-family: "Raleway", sans-serif;
 $button-padding-horizontal: 1em;
-// $body-overflow-x: hidden;
+$gap: 32px;
+$mobile: 320px;
+// $mobileS: 320px;
+// $mobileM: 375px;
+// $mobileL: 425px;
+$tablet: 768px;
+$tabletLrg: 960px;
+$desktop: 1000px + (2 * $gap);
++
 // $body-overflow-y: hidden;
 
 .title {
@@ -24,42 +32,39 @@ button {
 nav {
     @extend .navbar;
 }
-// $mobileS: 320px;
-// $mobileM: 375px;
-// $mobileL: 425px;
-// $tablet: 768px;
-$laptop: 1025px;
-// $laptopL: 1440px;
-// $desktop: 2560px;
 
 //mix in for media queries
-@mixin size($size) {
-    @if $size == mobile-only {
-        @media (max-width: 599px) {
-            @content;
-        }
-    } @else if $size == tablet-portrait-up {
-        @media (min-width: 600px) {
-            @content;
-        }
-    } @else if $size == tablet-landscape-up {
-        @media (min-width: 800px) {
-            @content;
-        }
-    } @else if $size == laptop-up {
-        @media (min-width: 1000px) {
-            @content;
-        }
-    } @else if $size == big-laptop-up {
-        @media (min-width: 1400px) {
-            @content;
-        }
-    } @else if $size == desktop-up {
-        @media (min-width: 2000px) {
-            @content;
-        }
-    }
-}
+// @mixin size($size) {
+//     @if $size == mobile-only {
+//         @media (max-width: 599px) {
+//             @content;
+//         }
+//     } @else if $size == tablet-portrait-up {
+//         @media (min-width: 600px) {
+//             @content;
+//         }
+//     } @else if $size == tablet-landscape-up {
+//         @media (min-width: 800px) {
+//             @content;
+//         }
+//     } @else if $size == ipad-pro {
+//         @media (min-width: 1024px) {
+//             @content;
+//         }
+//     } @else if $size == laptop-up {
+//         @media (min-width: 1100px) {
+//             @content;
+//         }
+//     } @else if $size == big-laptop-up {
+//         @media (min-width: 1400px) {
+//             @content;
+//         }
+//     } @else if $size == desktop-up {
+//         @media (min-width: 2000px) {
+//             @content;
+//         }
+//     }
+// }
 button {
     @extend .button;
 }
@@ -104,7 +109,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include size(mobile-only) {
+    @include until($tablet) {
         background-image: url("/image/header.svg");
         background-position: center;
 
@@ -124,7 +129,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include size(mobile-only) {
+    @include until($tablet) {
         background-image: url("/image/wavyheader.svg");
         background-position: center;
         background-size: cover;
@@ -136,10 +141,21 @@ nav {
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 5px;
-    @include size(mobile-only) {
+    @include until($tablet) {
         font-weight: 600;
         font-size: 20px;
         letter-spacing: 5px;
+    }
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+    }
+    @include from($tabletLrg) {
+        @media (orientation: landscape) {
+            font-size: 10px;
+        }
     }
 }
 .drink {
@@ -155,7 +171,7 @@ nav {
     top: 10vh;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease 0s;
-    @include size(mobile-only) {
+    @include until($tablet) {
         min-width: 200px !important;
         max-width: 250px !important;
     }
@@ -187,6 +203,13 @@ nav {
     position: relative;
     top: 5%;
     color: white;
+
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            position: fixed;
+            top: 0%;
+        }
+    }
 }
 #mixtly {
     font-size: 100px;
@@ -194,11 +217,21 @@ nav {
     font-weight: bolder;
     letter-spacing: 2rem;
     text-align: center;
-
-    @include size(mobile-only) {
-        font-size: 40px;
+    display: inline-flex;
+    margin-left: 2%;
+    @include from($mobile) {
+        font-size: 60px;
         letter-spacing: 0.5em;
-        margin-left: 10px;
+        margin-left: 2%;
+
+        @media (orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+    @include from($tabletLrg) {
+        @media (orientation: landscape) {
+            font-size: 80px;
+        }
     }
 }
 
@@ -217,17 +250,85 @@ nav {
     position: relative;
     top: 20vh;
 }
-// #full {
-//     height: 100%;
-//     .is-vertical-center {
-//         display: flex;
-//         align-items: center;
-//     }
-// }
+
+#splash-font {
+    @include from($desktop) {
+        max-width: 30%;
+        margin-left: 35%;
+    }
+    @include until($tabletLrg) {
+        max-width: 70%;
+        margin-left: 15%;
+    }
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            max-width: 40%;
+            margin-left: 30%;
+        }
+    }
+    @include until($tablet) {
+        @media (orientation: landscape) {
+            max-width: 40%;
+            font-size: 12px;
+        }
+    }
+    @include from($tabletLrg) {
+        max-width: 100%;
+        margin-left: 5px;
+        @media (orientation: landscape) {
+            max-width: 40%;
+            margin-left: 30%;
+        }
+    }
+    @include from($widescreen) {
+        max-width: 40%;
+        margin-left: 30%;
+    }
+}
+
+#drinktype,
+#randomizeall {
+    border-style: solid;
+    border-color: whitesmoke;
+}
 
 #randomizertitle {
     position: relative;
     top: 5%;
+    @include from($tablet) {
+        position: relative;
+        top: 0%;
+        font-size: 10%;
+        align-content: center;
+        margin-left: 30%;
+    }
+
+    @include from($mobile) {
+        position: relative;
+        top: 0% !important;
+        font-size: 35px;
+        align-content: center;
+        margin-left: 0%;
+
+        @media (orientation: landscape) {
+            position: relative;
+            top: 0% !important;
+            font-size: 35px;
+            align-content: center;
+            margin-left: 1%;
+        }
+    }
+    @include from($tabletLrg) {
+        position: relative;
+        top: 0%;
+        font-size: 60px;
+    }
+    @include from($desktop) {
+        position: relative;
+        top: 0;
+        font-size: 50px;
+        align-content: center;
+    }
 }
 
 .title {
@@ -260,7 +361,8 @@ nav {
     margin-top: 90px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
-    @include size(mobile-only) {
+
+    @include until($tablet) {
         margin-top: 60px;
         min-width: 250px !important;
         max-width: 251px !important;
@@ -273,7 +375,7 @@ nav {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
 
-    @include size(mobile-only) {
+    @include until($tablet) {
         min-width: 250px !important;
         max-width: 251px !important;
     }
@@ -285,7 +387,7 @@ nav {
     letter-spacing: 0.3em;
     font-weight: bolder;
 
-    @include size(mobile-only) {
+    @include until($tablet) {
         position: fixed;
         top: 10px;
         font-size: 30px;
@@ -295,16 +397,46 @@ nav {
     }
 }
 #baseheader {
-    @include size(mobile-only) {
+    font-family: "Poiret One", cursive;
+
+    @include from($tablet) {
         position: fixed;
-        top: 10px;
-        font-size: 25px;
-        z-index: 1;
-        width: 100%;
+        top: 1%;
+        font-size: 10%;
+        align-content: center;
+        margin-left: 30%;
+    }
+
+    @include from($mobile) {
+        position: fixed;
+        top: 0% !important;
+        font-size: 35px;
+        align-content: center;
+        display: contents;
+        @media (orientation: landscape) {
+            position: fixed;
+            top: 1%;
+            font-size: 35px;
+            align-content: center;
+            margin-left: 30%;
+        }
+    }
+    @include from($tabletLrg) {
+        position: fixed;
+        top: 0%;
+        font-size: 60px;
+    }
+    @include from($desktop) {
+        position: fixed;
+        top: 0;
+        font-size: 50px;
+        align-content: center;
+        margin-left: 5%;
     }
 }
+
 //randomizer page circle container and children
-@media only screen and (min-width: $laptop) {
+@media only screen and (min-width: $desktop) {
     // #favoritesbg {
     //     display: absolute;
     //     top: 0;
@@ -315,6 +447,7 @@ nav {
         height: $circle-size;
         padding: 0px;
         border-radius: 50%;
+
         list-style: none;
         padding-inline-start: 0px;
 
@@ -324,10 +457,12 @@ nav {
             top: 40%;
             left: 50%;
             transform: rotate(0deg);
-            transition: transform 0.7s linear;
-            width: $item-size;
-            height: $item-size;
-            margin: -($item-size / 2);
+            // transition: transform 0.7s linear;
+            width: ($item-size - 2);
+            height: ($item-size - 2);
+            margin: -($item-size / 3);
+            border-style: solid;
+            border-color: yellow;
             cursor: pointer;
             -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
             -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
@@ -346,15 +481,17 @@ nav {
     }
 
     .circleContainer {
-        @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
-        margin-top: 0px !important;
-        margin: 5em auto;
+        @include on-circle($item-count: 10, $circle-size: 65vh, $item-size: 8em);
+        margin-top: 1% !important;
+        margin: 6em auto;
         margin-bottom: 0;
         transform: rotate(0deg);
         transition: transform 0.7s linear;
         position: relative;
-        height: calc(90vh - 40px);
-        width: 100%;
+        left: 0%;
+
+        height: calc(90vh - 20px);
+        width: 50%;
 
         .img {
             transform: rotate(0deg);
@@ -367,13 +504,11 @@ nav {
     }
 }
 
-@media only screen and (max-width: $laptop) {
-    // $body-overflow-y: scroll;
+@media only screen and (max-width: $desktop) {
     main {
-        overflow: scroll !important;
+        // overflow: scroll !important;
     }
     ul.circleContainer {
-        display: flex;
         flex-wrap: wrap;
         overflow: scroll;
         z-index: 10;
@@ -383,19 +518,40 @@ nav {
             display: flex;
             flex-direction: column;
             position: relative;
+
             align-content: center;
             justify-items: center;
             border-radius: 10px;
             cursor: pointer;
 
-            @media only screen and (max-width: $tablet) {
-                min-width: calc(100vw - 4rem);
-                margin: 2rem;
+            // @media only screen and (max-width: $tablet) {
+            //     min-width: calc(100vw - 4rem);
+            //     margin: 2rem;
+            //     cursor: pointer;
+            // }
+
+            @include until($tabletLrg) {
+                max-width: 35%;
+                margin-left: 10%;
+
                 cursor: pointer;
+                display: inline-flex;
+
+                @media (orientation: landscape) {
+                    max-width: 30%;
+                    margin-left: 15%;
+                    font-size: 5%;
+                }
             }
-            @media only screen and (min-width: $tablet) {
-                min-width: calc(50vw - 2rem);
-                margin: 1rem;
+            @include from($tabletLrg) {
+                display: inline-flex;
+                position: relative;
+                align-content: center;
+                justify-items: center;
+                max-width: 50%;
+                margin-left: 15%;
+
+                border-radius: 10px;
                 cursor: pointer;
             }
             img.img {
@@ -405,23 +561,22 @@ nav {
             // overflow flex fix
             min-height: 0;
         }
-
-        span.title {
-            color: #222;
-            text-align: center;
-            display: block;
-            margin: 0;
-            width: 100%;
-        }
     }
-
-    .navbar-menu.is-active {
-        box-shadow: none;
-        padding: 0;
-        position: fixed;
-        top: -5px;
-        right: 40px;
+    span.title {
+        color: #222;
+        text-align: center;
+        display: block;
+        margin: 0;
+        width: 100%;
     }
+}
+
+.navbar-menu.is-active {
+    box-shadow: none;
+    padding: 0;
+    position: fixed;
+    top: -5px;
+    right: 40px;
 }
 
 .boxcard {
@@ -434,8 +589,10 @@ nav {
 
 .basecenter {
     display: flex;
+    font-family: "Poiret One", cursive;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 5px;
     width: 5em;
+    // font-family: @include;
 }
