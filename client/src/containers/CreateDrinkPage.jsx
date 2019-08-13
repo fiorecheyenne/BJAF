@@ -1,11 +1,3 @@
-// import React  from "react";
-import DrinkCard from "../shared/DrinkCard";
-
-
-// export default function CreateDrinkPage() {
-//     return <h1>Create Da Drink</h1>;
-// }
-
 import React, { useState, useCallback } from "react";
 
 const basebox = {};
@@ -17,7 +9,7 @@ const imageSize = {
     // marginTop: "5px",
 };
 
-export default function RandomizerPage(props) {
+export default function CreateDrinkPage(props) {
     const [shouldAnimateRotation, setShouldAnimationRotate] = useState(false);
     const [shouldChildAnimate, setShouldChildAnimationRotate] = useState(false);
 
@@ -25,12 +17,13 @@ export default function RandomizerPage(props) {
         (event, base) => {
             event.preventDefault();
             if (window.document.documentElement.clientWidth < 1025) {
-                props.history.push("results?base=" + base);
+                props.history.push("drinkCreator?base=" + base+",subset=variation");
+                console.log(props.history)
                 return;
             }
             setShouldAnimationRotate(!shouldAnimateRotation);
             setShouldChildAnimationRotate(!shouldChildAnimate);
-            setTimeout(() => props.history.push("results?base=" + base), 2000);
+            setTimeout(() => props.history.push("drinkCreator?base=" + base + ",subset=variation"), 2000);
         },
         [shouldAnimateRotation, shouldChildAnimate, props.history]
     );

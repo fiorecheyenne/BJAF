@@ -18,7 +18,7 @@ const cardProps = {
     top: "10vh",
     left: "50vh",
 };
-export default function ResultsPage(props) {
+export default function DrinkCreator(props) {
     const [result, setResult] = useState(null);
     console.log(props)
     const params = useMemo(() => {
@@ -39,7 +39,7 @@ export default function ResultsPage(props) {
         if (refetch) {
             setRefetch(false);
             const { base } = params;
-            fetch(base ? "/api/randomizer?base=" + base : "/api/randomizer")
+            fetch(base ? "/api/drinkCreator?base=" + base : "/api/drinkCreator")
                 .then(res => res.json())
                 .then(result => {
                     let generatedResult = result;
@@ -48,6 +48,8 @@ export default function ResultsPage(props) {
                     }
                     if (generatedResult.variation === "none") {
                         generatedResult.variation = undefined;
+                    
+                    console.log(result);
                     }
                     setResult(generatedResult);
                 })
@@ -63,8 +65,16 @@ export default function ResultsPage(props) {
             <div class="title is-2 has-text-centered" id="resultheader">
                 YOUR DRINK
             </div>
+            {/* <div style={centerConstraints} id="resultdiv">
+                {result && <DrinkCard style={cardProps} 
+                {...result}
+                
+                />}
+            </div> */}
             <div style={centerConstraints} id="resultdiv">
-                {result && <DrinkCard style={cardProps} {...result} />}
+                <DrinkCard style={cardProps} base="coffee" 
+                // presets="" 
+               />
             </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
@@ -83,4 +93,4 @@ export default function ResultsPage(props) {
             </div>
         </main>
     );
-}
+    }

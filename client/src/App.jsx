@@ -12,7 +12,8 @@ import FavoritesPage from "./containers/FavoritesPage";
 import RandomizerPage from "./containers/RandomizerPage";
 import ResultsPage from "./containers/ResultsPage";
 import ErrorPage from "./containers/ErrorPage";
-import CreatePage from "./containers/CreateDrinkPage"
+import CreateDrinkPage from "./containers/CreateDrinkPage";
+import DrinkCreator from "./containers/DrinkCreator";
 
 export default function App() {
     return (
@@ -23,7 +24,8 @@ export default function App() {
                 <Route path="/user/favorites" component={FavoritesPage} />
                 <Route path="/randomizer" component={RandomizerPage} />
                 <Route path="/results" component={ResultsPage} />
-                <Route path="/create" component={CreatePage} />
+                <Route path="/createDrink" component={CreateDrinkPage} />
+                <Route path="/drinkCreator" component= {DrinkCreator} />
                 <Route component={ErrorPage} />
             </Switch>
             <Footer />

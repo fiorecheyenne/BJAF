@@ -33,7 +33,13 @@ const randomizer = option => {
         }
         flavors = new Array(...new Set(flavors));
     }
-
+console.log({
+        base: option.base,
+        flavors: flavors,
+        preset: preset,
+        milk: randomBase(option.milk),
+        variation: randomBase(option.variation),
+    });
     return {
         base: option.base,
         flavors: flavors,

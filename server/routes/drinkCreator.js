@@ -1,4 +1,4 @@
-const creator = require("../creator");
+const creator = require("../drinkCreator");
 
 module.exports = {
     POST(request, response) {
