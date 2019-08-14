@@ -190,6 +190,7 @@ button {
         font-size: 20px;
     }
     @include from($desktop) {
+        margin-top: 3%;
     }
 }
 
@@ -448,7 +449,7 @@ button {
     }
 
     @include from($tabletLrg) {
-        margin-top: 3%;
+        margin-top: 2%;
     }
 }
 //pick new base button style (result page)
