@@ -3,9 +3,12 @@
 ### Team Members:
 
 -   Alexis Schaetzle
+    https://github.com/aschaetzle127
 -   Brandon Burrus
+    https://github.com/BrandonBurrus
 -   Fiore Cheyenne
 -   Juan Palomino
+    https://github.com/J-Palomino
 
 ### Description:
 
@@ -23,9 +26,10 @@ Mixtly also provides a developer-friendly public-facing GraphQL API for interact
         -   JWT
         -   Bcrypt
     -   GraphQL
-        - Apollo Server
+        -   Apollo Server
     -   Mongoose
 -   MongoDB
+-   Sass
 
 ### Primary Responsibilities:
 
@@ -34,7 +38,7 @@ Mixtly also provides a developer-friendly public-facing GraphQL API for interact
 -   **Brandon Burrus**
     -   Focused primarily on writing the application core, including the coupling of a server running Node.js and a client running React, as well as providing a flexible GraphQL API for public use.
 -   **Fiore Cheyenne**
-    -   Focused primarily on the front-end user interactions and design using React and Styled-Components, as well as the front-end routing using React-Router.
+    -   Focused primarily on the front-end user interactions and design using React, Styled-Components and Sass, as well as the front-end routing using React-Router.
 -   **Juan Palomino**
     -   Focused primarily on providing user/user favorites API routes, user authentication using JWT, as well as user password security via hash encryption using Bcrypt.
 
