@@ -14,19 +14,17 @@ type DrinkCardProps = {
     isFavorite?: boolean;
 };
 
-const constraints: CSSProperties = {
-    // maxWidth: "300px",
-    // minWidth: "299px",
-    position: "relative",
-    // top: "1px",
-    margin: "1rem",
-    display: "block",
-};
+// const constraints: CSSProperties = {
+//     position: "relative",
+//     top: "5%",
+//     margin: "0px",
+//     display: "block",
+// };
 
 const centerContainer: CSSProperties = {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "12px",
+    marginBottom: "5%",
 };
 
 const favoritesButton: CSSProperties = {
@@ -36,10 +34,10 @@ const favoritesButton: CSSProperties = {
     transform: "translate(-28%, 28%)",
 };
 
-const imageSize: CSSProperties = {
-    minWidth: "200px",
-    maxHeight: "220px",
-};
+// const imageSize: CSSProperties = {
+//     maxWidth: "200px",
+//     maxHeight: "150px",
+// };
 
 export default function DrinkCard({ base, preset, flavors, milk, variation, isFavorite }: DrinkCardProps) {
     const [favorite, toggleFavorite] = useFavorite(
@@ -72,14 +70,14 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
     }, [base]);
     const [token] = useUserToken();
     return (
-        <div className="drink box" style={constraints}>
+        <div className="drink box">
             {base && (
                 <div style={centerContainer}>
-                    <img src={`/image/${imgName}.png`} alt={base + " drink"} style={imageSize} />
+                    <img src={`/image/${imgName}.png`} alt={base + " drink"} />
                 </div>
             )}
             <hr />
-            <h3 className="is-size-5 has-text-centered drinkvariation">
+            <h3 className="has-text-centered drinkvariation">
                 <strong>{variation ? `${variation} ${base}` : base}</strong>
             </h3>
             <hr />
@@ -96,7 +94,6 @@ export default function DrinkCard({ base, preset, flavors, milk, variation, isFa
             )}
             {milk && (
                 <>
-                    <br />
                     <div className="control">
                         <div className="tags has-addons">
                             <span className="tag is-light">Suggested Milk</span>

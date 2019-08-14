@@ -9,23 +9,28 @@ export default function SplashPage(props) {
     return (
         <main>
             <div class="bg" />
-            <div class="column is-12-mobile is-4-desktop is-offset-4-desktop has-text-centered" id="divleft">
+            <div class="column is-12-mobile is-12-desktop  has-text-centered" id="divleft">
                 <span id="mixtly"> MIXTLY</span>
                 <br />
-                <span id="splash-font">
+                <div id="splash-font" class="column is-12-mobile  has-text-centered  ">
                     Mixtly is your go-to app for creating new and exciting drink options for your favorite coffee spot: Dutch
                     Bros. Start by choosing your favorite type and let us take care of the rest, or if you’re feeling
                     particularly bold create a completely randomized drink.
-                </span>
-                <br />
-                <br />
+                </div>
+
                 <span id="calltoaction">WHAT WOULD YOU LIKE TO DO? </span>
                 <div class="buttongroup" style={margin}>
                     <Link to="/randomizer">
-                        <a class="button is-primary is-medium is-rounded ">Select Drink Type</a>
+                        <a class="button is-primary is-medium is-rounded is-mobile" id="drinktype">
+                            Pick Drink Type
+                        </a>
                     </Link>
-                    <a class="button is-info has-text-dark is-medium is-rounded" onClick={() => props.history.push("/results")}>
-                        Randomize
+                    <br />
+                    <a
+                        class="button is-info has-text-dark is-medium is-rounded is-mobile"
+                        id="randomizeall"
+                        onClick={() => props.history.push("/results")}>
+                        Randomize All
                     </a>
                 </div>
             </div>

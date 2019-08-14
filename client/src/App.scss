@@ -1,8 +1,12 @@
 @charset "utf-8";
+// imported fonts
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+//overrides for bulma defaults
+
 $navbar-background-color: transparent;
 $primary: #156299;
 $link: #654791;
@@ -10,13 +14,22 @@ $info: #f8e316;
 $dark: hsl(0, 0%, 10%);
 $font-family: "Raleway", sans-serif;
 $button-padding-horizontal: 1em;
-// $body-overflow-x: hidden;
-// $body-overflow-y: hidden;
-
+$gap: 32px;
+$mobile: 320px;
+$tablet: 767px;
+$tabletLrg: 960px;
+$desktop: 1100px + (2 * $gap);
+.tags {
+    margin-top: 3%;
+}
 .title {
     font-family: "Poiret One", cursive;
 }
+
+//import bulma
 @import "../node_modules/bulma/bulma.sass";
+
+//extending bulma classes into stylesheet
 button {
     @extend .button;
 }
@@ -24,73 +37,65 @@ button {
 nav {
     @extend .navbar;
 }
-// $mobileS: 320px;
-// $mobileM: 375px;
-// $mobileL: 425px;
-// $tablet: 768px;
-$laptop: 1025px;
-// $laptopL: 1440px;
-// $desktop: 2560px;
 
-//mix in for media queries
-@mixin size($size) {
-    @if $size == mobile-only {
-        @media (max-width: 599px) {
-            @content;
-        }
-    } @else if $size == tablet-portrait-up {
-        @media (min-width: 600px) {
-            @content;
-        }
-    } @else if $size == tablet-landscape-up {
-        @media (min-width: 900px) {
-            @content;
-        }
-    } @else if $size == desktop-up {
-        @media (min-width: 1200px) {
-            @content;
-        }
-    } @else if $size == big-desktop-up {
-        @media (min-width: 1800px) {
-            @content;
-        }
-    }
-}
 button {
     @extend .button;
 }
+
+//button style
 .button {
     margin: 5px;
     cursor: pointer;
+    box-shadow: 0px 8px 13px rgba(115, 115, 115, 0.4);
+    transition: all 0.3s ease 0s;
 }
-nav {
-    @extend .navbar;
-}
+//navbar style
 .navbar-burger {
     color: whitesmoke !important;
+
+    align-items: right;
+
+    padding: 0;
+    display: flex;
+    margin-top: 1%;
+    cursor: pointer;
 }
+
+.navbar-brand {
+    @include until($desktop) {
+        width: 100%;
+    }
+}
+
 #root {
     top: 0;
     height: 100vh;
 }
-
+//splashpage background
 .bg {
     top: 0;
     height: 100%;
-    // overflow: hidden;
     position: absolute;
     width: 100%;
     background-image: url("/image/rainbrowdropshdw.svg");
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include until($tablet) {
+        background-image: url("/image/rainbrowdropshdw.svg");
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+    }
 }
 
+//base/randomizer page background
 .basebg {
     top: 0;
     min-height: 100vh;
     padding-top: 40px;
-    overflow: hidden;
+    // overflow: hidden;
     position: absolute;
     width: 100%;
     background-image: url("/image/basepagebg.svg");
@@ -98,63 +103,118 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include size(mobile-only) {
+    //base/randomizer page background until tablet size
+    @include until($tablet) {
         background-image: url("/image/header.svg");
         background-position: center;
-
         background-size: cover;
         background-repeat: no-repeat;
     }
 }
 
+//result background
 .resultbg {
     bottom: 0;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+
     position: absolute;
     width: 100%;
-    background-image: url("/image/colors.svg");
-    background-position: center;
+
+    background-image: url("/image/colors2.svg");
     background-size: cover;
+    background-position: left;
     background-repeat: no-repeat;
 
-    @include size(mobile-only) {
-        background-image: url("/image/wavyheader.svg");
+    //result background until size tablet
+    @include until($tabletLrg) {
+        background-image: url("/image/wavyhf.svg");
         background-position: center;
         background-size: cover;
+        height: 100vh;
+        width: 100%;
         background-repeat: no-repeat;
     }
 }
 
+// #resultdiv {
+//     position: relative;
+//     top: 1%;
+// }
+//what would you like to do text on splash page
 #calltoaction {
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 5px;
-    @include size(mobile-only) {
+
+    @include until($tablet) {
         font-weight: 600;
         font-size: 20px;
         letter-spacing: 5px;
     }
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+    }
+    @include from($tabletLrg) {
+        @media (orientation: landscape) {
+            font-size: 20px;
+        }
+    }
 }
+//result card styling
 .drink {
-    background-image: url("/image/redcard3.svg");
+    background-image: url("/image/redcard4.svg");
     height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    max-width: 300px;
-    min-width: 299px;
     position: relative;
-    top: 10vh;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease 0s;
-    @include size(mobile-only) {
-        min-width: 200px !important;
+    @include until($tablet) {
+        min-width: 240px !important;
         max-width: 250px !important;
+        max-height: 400px;
+        margin-top: 10%;
+        img {
+            max-height: 150px;
+        }
+    }
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 500px;
+        margin-top: 5%;
+        font-size: 20px;
+    }
+    @include from($desktop) {
+        margin-top: 3%;
     }
 }
 
+// @include from($mobile) {
+//     min-width: 200px;
+//     max-width: 250px;
+
+// }
+// @include from($tablet) {
+//     max-height: 10%;
+//     margin-top: 5%;
+// }
+// @include from($tabletLrg) {
+//     max-height: 10%;
+//     position: relative;
+//     margin-top: 5%;
+// }
+// @include from($desktop) {
+//     max-height: 10%;
+//     position: relative;
+//     top: 15%;
+// }
+
+//favorites page background styling
 #favoritesbg {
     background-image: url("/image/favbg.svg");
     height: 100%;
@@ -165,6 +225,8 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+//login and signup background
 #login-form,
 #signup-form {
     background-image: url("/image/waveh.svg");
@@ -173,66 +235,187 @@ nav {
     background-repeat: no-repeat;
 }
 #random {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ffffff;
+
+    @include from($tablet) {
+        font-size: 3em;
+    }
 }
 
+#burger {
+    font-size: 2em;
+
+    @include from($desktop) {
+        display: none;
+    }
+}
+
+// #signup #favoritesbutt {
+//     @include from();
+// }
 #divleft {
     position: relative;
     top: 5%;
     color: white;
+
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            position: fixed;
+            top: 0%;
+            overflow-y: scroll;
+        }
+    }
 }
+
+//"MIXTLY" splash page text styling
 #mixtly {
     font-size: 100px;
     font-family: "Poiret One", cursive;
     font-weight: bolder;
     letter-spacing: 2rem;
     text-align: center;
-
-    @include size(mobile-only) {
-        font-size: 40px;
+    display: inline-flex;
+    margin-left: 2%;
+    @include from($mobile) {
+        font-size: 60px;
         letter-spacing: 0.5em;
-        margin-left: 10px;
+        margin-left: 2%;
+
+        @media (orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+    @include from($tabletLrg) {
+        @media (orientation: landscape) {
+            font-size: 80px;
+        }
     }
 }
 
+//result page drink variation styling
 .drinkvariation {
     strong {
         color: whitesmoke;
+        letter-spacing: 3px;
     }
 }
 
+//result page drink preset styling
 #preset {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background: -webkit-linear-gradient(#f8e316, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+//randomize box styling
 #randomizerbox {
     position: relative;
     top: 20vh;
 }
-// #full {
-//     height: 100%;
-//     .is-vertical-center {
-//         display: flex;
-//         align-items: center;
-//     }
-// }
 
+//splach page intro font styling
+#splash-font {
+    @include from($desktop) {
+        max-width: 30%;
+        margin-left: 35%;
+    }
+    @include until($tabletLrg) {
+        max-width: 70%;
+        margin-left: 15%;
+    }
+    @include from($mobile) {
+        @media (orientation: landscape) {
+            max-width: 40%;
+            margin-left: 30%;
+        }
+    }
+    @include until($tablet) {
+        @media (orientation: landscape) {
+            max-width: 40%;
+            font-size: 12px;
+        }
+    }
+    @include from($tabletLrg) {
+        max-width: 100%;
+        margin-left: 5px;
+        @media (orientation: landscape) {
+            max-width: 40%;
+            margin-left: 30%;
+        }
+    }
+    @include from($widescreen) {
+        max-width: 40%;
+        margin-left: 30%;
+    }
+}
+//splash page buttons styling
+#drinktype,
+#randomizeall {
+    border-style: solid;
+    border-color: whitesmoke;
+}
+
+//base/randomizer header styling
 #randomizertitle {
     position: relative;
-    top: 5%;
+    top: 0%;
+    // @include from($tablet) {
+    //     position: relative;
+    //     top: 0% !important;
+
+    //     align-content: center;
+
+    //     margin-bottom: 2%;
+    //     z-index: 1;
+    // }
+
+    @include until($tablet) {
+        position: relative;
+        top: 0% !important;
+        font-size: 35px;
+        align-content: center;
+        margin-left: 1%;
+
+        @media (orientation: landscape) {
+            position: relative;
+            top: 0% !important;
+            font-size: 35px;
+            align-content: center;
+            margin-left: 1%;
+            margin-bottom: 5%;
+            z-index: 1;
+        }
+    }
+    @include from($tabletLrg) {
+        position: relative;
+        top: 0% !important;
+        font-size: 60px;
+        align-content: center;
+        margin-left: 0%;
+        margin-bottom: 5%;
+        z-index: 1;
+    }
+    @include from($desktop) {
+        position: fixed;
+        top: 0px;
+        font-size: 40px;
+        align-content: center;
+        margin-left: 0%;
+    }
 }
 
+//generic title class style
 .title {
     color: white;
-}
-.drink.box {
-    display: inline-block;
 }
 
 .drink hr {
     margin: 7px 0 6px 0;
+    background: -webkit-linear-gradient(#f8e316, #fff);
 }
 
 .is-vertical-center {
@@ -240,65 +423,143 @@ nav {
     align-items: center;
 }
 
-.drink.box {
-    display: inline-block;
-}
-
-.drink hr {
-    margin: 7px 0 6px 0;
-}
-
+//randomize again button style (result page)
 #randomizeagainbutton {
     min-width: 299px;
+    font-weight: bold;
+
     position: relative;
-    margin-top: 90px;
+    margin-top: 3%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
-    @include size(mobile-only) {
-        margin-top: 60px;
+
+    @include until($tablet) {
+        margin-top: 3%;
         min-width: 250px !important;
         max-width: 251px !important;
     }
-}
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 50px;
+        font-size: 25px;
+        letter-spacing: 4px;
+    }
+    @include until($tabletLrg) {
+        margin-top: 3%;
+    }
 
+    @include from($tabletLrg) {
+        margin-top: 2%;
+    }
+}
+//pick new base button style (result page)
 #newbasebutton {
     min-width: 299px;
     position: relative;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
-
-    @include size(mobile-only) {
+    font-weight: bolder;
+    @include until($tablet) {
         min-width: 250px !important;
         max-width: 251px !important;
     }
-}
-#resultheader {
-    color: black !important;
-    position: relative;
-    top: 10vh;
-    letter-spacing: 0.3em;
-    font-weight: bolder;
-
-    @include size(mobile-only) {
-        position: fixed;
-        top: 10px;
-        font-size: 30px;
-        color: white;
-        z-index: 1;
-        width: 100%;
-    }
-}
-#baseheader {
-    @include size(mobile-only) {
-        position: fixed;
-        top: 10px;
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 50px;
         font-size: 25px;
+        letter-spacing: 4px;
+    }
+}
+
+//result header style
+#resultheader {
+    color: white;
+
+    position: fixed;
+    top: 0%;
+
+    // margin-left: 39%;
+    letter-spacing: 0.3em;
+    font-weight: 600;
+    @include until($tablet) {
+        position: fixed;
+        top: 1%;
+        margin-left: 0%;
+        font-size: 20px;
+
         z-index: 1;
         width: 100%;
     }
+    @include from($tablet) {
+        position: fixed;
+        top: 1%;
+        font-size: 40px;
+
+        z-index: 1;
+        width: 100%;
+    }
+    @include from($tabletLrg) {
+        position: relative;
+        top: 0%;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 0%;
+        z-index: 1;
+        width: 100%;
+    }
+    @include from($desktop) {
+        margin-bottom: 1%;
+    }
 }
+
+//randomizer / base header style
+#baseheader {
+    font-family: "Poiret One", cursive;
+
+    @include from($tablet) {
+        position: fixed;
+        top: 1%;
+        font-size: 40px;
+        align-content: center;
+
+        width: 100%;
+    }
+
+    @include until($tablet) {
+        position: fixed;
+        top: 1% !important;
+        font-size: 20px;
+        align-content: center;
+        margin-left: 18%;
+
+        .title {
+            font-size: 0.9rem !important;
+        }
+        @media (orientation: landscape) {
+            position: fixed;
+            top: 1%;
+            font-size: 35px;
+            align-content: center;
+            margin-left: 20%;
+        }
+    }
+    @include from($tabletLrg) {
+        position: fixed;
+        top: 0%;
+        font-size: 60px;
+    }
+    @include from($desktop) {
+        position: fixed;
+        top: 0;
+        font-size: 50px;
+        align-content: center;
+
+        width: 100%;
+    }
+}
+
 //randomizer page circle container and children
-@media only screen and (min-width: $laptop) {
+@media only screen and (min-width: $desktop) {
     // #favoritesbg {
     //     display: absolute;
     //     top: 0;
@@ -309,6 +570,7 @@ nav {
         height: $circle-size;
         padding: 0px;
         border-radius: 50%;
+
         list-style: none;
         padding-inline-start: 0px;
 
@@ -318,10 +580,11 @@ nav {
             top: 40%;
             left: 50%;
             transform: rotate(0deg);
-            transition: transform 0.7s linear;
-            width: $item-size;
-            height: $item-size;
-            margin: -($item-size / 2);
+            // transition: transform 0.7s linear;
+            width: ($item-size - 2);
+            height: ($item-size - 2);
+            margin: -($item-size / 3);
+
             cursor: pointer;
             -webkit-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
             -moz-box-shadow: 3px 3px 7px 0px rgba(21, 98, 153, 1);
@@ -340,15 +603,17 @@ nav {
     }
 
     .circleContainer {
-        @include on-circle($item-count: 10, $circle-size: 60vh, $item-size: 8em);
-        margin-top: 0px !important;
-        margin: 5em auto;
+        @include on-circle($item-count: 10, $circle-size: 65vh, $item-size: 8em);
+        margin-top: 1% !important;
+        margin: 6em auto;
         margin-bottom: 0;
         transform: rotate(0deg);
         transition: transform 0.7s linear;
         position: relative;
-        height: calc(90vh - 40px);
-        width: 100%;
+        left: 0%;
+
+        height: calc(90vh - 20px);
+        width: 50%;
 
         .img {
             transform: rotate(0deg);
@@ -361,13 +626,11 @@ nav {
     }
 }
 
-@media only screen and (max-width: $laptop) {
-    // $body-overflow-y: scroll;
+@media only screen and (max-width: $desktop) {
     main {
-        overflow: scroll !important;
+        // overflow: scroll !important;
     }
     ul.circleContainer {
-        display: flex;
         flex-wrap: wrap;
         overflow: scroll;
         z-index: 10;
@@ -381,15 +644,33 @@ nav {
             justify-items: center;
             border-radius: 10px;
             cursor: pointer;
-
-            @media only screen and (max-width: $tablet) {
-                min-width: calc(100vw - 4rem);
-                margin: 2rem;
-                cursor: pointer;
+            @include until($tablet) {
+                max-width: 40%;
+                margin-left: 7%;
+                display: inline-flex;
             }
-            @media only screen and (min-width: $tablet) {
-                min-width: calc(50vw - 2rem);
-                margin: 1rem;
+            @include from($tablet) {
+                max-width: 35%;
+                margin-left: 10%;
+
+                cursor: pointer;
+                display: inline-flex;
+
+                @media (orientation: landscape) {
+                    max-width: 30%;
+                    margin-left: 15%;
+                    font-size: 5%;
+                }
+            }
+            @include from($tabletLrg) {
+                display: inline-flex;
+                position: relative;
+                align-content: center;
+                justify-items: center;
+                max-width: 50%;
+                margin-left: 15%;
+
+                border-radius: 10px;
                 cursor: pointer;
             }
             img.img {
@@ -399,23 +680,22 @@ nav {
             // overflow flex fix
             min-height: 0;
         }
-
-        span.title {
-            color: #222;
-            text-align: center;
-            display: block;
-            margin: 0;
-            width: 100%;
-        }
     }
-
-    .navbar-menu.is-active {
-        box-shadow: none;
-        padding: 0;
-        position: fixed;
-        top: -5px;
-        right: 40px;
+    span.title {
+        color: #222;
+        text-align: center;
+        display: block;
+        margin: 0;
+        width: 100%;
     }
+}
+
+.navbar-menu.is-active {
+    box-shadow: none;
+    padding: 0;
+    position: fixed;
+    top: -5px;
+    right: 40px;
 }
 
 .boxcard {
@@ -428,6 +708,7 @@ nav {
 
 .basecenter {
     display: flex;
+    font-family: "Poiret One", cursive;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 5px;
