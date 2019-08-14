@@ -26,9 +26,10 @@ export default function Nav(props) {
                             aria-label="menu"
                             aria-expanded="false"
                             onClick={() => setMobileNavActive(!mobileNavActive)}>
+                            <i class="fal fa-bars" id="burger" />
+                            {/* <span aria-hidden="true" />
                             <span aria-hidden="true" />
-                            <span aria-hidden="true" />
-                            <span aria-hidden="true" />
+                            <span aria-hidden="true" /> */}
                         </a>
                     )}
                 </div>
@@ -44,7 +45,8 @@ export default function Nav(props) {
                                                     setMobileNavActive(false);
                                                     props.history.push("/user/favorites");
                                                 }}
-                                                class="button is-primary">
+                                                class="button is-primary"
+                                                id="favoritesbutt">
                                                 My Favorites
                                             </button>
                                             <button
@@ -64,7 +66,8 @@ export default function Nav(props) {
                                                     setVisibleForm("SIGNUP");
                                                     setSignupVisible(true);
                                                 }}
-                                                class="button is-primary">
+                                                class="button is-primary"
+                                                id="signup">
                                                 Sign Up
                                             </button>
                                             <button

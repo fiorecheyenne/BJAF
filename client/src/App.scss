@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 //overrides for bulma defaults
+
 $navbar-background-color: transparent;
 $primary: #156299;
 $link: #654791;
@@ -15,10 +16,12 @@ $font-family: "Raleway", sans-serif;
 $button-padding-horizontal: 1em;
 $gap: 32px;
 $mobile: 320px;
-$tablet: 768px;
+$tablet: 767px;
 $tabletLrg: 960px;
-$desktop: 1000px + (2 * $gap);
-
+$desktop: 1100px + (2 * $gap);
+.tags {
+    margin-top: 3%;
+}
 .title {
     font-family: "Poiret One", cursive;
 }
@@ -49,7 +52,21 @@ button {
 //navbar style
 .navbar-burger {
     color: whitesmoke !important;
+
+    align-items: right;
+
+    padding: 0;
+    display: flex;
+    margin-top: 1%;
+    cursor: pointer;
 }
+
+.navbar-brand {
+    @include until($desktop) {
+        width: 100%;
+    }
+}
+
 #root {
     top: 0;
     height: 100vh;
@@ -64,6 +81,13 @@ button {
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include until($tablet) {
+        background-image: url("/image/rainbrowdropshdw.svg");
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+    }
 }
 
 //base/randomizer page background
@@ -71,7 +95,7 @@ button {
     top: 0;
     min-height: 100vh;
     padding-top: 40px;
-    overflow: hidden;
+    // overflow: hidden;
     position: absolute;
     width: 100%;
     background-image: url("/image/basepagebg.svg");
@@ -83,7 +107,6 @@ button {
     @include until($tablet) {
         background-image: url("/image/header.svg");
         background-position: center;
-
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -92,24 +115,31 @@ button {
 //result background
 .resultbg {
     bottom: 0;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+
     position: absolute;
     width: 100%;
-    background-image: url("/image/colors.svg");
-    background-position: center;
+
+    background-image: url("/image/colors2.svg");
     background-size: cover;
+    background-position: left;
     background-repeat: no-repeat;
 
     //result background until size tablet
-    @include until($tablet) {
-        background-image: url("/image/wavyheader.svg");
+    @include until($tabletLrg) {
+        background-image: url("/image/wavyhf.svg");
         background-position: center;
         background-size: cover;
+        height: 100vh;
+        width: 100%;
         background-repeat: no-repeat;
     }
 }
 
+// #resultdiv {
+//     position: relative;
+//     top: 1%;
+// }
 //what would you like to do text on splash page
 #calltoaction {
     font-weight: bold;
@@ -129,29 +159,59 @@ button {
     }
     @include from($tabletLrg) {
         @media (orientation: landscape) {
-            font-size: 10px;
+            font-size: 20px;
         }
     }
 }
 //result card styling
 .drink {
-    background-image: url("/image/redcard3.svg");
+    background-image: url("/image/redcard4.svg");
     height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    max-width: 300px;
-    min-width: 299px;
     position: relative;
-    top: 10vh;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease 0s;
     @include until($tablet) {
-        min-width: 200px !important;
+        min-width: 240px !important;
         max-width: 250px !important;
+        max-height: 400px;
+        margin-top: 10%;
+        img {
+            max-height: 150px;
+        }
+    }
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 500px;
+        margin-top: 5%;
+        font-size: 20px;
+    }
+    @include from($desktop) {
     }
 }
+
+// @include from($mobile) {
+//     min-width: 200px;
+//     max-width: 250px;
+
+// }
+// @include from($tablet) {
+//     max-height: 10%;
+//     margin-top: 5%;
+// }
+// @include from($tabletLrg) {
+//     max-height: 10%;
+//     position: relative;
+//     margin-top: 5%;
+// }
+// @include from($desktop) {
+//     max-height: 10%;
+//     position: relative;
+//     top: 15%;
+// }
 
 //favorites page background styling
 #favoritesbg {
@@ -174,10 +234,25 @@ button {
     background-repeat: no-repeat;
 }
 #random {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ffffff;
+
+    @include from($tablet) {
+        font-size: 3em;
+    }
 }
 
+#burger {
+    font-size: 2em;
+
+    @include from($desktop) {
+        display: none;
+    }
+}
+
+// #signup #favoritesbutt {
+//     @include from();
+// }
 #divleft {
     position: relative;
     top: 5%;
@@ -187,6 +262,7 @@ button {
         @media (orientation: landscape) {
             position: fixed;
             top: 0%;
+            overflow-y: scroll;
         }
     }
 }
@@ -220,6 +296,7 @@ button {
 .drinkvariation {
     strong {
         color: whitesmoke;
+        letter-spacing: 3px;
     }
 }
 
@@ -228,6 +305,9 @@ button {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background: -webkit-linear-gradient(#f8e316, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 //randomize box styling
@@ -282,20 +362,22 @@ button {
 #randomizertitle {
     position: relative;
     top: 0%;
-    @include from($tablet) {
-        position: relative;
-        top: 0%;
-        font-size: 10%;
-        align-content: center;
-        margin-left: 30%;
-    }
+    // @include from($tablet) {
+    //     position: relative;
+    //     top: 0% !important;
 
-    @include from($mobile) {
+    //     align-content: center;
+
+    //     margin-bottom: 2%;
+    //     z-index: 1;
+    // }
+
+    @include until($tablet) {
         position: relative;
         top: 0% !important;
         font-size: 35px;
         align-content: center;
-        margin-left: 0%;
+        margin-left: 1%;
 
         @media (orientation: landscape) {
             position: relative;
@@ -303,18 +385,25 @@ button {
             font-size: 35px;
             align-content: center;
             margin-left: 1%;
+            margin-bottom: 5%;
+            z-index: 1;
         }
     }
     @include from($tabletLrg) {
         position: relative;
-        top: 0%;
+        top: 0% !important;
         font-size: 60px;
+        align-content: center;
+        margin-left: 0%;
+        margin-bottom: 5%;
+        z-index: 1;
     }
     @include from($desktop) {
         position: fixed;
         top: 0px;
         font-size: 40px;
         align-content: center;
+        margin-left: 0%;
     }
 }
 
@@ -323,13 +412,9 @@ button {
     color: white;
 }
 
-//drink box class style
-.drink.box {
-    display: inline-block;
-}
-
 .drink hr {
     margin: 7px 0 6px 0;
+    background: -webkit-linear-gradient(#f8e316, #fff);
 }
 
 .is-vertical-center {
@@ -337,22 +422,33 @@ button {
     align-items: center;
 }
 
-.drink.box {
-    display: inline-block;
-}
-
 //randomize again button style (result page)
 #randomizeagainbutton {
     min-width: 299px;
+    font-weight: bold;
+
     position: relative;
-    margin-top: 90px;
+    margin-top: 3%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
 
     @include until($tablet) {
-        margin-top: 60px;
+        margin-top: 3%;
         min-width: 250px !important;
         max-width: 251px !important;
+    }
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 50px;
+        font-size: 25px;
+        letter-spacing: 4px;
+    }
+    @include until($tabletLrg) {
+        margin-top: 3%;
+    }
+
+    @include from($tabletLrg) {
+        margin-top: 3%;
     }
 }
 //pick new base button style (result page)
@@ -361,28 +457,57 @@ button {
     position: relative;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
-
+    font-weight: bolder;
     @include until($tablet) {
         min-width: 250px !important;
         max-width: 251px !important;
+    }
+    @include from($tablet) {
+        min-width: 350px;
+        min-height: 50px;
+        font-size: 25px;
+        letter-spacing: 4px;
     }
 }
 
 //result header style
 #resultheader {
-    color: black !important;
-    position: relative;
-    top: 10vh;
-    letter-spacing: 0.3em;
-    font-weight: bolder;
+    color: white;
 
+    position: fixed;
+    top: 0%;
+
+    // margin-left: 39%;
+    letter-spacing: 0.3em;
+    font-weight: 600;
     @include until($tablet) {
         position: fixed;
-        top: 10px;
-        font-size: 30px;
-        color: white;
+        top: 1%;
+        margin-left: 0%;
+        font-size: 20px;
+
         z-index: 1;
         width: 100%;
+    }
+    @include from($tablet) {
+        position: fixed;
+        top: 1%;
+        font-size: 40px;
+
+        z-index: 1;
+        width: 100%;
+    }
+    @include from($tabletLrg) {
+        position: relative;
+        top: 0%;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 0%;
+        z-index: 1;
+        width: 100%;
+    }
+    @include from($desktop) {
+        margin-bottom: 1%;
     }
 }
 
@@ -393,23 +518,28 @@ button {
     @include from($tablet) {
         position: fixed;
         top: 1%;
-        font-size: 10%;
+        font-size: 40px;
         align-content: center;
-        margin-left: 30%;
+
+        width: 100%;
     }
 
-    @include from($mobile) {
+    @include until($tablet) {
         position: fixed;
-        top: 0% !important;
-        font-size: 35px;
+        top: 1% !important;
+        font-size: 20px;
         align-content: center;
-        display: contents;
+        margin-left: 18%;
+
+        .title {
+            font-size: 0.9rem !important;
+        }
         @media (orientation: landscape) {
             position: fixed;
             top: 1%;
             font-size: 35px;
             align-content: center;
-            margin-left: 30%;
+            margin-left: 20%;
         }
     }
     @include from($tabletLrg) {
@@ -422,7 +552,8 @@ button {
         top: 0;
         font-size: 50px;
         align-content: center;
-        margin-left: 5%;
+
+        width: 100%;
     }
 }
 
@@ -508,13 +639,16 @@ button {
             display: flex;
             flex-direction: column;
             position: relative;
-
             align-content: center;
             justify-items: center;
             border-radius: 10px;
             cursor: pointer;
-
-            @include until($tabletLrg) {
+            @include until($tablet) {
+                max-width: 40%;
+                margin-left: 7%;
+                display: inline-flex;
+            }
+            @include from($tablet) {
                 max-width: 35%;
                 margin-left: 10%;
 
@@ -578,5 +712,4 @@ button {
     margin-top: 20px;
     margin-bottom: 5px;
     width: 5em;
-    // font-family: @include;
 }

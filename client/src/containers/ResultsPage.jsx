@@ -16,6 +16,7 @@ const buttonPadding = {
 const cardProps = {
     position: "relative",
     top: "10vh",
+
     left: "50vh",
 };
 export default function ResultsPage(props) {
@@ -67,14 +68,14 @@ export default function ResultsPage(props) {
             </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
-                <button class="button is-primary" id="randomizeagainbutton" onClick={() => setRefetch(true)}>
+                <button class="button is-primary is-rounded" id="randomizeagainbutton" onClick={() => setRefetch(true)}>
                     Randomize again
                 </button>
             </div>
 
             <div class="column is-full is-mobile has-text-centered" style={buttonPadding}>
                 <button
-                    class="button is-info has-text-dark "
+                    class="button is-info has-text-dark is-rounded"
                     id="newbasebutton"
                     onClick={() => props.history.push("/randomizer")}>
                     Pick a new base
